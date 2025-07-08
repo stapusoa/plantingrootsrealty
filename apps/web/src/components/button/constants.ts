@@ -1,2 +1,3 @@
-export const buttonSizes = ["sm", "default", "lg", "icon"] as const;
-export const buttonVariants = ["default", "outline", "ghost", "link"] as const;
+export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonColor = "primary" | "secondary" | "contrast" | "critical" | "neutral";
+export type ButtonVariant = "filled" | "outlined" | "ghost";

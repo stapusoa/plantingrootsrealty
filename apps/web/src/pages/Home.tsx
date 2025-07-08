@@ -1,4 +1,4 @@
-import { Accordion } from "@/components/accordion";
+import { Accordion } from "@/components/index";
 import { Link } from "react-router-dom";
 export default function Home() {
   return (

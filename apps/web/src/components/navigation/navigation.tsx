@@ -1,6 +1,6 @@
-// components/navigation/navigation.tsx
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils"; // Optional: your class merge util
+import { Button } from "@/components/index";
 
 export function Navigation() {
   const location = useLocation();
@@ -8,8 +8,10 @@ export function Navigation() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Our Story", path: "/our-story" },
+    { name: "Listings", path: "/listings" },
+    { name: "Resources", path: "/resources" },
     { name: "Blog", path: "/blogs" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -28,6 +30,13 @@ export function Navigation() {
               >
                 {item.name}
               </Link>
+              <Button
+                as={Link}
+                className={cn(
+                  "ml-2",
+                  location.pathname === item.path ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800"
+                )}
+                >Hi</Button>
             </li>
           ))}
         </ul>

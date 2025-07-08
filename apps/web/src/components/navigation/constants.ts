@@ -1,10 +1,11 @@
 
 export const NAV_ITEMS = [
-  { text: "Home", path: "/" },
-  { text: "Our Story", path: "/our-story" },
-  { text: "Blogs", path: "/blogs" },
-  { text: "Listings", path: "/listings" },
-  { text: "Contact Us", path: "/contact" },
+  { name: "Home", path: "/" },
+  { name: "Our Story", path: "/our-story" },
+  { name: "Listings", path: "/listings" },
+  { name: "Resources", path: "/resources" },
+  { name: "Blog", path: "/blogs" },
+  { name: "Contact Us", path: "/contact" },
 ];
 
 export const PHONE_NUMBER = "(801) 400-9242";
