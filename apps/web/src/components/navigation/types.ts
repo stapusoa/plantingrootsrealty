@@ -1,4 +1,4 @@
-export type PageType = "home" | "our-story" | "blogs" | "listings" | "contact";
+export type PageType = 'home' | 'our-story' | 'listings' | 'resources' | 'blog' | 'contact';
 
 export interface NavigationProps {
   currentPage: PageType;

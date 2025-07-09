@@ -1,22 +1,12 @@
+import type { PageType } from "./types";
 
-export const NAV_ITEMS = [
-  { name: "Home", path: "/" },
-  { name: "Our Story", path: "/our-story" },
-  { name: "Listings", path: "/listings" },
-  { name: "Resources", path: "/resources" },
-  { name: "Blog", path: "/blogs" },
-  { name: "Contact Us", path: "/contact" },
+export const navitems: { text: string; page: PageType }[] = [
+  { text: 'Home', page: 'home' },
+  { text: 'Our Story', page: 'our-story' },
+  { text: 'Blog', page: 'blog' },
+  { text: 'Listings', page: 'listings' },
+  { text: 'Resources', page: 'resources' },
+  { text: 'Contact Us', page: 'contact' },
 ];
 
 export const PHONE_NUMBER = "(801) 400-9242";
-export const PHONE_ICON_PATH = `<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_39_375)">
-<path d="M14.572 11.3596L11.2907 9.95336C11.1506 9.89362 10.9948 9.88104 10.8468 9.9175C10.6989 9.95395 10.5668 10.0375 10.4704 10.1555L9.01729 11.9309C6.73674 10.8556 4.90143 9.02033 3.82617 6.73979L5.60156 5.28666C5.71983 5.19048 5.80353 5.05837 5.84001 4.91036C5.87648 4.76235 5.86374 4.60648 5.80371 4.46635L4.39746 1.1851C4.33158 1.03405 4.21505 0.91072 4.06797 0.83638C3.9209 0.76204 3.75249 0.741349 3.5918 0.777875L0.544922 1.481C0.389991 1.51678 0.251761 1.60401 0.152794 1.72847C0.0538257 1.85292 -3.56897e-05 2.00725 1.77428e-08 2.16625C1.77428e-08 9.6809 6.09082 15.76 13.5938 15.76C13.7528 15.7601 13.9072 15.7063 14.0317 15.6073C14.1562 15.5083 14.2435 15.3701 14.2793 15.2151L14.9824 12.1682C15.0187 12.0067 14.9976 11.8376 14.9227 11.6901C14.8478 11.5425 14.7237 11.4256 14.572 11.3596Z" fill="#5E4684"/>
-</g>
-<defs>
-<clipPath id="clip0_39_375">
-<rect width="15" height="15" fill="white" transform="translate(0 0.76001)"/>
-</clipPath>
-</defs>
-</svg>
-`;

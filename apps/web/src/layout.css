@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@layer utilities {
+  .page {
+    @apply max-w-[49rem] mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .page-wide {
+    @apply max-w-[56.5rem] mx-auto px-4 md:px-6;
+  }
+
+  .page-tight {
+    @apply max-w-[37.5rem] mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .page-tighter {
+    @apply max-w-4xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .page-full {
+    @apply max-w-full;
+  }
+
+  .section {
+    @apply py-8 md:py-12;
+  }
+
+  .container-center {
+    @apply max-w-screen-xl mx-auto px-4;
+  }
+
+  .grid-cols-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}

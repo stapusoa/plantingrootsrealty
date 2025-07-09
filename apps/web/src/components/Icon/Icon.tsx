@@ -1,17 +1,11 @@
 import React from 'react'
 import { cn } from '../../lib/utils'
-import type { AvailableIcons } from './IconMapping'
-import { IconMapping } from './IconMapping'
-import type { IconSize } from './iconConstants'
+import { IconMapping } from './mapping'
+import type { IconProps } from './types'
 
-interface IconProps {
-  name: AvailableIcons
-  size?: IconSize
-}
-
-export const Icon = ({ name, size = 'medium' }: IconProps): React.ReactElement => {
+export const Icon = ({ name, size = 'md', className }: IconProps): React.ReactElement => {
   return (
-    <i aria-hidden='true' className={iconCss(size)}>
+    <i aria-hidden='true' className={cn(iconCss(size), className)}>
       {IconMapping[name]}
     </i>
   )
@@ -19,7 +13,7 @@ export const Icon = ({ name, size = 'medium' }: IconProps): React.ReactElement =
 
 const iconCss = (size: string) =>
   cn('[&>svg]:h-inherit [&>svg]:w-inherit', {
-    'h-8 min-w-8 w-8': size === 'large',
-    'h-6 min-w-6 w-6': size === 'medium',
-    'h-16px min-w-16px w-16px': size === 'small',
+    'h-8 min-w-8 w-8': size === 'lg',
+    'h-6 min-w-6 w-6': size === 'md',
+    'h-4 min-w-4 w-4': size === 'sm',
   })

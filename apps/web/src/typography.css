@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-merriweather: "Merriweather", sans-serif;
+  --font-karla: "Karla", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.75rem;
+  --text-4xl: 2rem;
+  --text-5xl: 2.5rem;
+  --text-6xl: 3rem;
+  --text-7xl: 3.5rem;
+  --text-8xl: 4rem;
+
+  --leading-cozy: 1.08;
+  --leading-tighter: 1.15;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  --tracking-ultra: 0.2em;
+  --tracking-mega: 0.3em;
+}
+
+@layer components {
+  
+
+  /* Typography Utilities */
+  .h1 {
+    @apply font-merriweather font-bold text-blue-600;
+    font-size: var(--text-6xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    margin: 0;
+  }
+
+  .h2 {
+    @apply font-merriweather font-bold text-gray-700;
+    font-size: var(--text-4xl);
+    letter-spacing: var(--tracking-normal);
+    margin: 0;
+  }
+
+  .h3 {
+    @apply font-merriweather font-bold text-gray-700;
+    font-size: var(--text-3xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    margin: 0;
+  }
+
+  .h4 {
+    @apply font-merriweather font-bold;
+    font-size: var(--text-2xl);
+    letter-spacing: var(--tracking-normal);
+    margin: 0;
+  }
+
+  .body {
+    @apply font-merriweather;
+    font-size: var(--text-base);
+    line-height: var(--leading-tight);
+    margin: 0;
+  }
+
+  .body-semibold {
+    @apply font-merriweather font-semibold;
+    font-size: var(--text-base);
+    line-height: var(--leading-tight);
+    margin: 0;
+  }
+
+  .body-large {
+    @apply font-merriweather font-normal;
+    font-size: var(--text-lg);
+    line-height: var(--leading-tight);
+  }
+
+  .body-2 {
+    @apply font-merriweather font-light;
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+  }
+
+  .navlink {
+    @apply font-merriweather text-blue-600 font-medium text-lg no-underline hover:text-green-500;
+  }
+}
