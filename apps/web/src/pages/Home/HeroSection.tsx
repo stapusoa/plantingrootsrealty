@@ -1,4 +1,3 @@
-import React from "react";
 import type { PageType } from "@/components/navigation/types";
 import { Button } from "@/components/button/button";
 import { BackgroundImages } from "../../lib/BG";

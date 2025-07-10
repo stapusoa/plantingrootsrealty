@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 
 export type PageType = 'home' | 'our-story' | 'listings' | 'resources' | 'blog' | 'contact';
 

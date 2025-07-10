@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFlags } from 'launchdarkly-react-client-sdk';
 import type { PageType } from "@/components/navigation/types";
 import {
   HeroSection,
-  MarketStats,
   LogoCloud,
   ServiceAreas,
   OurStorySection,

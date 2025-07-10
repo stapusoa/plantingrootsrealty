@@ -4,8 +4,6 @@ import imgLogo2 from "@/assets/Logo 3.png";
 import imgLogo3 from "@/assets/Logo 4.png";
 import imgLogo4 from "@/assets/Logo 5.png";
 import imgLogo5 from "@/assets/Logo 6.png";
-import imgImgOurStory1 from "@/assets/img1.jpg";
-import imgImage from "@/assets/img2.jpg";
 
 export function LogoCloud() {
   return (

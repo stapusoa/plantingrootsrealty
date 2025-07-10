@@ -1,5 +1,4 @@
 import type { PageType } from "./types";
-import { useState, useEffect } from "react";
 
 export const navitems: { text: string; page: PageType }[] = [
   { text: 'Home', page: 'home' },

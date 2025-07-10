@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/index";
 import { navitems, PHONE_NUMBER } from "./constants";
 import type { NavigationProps } from "./types";
 import logowhite from "@/assets/logo-contrast.webp";
 import { Icon } from "@/components/Icon/Icon";
 
-export function Navigation({ currentPage, onNavigate, heroHeight = 600 }: NavigationProps) {
+export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

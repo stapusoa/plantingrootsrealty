@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 
 export const baseWrapper =
   "fixed top-0 z-50 w-full transition-all duration-500 flex items-center gap-4";

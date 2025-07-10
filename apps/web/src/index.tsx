@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, useLocation, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Home} from "./pages/Home";
 import { MarkdownPage } from "./pages/MarkdownPage";
 import "./index.css";
