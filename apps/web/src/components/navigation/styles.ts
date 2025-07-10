@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
+
 export const baseWrapper =
-  "fixed top-0 z-50 w-full transition-all duration-500";
+  "fixed top-0 z-50 w-full transition-all duration-500 flex items-center gap-4";
 
 export const navScrolled =
   "bg-gradient-to-r from-[#5e4684] to-[#7a5ba8] backdrop-blur-md shadow-xl";
@@ -17,3 +19,9 @@ export const phoneButtonBase =
 
 export const phoneButtonScrolled = "bg-white/20 hover:bg-white/30";
 export const phoneButtonTransparent = "bg-white/10 hover:bg-white/20";
+
+// Additional classes for layout adjustments
+export const phoneButtonFull = "hidden lg:flex";
+export const phoneButtonLearnMore = "hidden md:flex lg:hidden";
+export const phoneButtonIconOnly = "flex md:hidden";
+export const phoneAndMenuContainer = "flex space-x-4 items-center";

@@ -69,3 +69,4 @@ AccordionRoot.Trigger = AccordionTrigger
 AccordionRoot.Content = AccordionContent
 
 export const Accordion = AccordionRoot
+

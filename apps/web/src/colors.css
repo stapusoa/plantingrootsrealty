@@ -148,6 +148,8 @@
   .bg-error { background-color: var(--color-error); }
   .bg-info { background-color: var(--color-info); }
   .bg-error-opacity { background-color: var(--color-error-opacity); }
+  .bg-primary-95 { background-color: rgba(94, 70, 132, 0.95); }
+  .bg-secondary-light { background-color: var(--color-secondary-light); }
 
   .bg-green { background-color: var(--color-green); }
   .bg-blue { background-color: var(--color-blue); }
