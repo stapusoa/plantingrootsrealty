@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { BrowserRouter, useLocation, Routes, Route } from "react-router-dom";
 import {Home} from "./pages/Home";
+import { MarkdownPage } from "./pages/MarkdownPage";
 import "./index.css";
 import { Navigation } from "./components/navigation";
 import type { PageType } from "./components/navigation/types";
@@ -14,7 +15,10 @@ function App() {
   return (
     <>
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      <Home onNavigate={handleNavigate} />
+      <Routes>
+        <Route path="/" element={<Home onNavigate={handleNavigate} />} />
+        <Route path="/page/:slug" element={<MarkdownPage />} />
+      </Routes>
     </>
   );
 }

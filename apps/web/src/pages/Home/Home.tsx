@@ -15,7 +15,7 @@ import {
   FAQSection,
   Footer
 } from "./index";
-import { HomeOld } from "./HomeOld";
+import { Simple } from "./HomeOld";
 
 interface HomePageProps {
   onNavigate: (page: PageType) => void;
@@ -61,7 +61,7 @@ export function Home({ onNavigate }: HomePageProps) {
         <div className="flex flex-col items-center relative size-full">
           <div className="box-border content-stretch flex flex-col items-center justify-start pb-0 pt-0 px-0 relative size-full">
             <HeroSection onNavigate={onNavigate} />
-            <HomeOld />
+            <Simple />
           </div>
         </div>
       )}
