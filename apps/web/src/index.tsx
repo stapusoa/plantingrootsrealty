@@ -5,6 +5,7 @@ import {Home} from "./pages/Home";
 import "./index.css";
 import { Navigation } from "./components/navigation";
 import type { PageType } from "./components/navigation/types";
+import { withLDProvider } from "launchdarkly-react-client-sdk";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -18,10 +19,19 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+const LDApp = withLDProvider({
+  clientSideID: "686ffb31d2db8409436cef4b",
+  reactOptions: {
+    useCamelCaseFlagKeys: false,
+  },
+})(() => (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
+));
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <LDApp />
 );
