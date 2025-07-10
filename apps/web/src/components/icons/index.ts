@@ -1,3 +1,5 @@
 export { LoadingIcon } from './LoadingIcon'
 export { PhoneIcon } from './PhoneIcon'
 export { PhoneOutlinedIcon } from './PhoneOutlinedIcon'
+export { MenuIcon } from './MenuIcon'
+export { CloseIcon } from './CloseIcon'

@@ -1,12 +1,12 @@
 import type { PageType } from "./types";
+import { useState, useEffect } from "react";
 
 export const navitems: { text: string; page: PageType }[] = [
   { text: 'Home', page: 'home' },
-  { text: 'Our Story', page: 'our-story' },
-  { text: 'Blog', page: 'blog' },
+  { text: 'About', page: 'our-story' },
   { text: 'Listings', page: 'listings' },
   { text: 'Resources', page: 'resources' },
-  { text: 'Contact Us', page: 'contact' },
+  { text: 'Contact', page: 'contact' },
 ];
 
 export const PHONE_NUMBER = "(801) 400-9242";
