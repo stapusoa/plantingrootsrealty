@@ -4,6 +4,9 @@ import {
   PhoneOutlinedIcon,
   MenuIcon,
   CloseIcon,
+  LinkedinIcon,
+  InstagramIcon,
+  FacebookIcon
 } from '../icons'
 
 const IconMapping = {
@@ -12,6 +15,9 @@ const IconMapping = {
   phoneOutlined: <PhoneOutlinedIcon />,
   menu: <MenuIcon />,
   close: <CloseIcon />,
+  linkedin: <LinkedinIcon />,
+  facebook: <FacebookIcon />,
+  instagram: <InstagramIcon />
 }
 
 type AvailableIcons = keyof typeof IconMapping

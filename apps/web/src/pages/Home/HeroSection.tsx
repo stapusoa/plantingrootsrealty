@@ -58,8 +58,8 @@ export function HeroSection({ onNavigate }: { onNavigate: (page: PageType) => vo
           <div className="box-border content-stretch flex flex-col gap-8 items-center justify-center p-0 relative w-full">
             <div className="max-w-[1140px] relative shrink-0 w-full">
               <div className="box-border content-stretch flex flex-col items-start justify-center max-w-inherit p-0 relative w-full">
-                <div className="flex flex-col font-['Merriweather:Regular',_sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#ffffff] text-[42px] md:text-[64px] text-center w-full animate-fade-in">
-                  <p className="block leading-[1.1] drop-shadow-2xl font-bold">Deep Roots, Lasting Homes</p>
+                <div className="flex flex-col font-['Merriweather'] text-6xl md:text-5xl sm:text-4xl justify-center not-italic relative shrink-0 text-white text-center w-full animate-fade-in">
+                  <h1 className="block leading-tight drop-shadow-2xl">Deep Roots, Lasting Homes</h1>
                 </div>
               </div>
             </div>

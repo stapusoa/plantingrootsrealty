@@ -14,8 +14,9 @@ import {
   FAQSection,
   Footer
 } from "./index";
-import { Simple } from "./HomeOld";
-
+import { OurStoryOld } from "./OurStoryOld";
+import { ContactFormOld } from "./ContactFormOld"
+import { TestimonialsOld } from "./TestimonialsOld";
 interface HomePageProps {
   onNavigate: (page: PageType) => void;
 }
@@ -60,7 +61,9 @@ export function Home({ onNavigate }: HomePageProps) {
         <div className="flex flex-col items-center relative size-full">
           <div className="box-border content-stretch flex flex-col items-center justify-start pb-0 pt-0 px-0 relative size-full">
             <HeroSection onNavigate={onNavigate} />
-            <Simple />
+            <OurStoryOld onNavigate={onNavigate} />
+            <ContactFormOld />
+            <TestimonialsOld />
           </div>
         </div>
       )}

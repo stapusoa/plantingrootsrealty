@@ -1,4 +1,3 @@
-
 export const baseWrapper =
   "fixed top-0 z-50 w-full transition-all duration-500 flex items-center gap-4";
 
@@ -24,3 +23,14 @@ export const phoneButtonFull = "hidden lg:flex";
 export const phoneButtonLearnMore = "hidden md:flex lg:hidden";
 export const phoneButtonIconOnly = "flex md:hidden";
 export const phoneAndMenuContainer = "flex space-x-4 items-center";
+
+export const footerStyles = {
+  footer: "bg-gray-50 border-t border-gray-200 py-8",
+  container: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+  flexWrapper: "flex flex-col md:flex-row justify-between items-center gap-6",
+  socialsWrapper: "flex flex-row md:flex-col space-x-6 md:space-x-0 md:space-y-4",
+  socialLink: "text-gray-500 hover:text-gray-700 transition",
+  nav: "flex flex-wrap justify-center gap-6",
+  navLink: "text-gray-600 hover:text-gray-900 transition",
+  copyright: "mt-8 text-center text-gray-400 text-sm",
+}
