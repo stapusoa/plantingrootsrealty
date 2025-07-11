@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Badge } from "@/components/badge/badge";
-import { Button } from "@/components/button";
 import type { PageType } from "@/components/navigation/types";
-import imgImgOurStory1 from "@/assets/img1.jpg";
 
 function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, onSlideSelect }: {
   children: React.ReactNode;
@@ -56,7 +53,7 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
   );
 }
 
-export function OurStoryOld({ onNavigate }: { onNavigate: (page: PageType) => void }) {
+export function OurStoryOld({  }: { onNavigate: (page: PageType) => void }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 10;
 
