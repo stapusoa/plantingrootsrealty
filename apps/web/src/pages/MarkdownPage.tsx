@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { useMarkdownPages } from "@/lib/useMarkdownPages";
+import { useMarkdownPages } from "@/useMarkdownPages";
 
 export function MarkdownPage() {
   const { slug } = useParams();
   const pages = useMarkdownPages();
   const page = pages.find((p) => p.slug === slug);
-
+console.log("Available pages:", pages.map((p) => p.slug));
+console.log("Current slug from URL:", slug);
   if (!page) return <p>Loading page...</p>;
 
   return (

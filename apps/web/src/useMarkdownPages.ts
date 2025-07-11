@@ -24,7 +24,10 @@ export function useMarkdownPages(): Page[] {
         const slug = path.split("/").pop()?.replace(".md", "") || "";
         return { slug, data, content };
       })
-    ).then(setPages);
+    ).then((loadedPages) => {
+      console.log("Resolved pages from glob:", loadedPages);
+      setPages(loadedPages);
+    });
   }, []);
 
   return pages;

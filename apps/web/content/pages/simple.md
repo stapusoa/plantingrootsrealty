@@ -1,5 +1,5 @@
 ---
-title: "Welcome Home"
+title: Welcome Home
 ---
 
 # Welcome to Our Real Estate Site
