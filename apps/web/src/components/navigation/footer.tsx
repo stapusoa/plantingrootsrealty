@@ -20,7 +20,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <p className="font-['Karla'] text-white font-medium">Brittni Bingham</p>
+                  <p className="font-['Karla'] text-white font-medium">Brittany Hutchison</p>
                   <p className="font-['Karla'] text-white/80 text-[14px]">Licensed Real Estate Agent</p>
                   <p className="font-['Karla'] text-white/80 text-[14px]">Utah County & Surrounding Areas</p>
                 </div>
@@ -79,8 +79,8 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-[20px]">📧</span>
-                    <a href="mailto:brittni@plantingrootsrealty.com" className="font-['Karla'] text-white/80 hover:text-white transition-colors">
-                      brittni@plantingrootsrealty.com
+                    <a href="mailto:plantingrootsrealty@gmail.com" className="font-['Karla'] text-white/80 hover:text-white transition-colors">
+                      plantingrootsrealty@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
             {/* License Info */}
             <div className="mt-6 pt-6 border-t border-white/20">
               <p className="font-['Karla'] text-white/60 text-[12px] text-center leading-relaxed">
-                Brittni Bingham - Licensed Real Estate Agent in Utah.
+                Brittany Hutchison - Licensed Real Estate Agent in Utah.
                 All information deemed reliable but not guaranteed.
                 Equal Housing Opportunity.
               </p>
