@@ -4,13 +4,13 @@ backend:
   repo: stapusoa/plantingrootsrealty
   site_url: https://cms.plantingrootsrealty.com
 
-media_folder: "public/uploads"
+media_folder: "apps/web/public/uploads"
 public_folder: "/uploads"
 
 collections:
   - name: "pages"
     label: "Pages"
-    folder: "content/pages"
+    folder: "apps/web/content/pages"
     create: true
     slug: "{{slug}}"
     fields:
@@ -19,7 +19,7 @@ collections:
 
   - name: "posts"
     label: "Blog Posts"
-    folder: "content/posts"
+    folder: "apps/web/content/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
