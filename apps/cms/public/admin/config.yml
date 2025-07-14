@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: home
+  site_url: https://cms.plantingrootsrealty.com
+
+media_folder: "apps/cms/public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"        # <-- updated path here
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subheader", name: "subheader", widget: "string", required: false }
+      - { label: "Hero Button Text", name: "heroButtonText", widget: "string", required: false }
+      - { label: "Hero Button Link", name: "heroButtonLink", widget: "string", required: false }
+      - { label: "Hero Image SM", name: "heroImageSM", widget: "string", required: false }
+      - { label: "Hero Image MD", name: "heroImageMD", widget: "string", required: false }
+      - { label: "Hero Image LG", name: "heroImageLG", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "content/posts"        # <-- updated path here
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
