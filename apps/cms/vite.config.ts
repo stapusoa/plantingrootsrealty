@@ -1,13 +1,13 @@
-import path from "path"
-import tailwindcss from "@tailwindcss/vite"
-import react from "@vitejs/plugin-react"
-import { nodePolyfills } from "vite-plugin-node-polyfills"
-import { defineConfig } from "vite"
+import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+import { defineConfig } from "vite";
 
 // https://vite.dev/config/
+
 export default defineConfig({
-  root: __dirname,
-  base: '/',
+  base: '/', // still fine
   plugins: [react(), tailwindcss(), nodePolyfills()],
   resolve: {
     alias: {
@@ -26,4 +26,4 @@ export default defineConfig({
     global: {},
   },
   assetsInclude: ["**/*.md"],
-})
+});
