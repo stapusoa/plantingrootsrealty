@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { ContentItem } from '../pages/types';
-import { octokit } from '../github';
+import { octokit } from '../../api/github';
 import { GITHUB_TOKEN, REPO_OWNER, REPO_NAME, BRANCH } from '../env';
 import matter from 'gray-matter';
 

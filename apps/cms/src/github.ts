@@ -1,15 +1,25 @@
-import { Octokit } from "@octokit/rest";
-import { GITHUB_TOKEN } from "./env";
+// apps/cms/src/lib/github.ts
 
-// Initialize Octokit with authentication if token is available
-export const octokit = new Octokit({
-  auth: GITHUB_TOKEN || undefined,
-});
+import { REPO_OWNER, REPO_NAME, CONTENT_PATH, BRANCH } from "@/env";
 
-// Add warning if no token is provided
-if (!GITHUB_TOKEN) {
-  console.warn('GitHub token not provided. Create a VITE_GITHUB_TOKEN environment variable for GitHub integration.');
+export async function fetchGitHubContentFromApi() {
+  try {
+    const query = new URLSearchParams({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path: CONTENT_PATH,
+      ref: BRANCH,
+    }).toString();
+
+    const response = await fetch(`/api/github?${query}`);
+
+    if (!response.ok) {
+      throw new Error(`GitHub API failed: ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (err) {
+    console.error("Failed to fetch GitHub content from API:", err);
+    return null;
+  }
 }
-
-// Export GitHub connection status
-export const isGitHubEnabled = Boolean(GITHUB_TOKEN);
