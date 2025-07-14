@@ -5,9 +5,7 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  // DO NOT set root unless you know why — let it use default
   base: '/',
-  root: '.', // default is fine
   plugins: [react(), tailwindcss(), nodePolyfills()],
   resolve: {
     alias: {
