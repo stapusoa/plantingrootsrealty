@@ -6,15 +6,21 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
+  root: __dirname,
+  base: '/',
   plugins: [react(), tailwindcss(), nodePolyfills()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"),
       "@/components": path.resolve(__dirname, "src/components"),
       "@/lib": path.resolve(__dirname, "src/lib"),
       "@/hooks": path.resolve(__dirname, "src/hooks"),
       buffer: "buffer",
     },
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
   },
   define: {
     global: {},
