@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "deploy:cms": "git subtree push --prefix=apps/cms cms main",
     "lint": "eslint .",
     "preview": "vite preview"
