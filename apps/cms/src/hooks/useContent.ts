@@ -1,8 +1,172 @@
 import { useState, useEffect } from 'react';
-import { octokit } from '../lib/github';
 import type { ContentItem } from '../pages/types';
-import { CONTENT_PATH, REPO_OWNER, REPO_NAME, BRANCH, GITHUB_TOKEN } from '../env';
+import { octokit } from '../github';
+import { GITHUB_TOKEN, REPO_OWNER, REPO_NAME, BRANCH } from '../env';
 import matter from 'gray-matter';
+
+
+// Check if GitHub is enabled
+const isGitHubEnabled = Boolean(GITHUB_TOKEN && REPO_OWNER && REPO_NAME);
+
+// GitHub API functions
+const getContentFiles = async (folder: 'posts' | 'pages') => {
+  try {
+    const { data } = await octokit.rest.repos.getContent({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path: `content/${folder}`,
+      ref: BRANCH,
+    });
+
+    if (Array.isArray(data)) {
+      return data
+        .filter(file => file.name.endsWith('.md') && file.type === 'file')
+        .map(file => ({
+          name: file.name,
+          path: file.path,
+          sha: file.sha || '',
+          content: '',
+          download_url: file.download_url || '',
+        }));
+    }
+    return [];
+  } catch (error) {
+    console.error('Error fetching content files:', error);
+    return [];
+  }
+};
+
+const getFileContent = async (path: string): Promise<string> => {
+  try {
+    const { data } = await octokit.rest.repos.getContent({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path,
+      ref: BRANCH,
+    });
+
+    if ('content' in data && typeof data.content === 'string') {
+      return atob(data.content);
+    }
+    return '';
+  } catch (error) {
+    console.error('Error fetching file content:', error);
+    return '';
+  }
+};
+
+const createFile = async (path: string, content: string, message: string): Promise<boolean> => {
+  try {
+    await octokit.rest.repos.createOrUpdateFileContents({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path,
+      message,
+      content: btoa(content),
+      branch: BRANCH,
+    });
+    return true;
+  } catch (error) {
+    console.error('Error creating file:', error);
+    return false;
+  }
+};
+
+const updateFile = async (path: string, content: string, sha: string, message: string): Promise<boolean> => {
+  try {
+    await octokit.rest.repos.createOrUpdateFileContents({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path,
+      message,
+      content: btoa(content),
+      sha,
+      branch: BRANCH,
+    });
+    return true;
+  } catch (error) {
+    console.error('Error updating file:', error);
+    return false;
+  }
+};
+
+const deleteFile = async (path: string, sha: string, message: string): Promise<boolean> => {
+  try {
+    await octokit.rest.repos.deleteFile({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path,
+      message,
+      sha,
+      branch: BRANCH,
+    });
+    return true;
+  } catch (error) {
+    console.error('Error deleting file:', error);
+    return false;
+  }
+};
+
+const parseMarkdownFile = (rawContent: string, filename: string) => {
+  try {
+    const { data, content } = matter(rawContent);
+    const id = filename.replace('.md', '');
+    
+    return {
+      id,
+      title: data.title || 'Untitled',
+      type: data.type || 'post',
+      status: data.status || 'published',
+      content: content.trim(),
+      excerpt: data.excerpt || content.slice(0, 150) + '...',
+      createdAt: data.date || new Date().toISOString().split('T')[0],
+      updatedAt: data.updated || data.date || new Date().toISOString().split('T')[0],
+      filename,
+      sha: '',
+    };
+  } catch (error) {
+    console.error('Error parsing markdown file:', error);
+    const id = filename.replace('.md', '');
+    return {
+      id,
+      title: 'Untitled',
+      type: 'post' as const,
+      status: 'published' as const,
+      content: rawContent,
+      excerpt: rawContent.slice(0, 150) + '...',
+      createdAt: new Date().toISOString().split('T')[0],
+      updatedAt: new Date().toISOString().split('T')[0],
+      filename,
+      sha: '',
+    };
+  }
+};
+
+const createMarkdownContent = (contentItem: any): string => {
+  try {
+    const frontmatter = {
+      title: contentItem.title,
+      type: contentItem.type,
+      status: contentItem.status,
+      excerpt: contentItem.excerpt,
+      date: contentItem.createdAt,
+      updated: contentItem.updatedAt,
+    };
+
+    return matter.stringify(contentItem.content, frontmatter);
+  } catch (error) {
+    console.error('Error creating markdown content:', error);
+    // Fallback to basic markdown format
+    return `---
+title: ${contentItem.title}
+type: ${contentItem.type}
+status: ${contentItem.status}
+date: ${contentItem.createdAt}
+---
+
+${contentItem.content}`;
+  }
+};
 
 // Mock data for when GitHub is not available
 const mockContent: ContentItem[] = [
@@ -189,13 +353,12 @@ export function useContent() {
   const [contents, setContents] = useState<ContentItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const isGitHubConnected = !!GITHUB_TOKEN;
 
   const loadContent = async () => {
     setLoading(true);
     setError(null);
     
-    if (!isGitHubConnected) {
+    if (!isGitHubEnabled) {
       // Use mock data when GitHub is not connected
       setTimeout(() => {
         setContents(mockContent);
@@ -205,13 +368,13 @@ export function useContent() {
     }
 
     try {
-      // Load all content files from the configured CONTENT_PATH
-      const allFiles = await octokit.repos.getContent({
-        owner: REPO_OWNER,
-        repo: REPO_NAME,
-        path: CONTENT_PATH,
-        ref: BRANCH,
-      }).then(res => Array.isArray(res.data) ? res.data : []);
+      // Load both posts and pages
+      const [postFiles, pageFiles] = await Promise.all([
+        getContentFiles('posts'),
+        getContentFiles('pages'),
+      ]);
+
+      const allFiles = [...postFiles, ...pageFiles];
       
       if (allFiles.length === 0) {
         // No content found, use mock data as starting point
@@ -222,29 +385,8 @@ export function useContent() {
 
       // Load content for each file
       const contentPromises = allFiles.map(async (file) => {
-        const rawContent = await octokit.repos.getContent({
-          owner: REPO_OWNER,
-          repo: REPO_NAME,
-          path: file.path,
-          ref: BRANCH,
-        }).then(res => {
-          if (!("content" in res.data)) return '';
-          return atob(res.data.content || '');
-        });
-        const parsedContent = (() => {
-          const { data, content } = matter(rawContent);
-          return {
-            id: file.name.replace('.md', ''),
-            title: data.title || 'Untitled',
-            type: data.type || 'post',
-            status: data.status || 'draft',
-            excerpt: content.slice(0, 150),
-            content,
-            createdAt: data.date || new Date().toISOString().split('T')[0],
-            updatedAt: data.date || new Date().toISOString().split('T')[0],
-            filename: file.name,
-          };
-        })();
+        const rawContent = await getFileContent(file.path);
+        const parsedContent = parseMarkdownFile(rawContent, file.name);
         return {
           ...parsedContent,
           sha: file.sha,
@@ -264,7 +406,7 @@ export function useContent() {
   };
 
   const saveContent = async (contentItem: ContentItem): Promise<boolean> => {
-    if (!isGitHubConnected) {
+    if (!isGitHubEnabled) {
       // Simulate save for mock data
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
       
@@ -281,44 +423,36 @@ export function useContent() {
     }
 
     try {
-      const markdownContent = `---
-title: ${contentItem.title}
-type: ${contentItem.type}
-status: ${contentItem.status}
-date: ${contentItem.createdAt}
----
-
-${contentItem.content}`;
+      const markdownContent = createMarkdownContent(contentItem);
+      const folder = contentItem.type === 'post' ? 'posts' : 'pages';
       const filename = contentItem.filename || `${contentItem.id}.md`;
-      const path = `${CONTENT_PATH}/${filename}`;
+      const path = `content/${folder}/${filename}`;
 
+      let success = false;
+      
       if (contentItem.sha) {
         // Update existing file
-        await octokit.repos.createOrUpdateFileContents({
-          owner: REPO_OWNER,
-          repo: REPO_NAME,
+        success = await updateFile(
           path,
-          message: `Update ${contentItem.type}: ${contentItem.title}`,
-          content: btoa(markdownContent),
-          sha: contentItem.sha,
-          branch: BRANCH,
-        });
+          markdownContent,
+          contentItem.sha,
+          `Update ${contentItem.type}: ${contentItem.title}`
+        );
       } else {
         // Create new file
-        await octokit.repos.createOrUpdateFileContents({
-          owner: REPO_OWNER,
-          repo: REPO_NAME,
+        success = await createFile(
           path,
-          message: `Create ${contentItem.type}: ${contentItem.title}`,
-          content: btoa(markdownContent),
-          branch: BRANCH,
-        });
+          markdownContent,
+          `Create ${contentItem.type}: ${contentItem.title}`
+        );
       }
 
-      // Reload content to get updated data
-      await loadContent();
+      if (success) {
+        // Reload content to get updated data
+        await loadContent();
+      }
 
-      return true;
+      return success;
     } catch (err) {
       console.error('Error saving content:', err);
       return false;
@@ -326,7 +460,7 @@ ${contentItem.content}`;
   };
 
   const deleteContent = async (contentItem: ContentItem): Promise<boolean> => {
-    if (!isGitHubConnected) {
+    if (!isGitHubEnabled) {
       // Simulate delete for mock data
       await new Promise(resolve => setTimeout(resolve, 500)); // Simulate API call
       setContents(prev => prev.filter(c => c.id !== contentItem.id));
@@ -338,21 +472,21 @@ ${contentItem.content}`;
     }
 
     try {
-      const path = `${CONTENT_PATH}/${contentItem.filename}`;
+      const folder = contentItem.type === 'post' ? 'posts' : 'pages';
+      const path = `content/${folder}/${contentItem.filename}`;
       
-      await octokit.repos.deleteFile({
-        owner: REPO_OWNER,
-        repo: REPO_NAME,
+      const success = await deleteFile(
         path,
-        message: `Delete ${contentItem.type}: ${contentItem.title}`,
-        sha: contentItem.sha,
-        branch: BRANCH,
-      });
+        contentItem.sha,
+        `Delete ${contentItem.type}: ${contentItem.title}`
+      );
 
-      // Remove from local state
-      setContents(prev => prev.filter(c => c.id !== contentItem.id));
+      if (success) {
+        // Remove from local state
+        setContents(prev => prev.filter(c => c.id !== contentItem.id));
+      }
 
-      return true;
+      return success;
     } catch (err) {
       console.error('Error deleting content:', err);
       return false;
@@ -389,11 +523,11 @@ ${type === 'post' ?
   return {
     contents,
     loading,
-    error: isGitHubConnected ? error : null, // Don't show error when using mock data
+    error: isGitHubEnabled ? error : null, // Don't show error when using mock data
     loadContent,
     saveContent,
     deleteContent,
     createContent,
-    isGitHubConnected,
+    isGitHubConnected: isGitHubEnabled,
   };
 }

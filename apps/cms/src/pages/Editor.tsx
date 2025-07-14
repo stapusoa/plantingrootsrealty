@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { octokit } from "@/lib/github";
+import { octokit } from "@/github";
 import { REPO_OWNER, REPO_NAME, BRANCH } from "@/env";
 import matter from "gray-matter";
 import { Button } from "@/components/ui/button";

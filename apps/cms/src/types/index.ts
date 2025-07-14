@@ -25,6 +25,7 @@ export interface AuthConfig {
   audience?: string;
 }
 
+// Environment variables interface
 export interface EnvConfig {
   GITHUB_TOKEN: string;
   REPO_OWNER: string;

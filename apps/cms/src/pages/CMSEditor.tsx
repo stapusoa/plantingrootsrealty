@@ -212,7 +212,18 @@ export function CMSEditor() {
     }
 
     if (viewMode === 'list') {
-      return <Dashboard />;
+      return (
+        <Dashboard
+          contents={currentSectionContents}
+          activeSection={activeSection}
+          searchTerm={searchTerm}
+          onSelectContent={handleSelectContent}
+          onEditContent={handleEditContent}
+          onDeleteContent={handleDelete}
+          onCreateContent={handleCreate}
+          onSwitchToPreview={() => setViewMode('preview')}
+        />
+      );
     }
 
     if (selectedContent) {
