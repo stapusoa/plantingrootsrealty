@@ -1,5 +1,11 @@
 ---
 title: "Blogs"
+subheader: "Your trusted Utah County real estate expert with nearly 6 years of experience helping families find their perfect home."
+heroButtonText: "Find Your Home"
+heroButtonLink: "#contact"
+heroImageSM: "/uploads/img1.jpg"
+heroImageMD: "/uploads/img1.jpg"
+heroImageLG: "/uploads/img1.jpg"
 ---
 
 Blogs

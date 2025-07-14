@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
         <Route path="/:slug" element={<MarkdownPage />} />
         <Route path="/listings" element={<ListingsOld />} />
-        <Route path="/resources" element={<BlogsOld />} />
+        {/*<Route path="/resources" element={<BlogsOld />} /> */}
         <Route path="/our-story" element={<AboutOld />} />
       </Routes>
       <Footer onNavigate={handleNavigate} />

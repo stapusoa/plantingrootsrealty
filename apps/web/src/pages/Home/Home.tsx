@@ -28,7 +28,7 @@ export function Home({ onNavigate }: HomePageProps) {
   const showNewHome = override || enableHome001;
 
   return (
-    <div className="bg-[#ffffff] relative size-full">
+    <div className="bg-white relative size-full">
       {/* Dev-only toggle button */}
       {process.env.NODE_ENV === 'development' && (
         <button
