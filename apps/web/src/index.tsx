@@ -7,7 +7,7 @@ import "./index.css";
 import { Navigation } from "./components/navigation";
 import type { PageType } from "./components/navigation/types";
 import { withLDProvider } from "launchdarkly-react-client-sdk";
-import { ListingsOld } from "./pages/Home/ListingsOld";
+import { Listings } from "./pages/Home/Listings";
 import { AboutOld } from "./pages/Home/AboutOld";
 import { Footer } from './components/navigation/footer'
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
         <Route path="/:slug" element={<MarkdownPage />} />
-        <Route path="/listings" element={<ListingsOld />} />
+        <Route path="/listings" element={<Listings />} />
         {/*<Route path="/resources" element={<BlogsOld />} /> */}
         <Route path="/our-story" element={<AboutOld />} />
       </Routes>
