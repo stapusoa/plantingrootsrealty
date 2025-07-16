@@ -99,6 +99,7 @@ const [properties, setProperties] = useState<Property[]>([])
                   </button>
                 </div>
               </div>
+              </div>
 
               {properties.length < 1 && <p>No properties found.</p>}
 
@@ -129,7 +130,6 @@ const [properties, setProperties] = useState<Property[]>([])
             </div>
           </div>
         </div>
-      </div>
     </>
   )
 }
