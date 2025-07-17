@@ -7,7 +7,7 @@ import "./index.css";
 import { Navigation } from "./components/navigation";
 import type { PageType } from "./components/navigation/types";
 import { withLDProvider } from "launchdarkly-react-client-sdk";
-import { Listings } from "./pages/Home/Listings";
+import { Listings } from "./pages/Listings/Listings";
 import { AboutOld } from "./pages/Home/AboutOld";
 import { Footer } from './components/navigation/footer'
 function App() {
