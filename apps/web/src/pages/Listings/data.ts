@@ -1,4 +1,4 @@
-export interface Listing {
+export interface DataListing {
   id: string
   title: string
   price: number
@@ -13,7 +13,7 @@ export interface Listing {
   dateAdded: string
 }
 
-export const mockListings: Listing[] = [
+export const mockListings: DataListing[] = [
   {
     id: "1",
     title: "Modern Downtown Apartment",

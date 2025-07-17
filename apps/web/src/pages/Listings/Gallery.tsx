@@ -15,7 +15,7 @@ import {
   PaginationPrevious,
 } from "@/components/pagination"
 import { Search, SlidersHorizontal, Grid, List } from "lucide-react"
-import { mockListings } from "./listings"
+import { mockListings } from "./data"
 import { Card } from "@/components/card"
 import { FiltersSidebar } from "./FiltersSidebar"
 
