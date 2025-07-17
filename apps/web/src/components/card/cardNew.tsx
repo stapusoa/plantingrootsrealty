@@ -85,10 +85,10 @@ export function Card({
           size !== "sm" && "gap-3" // apply larger gap between image and content at md/lg
         )}
       >
-        {title && <h3 className="font-semibold text-lg line-clamp-1">{title}</h3>}
+        {title && <h3 className="font-semibold text-lg text-header line-clamp-1">{title}</h3>}
 
         {location && (
-          <div className="flex items-center text-muted-foreground text-sm">
+          <div className="flex items-center text-body text-sm">
             <MapPin className="w-4 h-4 mr-1" />
             {location}
           </div>
@@ -97,7 +97,7 @@ export function Card({
         {typeof price === "number" && <p className="text-2xl font-bold text-primary">{formatPrice(price)}</p>}
 
         {Array.isArray(amenities) && amenities.length > 0 && (
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex items-center gap-4 text-sm text-body">
             {amenities.map((amenity, idx) => {
               const key = typeof amenity === "string" ? amenity : amenity.icon
               const label = typeof amenity === "string" ? amenity : amenity.label
@@ -112,7 +112,7 @@ export function Card({
           </div>
         )}
 
-        {description && <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>}
+        {description && <p className="text-sm text-body line-clamp-2">{description}</p>}
 
         {tag?.length > 0 && (
           <div className="flex flex-wrap gap-1 pt-2">

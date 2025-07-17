@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority"
 
 export const cardStyles = cva(
-  "flex rounded-lg transition-shadow relative overflow-hidden",
+  "flex rounded-2xl transition-shadow relative overflow-hidden",
   {
     variants: {
       size: {
@@ -19,7 +19,7 @@ export const cardStyles = cva(
       },
       variant: {
         filled: "",
-        outlined: "bg-transparent border-2",
+        outlined: "bg-transparent border",
         ghost: "bg-transparent border-0 shadow-none",
       },
       orientation: {
@@ -46,19 +46,19 @@ export const cardStyles = cva(
       alignV: "top",
     },
     compoundVariants: [
-      { variant: "filled", color: "primary", class: "bg-neutral-200 hover:shadow-md" },
+      { variant: "filled", color: "primary", class: "bg-neutral-50 hover:shadow-md" },
       { variant: "filled", color: "secondary", class: "bg-secondary hover:shadow-md" },
       { variant: "filled", color: "contrast", class: "bg-white hover:shadow-md" },
       { variant: "filled", color: "critical", class: "bg-error text-white hover:shadow-md" },
       { variant: "filled", color: "neutral", class: "bg-neutral-300 hover:shadow-md" },
       { variant: "filled", color: "promo", class: "bg-primary text-white hover:shadow-md" },
 
-      { variant: "outlined", color: "primary", class: "border-neutral-200 border-2" },
-      { variant: "outlined", color: "secondary", class: "border-secondary border-2" },
-      { variant: "outlined", color: "contrast", class: "border-white border-2" },
-      { variant: "outlined", color: "critical", class: "border-error border-2" },
-      { variant: "outlined", color: "neutral", class: "border-neutral-300 border-2" },
-      { variant: "outlined", color: "promo", class: "border-primary border-2" },
+      { variant: "outlined", color: "primary", class: "border-neutral-300" },
+      { variant: "outlined", color: "secondary", class: "border-secondary" },
+      { variant: "outlined", color: "contrast", class: "border-white" },
+      { variant: "outlined", color: "critical", class: "border-error" },
+      { variant: "outlined", color: "neutral", class: "border-neutral-400" },
+      { variant: "outlined", color: "promo", class: "border-primary" },
 
       { variant: "ghost", color: "primary", class: "border-none" },
       { variant: "ghost", color: "secondary", class: "border-none" },
