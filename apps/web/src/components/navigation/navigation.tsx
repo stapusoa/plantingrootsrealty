@@ -4,10 +4,12 @@ import { cn } from "@/lib/utils";
 import { navitems, PHONE_NUMBER } from "./constants";
 import type { NavigationProps } from "./types";
 import logowhite from "@/assets/logo-contrast.webp";
+import logoprimary from "@/assets/logo-primary.webp";
 import { Icon } from "@/components/Icon/Icon";
 
 export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -37,18 +39,23 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
 
   return (
     <>
-      <nav className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500",
-        isScrolled
-          ? "bg-primary-95 backdrop-blur-md shadow-xl"
-          : "bg-transparent"
-      )}>
+      <nav
+        className={cn(
+          "fixed top-0 z-50 w-full",
+          isHomePage
+            ? "transition-all duration-500 " + (isScrolled ? "bg-primary-95 backdrop-blur-md shadow-xl" : "bg-transparent")
+            : "bg-white shadow-md"
+        )}
+      >
         <div className="flex flex-col items-center relative w-full">
           <div className="flex flex-row items-center justify-between max-w-6xl w-full px-8 py-4">
             {/* Logo */}
             <Link to="/" onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }} className="h-full w-auto p-0 bg-transparent hover:scale-105 transition-transform flex items-center">
-              <img src={logowhite} alt="Planting Roots Realty" className="h-full max-h-40 w-auto" />
-            </Link>
+              <img
+                src={isHomePage ? logowhite : logoprimary}
+                alt="Planting Roots Realty"
+                className="h-full max-h-40 w-auto"
+              />          </Link>
             {/* Desktop Navigation Menu */}
             <ul className="hidden lg:flex gap-6 items-center">
               {navitems.map((item) => {
@@ -83,7 +90,10 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
               {/* Icon-only Phone Button on mobile (<md) */}
               <button
                 onClick={handleCallClick}
-                className="flex md:hidden items-center justify-center bg-white/20 hover:bg-white/30 rounded-lg px-4 py-2 backdrop-blur-sm shadow-md transition-all text-white font-semibold text-sm uppercase"
+                className={cn(
+                  "flex md:hidden items-center justify-center rounded-lg px-4 py-2 backdrop-blur-sm shadow-md transition-all text-white font-semibold text-sm uppercase",
+                  isHomePage ? "bg-white/20 hover:bg-white/30" : "bg-primary hover:bg-primary-dark"
+                )}
                 aria-label={`Call ${PHONE_NUMBER}`}
               >
                 <span className="flex items-center justify-center gap-2">
@@ -93,7 +103,10 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
               {/* Icon-only Phone Button on md to lg screens with "Learn More" text */}
               <button
                 onClick={handleCallClick}
-                className="hidden md:flex lg:hidden items-center justify-center bg-white/20 hover:bg-white/30 rounded-lg px-4 py-2 backdrop-blur-sm shadow-md transition-all text-white font-semibold text-sm uppercase"
+                className={cn(
+                  "hidden md:flex lg:hidden items-center justify-center rounded-lg px-4 py-2 backdrop-blur-sm shadow-md transition-all text-white font-semibold text-sm uppercase",
+                  isHomePage ? "bg-white/20 hover:bg-white/30" : "bg-primary hover:bg-primary-dark"
+                )}
                 aria-label={`Learn More about ${PHONE_NUMBER}`}
               >
                 <span className="flex items-center justify-center gap-2">
@@ -104,7 +117,10 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
               {/* Full Phone Button on large screens */}
               <button
                 onClick={handleCallClick}
-                className="hidden lg:flex items-center justify-center bg-white/20 hover:bg-white/30 rounded-lg px-4 py-2 backdrop-blur-sm shadow-md transition-all text-white font-semibold text-sm uppercase"
+                className={cn(
+                  "hidden lg:flex items-center justify-center rounded-lg px-4 py-2 backdrop-blur-sm shadow-md transition-all text-white font-semibold text-sm uppercase",
+                  isHomePage ? "bg-white/20 hover:bg-white/30" : "bg-primary hover:bg-primary-dark"
+                )}
               >
                 <span className="flex items-center justify-center gap-2">
                   <Icon name="phone" className="w-6 h-6" />
@@ -114,7 +130,10 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
               {/* Mobile Menu Toggle Button */}
               <button
                 onClick={toggleMobileMenu}
-                className="flex lg:hidden p-2 rounded-md text-white hover:bg-white/20 transition"
+                className={cn(
+                  "flex lg:hidden p-2 items-center text-white justify-center rounded-md shadow-md transition-all font-semibold text-sm uppercase",
+                  isHomePage ? "bg-white/20 hover:bg-white/30" : "bg-primary hover:bg-primary-dark"
+                )}
                 aria-label="Toggle mobile menu"
               >
                 <Icon name={isMobileMenuOpen ? "close" : "menu"} className="w-6 h-6" />

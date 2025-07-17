@@ -3,12 +3,14 @@ import type {
   CardColor,
   CardVariant,
   CardBadge,
-  CardAmenities,
+  CardAmenityKey,
   CardOrientation,
   CardImagePosition,
   CardHorizAlign,
   CardVertAlign
 } from "./constants"
+
+export type CardAmenity = CardAmenityKey | { icon: CardAmenityKey; label: string }
 
 export interface CardProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   classname?: string
@@ -18,13 +20,13 @@ export interface CardProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   variant?: CardVariant
   badge?: CardBadge
   price?: number
-  amenities?: CardAmenities[]
+  amenities?: CardAmenity[]
   title?: string
   description?: string
   location?: string
   loading?: boolean
   link?: boolean
-  image?: string
+  image?: string | { url?: string; imagePosition?: CardImagePosition }
   tag?: string[]
   orientation?: CardOrientation
   imagePosition?: CardImagePosition

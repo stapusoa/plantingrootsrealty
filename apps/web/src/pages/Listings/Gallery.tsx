@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { Input } from "@/components/input"
 import { Button } from "@/components/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/select/select"
@@ -15,9 +15,40 @@ import {
   PaginationPrevious,
 } from "@/components/pagination"
 import { Search, SlidersHorizontal, Grid, List } from "lucide-react"
-import { mockListings } from "./data"
 import { Card } from "@/components/card"
 import { FiltersSidebar } from "./FiltersSidebar"
+
+import { sanity } from "@/lib/sanityClient"
+
+const PROPERTY_QUERY = `*[_type == "property"]{
+  _id,
+  title,
+  description,
+  address,
+  price,
+  bedrooms,
+  bathrooms,
+  sqft,
+  dateAdded,
+  type,
+  features,
+  "imageUrl": images[0].asset->url
+}`
+
+type Property = {
+  _id: string
+  title: string
+  description?: string
+  address?: string
+  price?: number
+  bedrooms?: number
+  bathrooms?: number
+  sqft?: number
+  dateAdded?: string
+  type?: string[]
+  features?: string[]
+  imageUrl?: string
+}
 
 const ITEMS_PER_PAGE = 6
 
@@ -34,57 +65,80 @@ export default function RealEstateGallery() {
     bathrooms: "any",
   })
 
+  const [properties, setProperties] = useState<Property[]>([])
+  
+  useEffect(() => {
+    sanity.fetch<Property[]>(PROPERTY_QUERY)
+        .then(setProperties)
+        .catch(e => {
+          // You may want error UI here too
+          console.error("Failed to fetch properties from Sanity:", e)
+        })
+    }, [])
+  
+
   // Filter and search logic
   const filteredListings = useMemo(() => {
-    const filtered = mockListings.filter((listing) => {
-      // Search filter
+    const filtered = properties.filter((listing) => {
       const matchesSearch =
         searchQuery === "" ||
-        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        listing.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        listing.description.toLowerCase().includes(searchQuery.toLowerCase())
+        listing.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        listing.address?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        listing.description?.toLowerCase().includes(searchQuery.toLowerCase());
 
-      // Price range filter
-      const matchesPrice = listing.price >= filters.priceRange[0] && listing.price <= filters.priceRange[1]
+      const matchesPrice =
+        typeof listing.price === "number" &&
+        listing.price >= filters.priceRange[0] &&
+        listing.price <= filters.priceRange[1];
 
-      // Property type filter
-      const matchesType = filters.propertyTypes.length === 0 || filters.propertyTypes.includes(listing.type)
+      const matchesType =
+        filters.propertyTypes.length === 0 ||
+        (Array.isArray(listing.type) &&
+          listing.type.some((t) => filters.propertyTypes.includes(t)));
 
-      // Bedrooms filter
-      const matchesBedrooms = filters.bedrooms === "any" || listing.bedrooms >= Number.parseInt(filters.bedrooms)
+      const matchesBedrooms =
+        filters.bedrooms === "any" ||
+        (listing.bedrooms ?? 0) >= Number(filters.bedrooms);
 
-      // Bathrooms filter
-      const matchesBathrooms = filters.bathrooms === "any" || listing.bathrooms >= Number.parseInt(filters.bathrooms)
+      const matchesBathrooms =
+        filters.bathrooms === "any" ||
+        (listing.bathrooms ?? 0) >= Number(filters.bathrooms);
 
-      return matchesSearch && matchesPrice && matchesType && matchesBedrooms && matchesBathrooms
-    })
+      return (
+        matchesSearch &&
+        matchesPrice &&
+        matchesType &&
+        matchesBedrooms &&
+        matchesBathrooms
+      );
+    });
 
     // Sort logic
     switch (sortBy) {
       case "price-low":
-        filtered.sort((a, b) => a.price - b.price)
+        filtered.sort((a, b) => (a.price ?? 0) - (b.price ?? 0))
         break
       case "price-high":
-        filtered.sort((a, b) => b.price - a.price)
+        filtered.sort((a, b) => (b.price ?? 0) - (a.price ?? 0))
         break
       case "newest":
-        filtered.sort((a, b) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime())
+        filtered.sort((a, b) => new Date(b.dateAdded ?? "").getTime() - new Date(a.dateAdded ?? "").getTime())
         break
       case "oldest":
-        filtered.sort((a, b) => new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime())
+        filtered.sort((a, b) => new Date(a.dateAdded ?? "").getTime() - new Date(b.dateAdded ?? "").getTime())
         break
       case "sqft-high":
-        filtered.sort((a, b) => b.sqft - a.sqft)
+        filtered.sort((a, b) => (b.sqft ?? 0) - (a.sqft ?? 0))
         break
       case "sqft-low":
-        filtered.sort((a, b) => a.sqft - b.sqft)
+        filtered.sort((a, b) => (a.sqft ?? 0) - (b.sqft ?? 0))
         break
       default:
         break
     }
 
     return filtered
-  }, [searchQuery, filters, sortBy])
+  }, [searchQuery, filters, sortBy, properties])
 
   // Pagination logic
   const totalPages = Math.ceil(filteredListings.length / ITEMS_PER_PAGE)
@@ -112,7 +166,7 @@ export default function RealEstateGallery() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen mt-50 bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -213,7 +267,18 @@ export default function RealEstateGallery() {
                   }`}
                 >
                   {paginatedListings.map((listing) => (
-                    <Card key={listing.id} title={listing.title} />
+                    <Card
+                      key={listing._id}
+                      title={listing.title}
+                      description={listing.description}
+                      image={{ url: listing.imageUrl, imagePosition: "inline" }}
+                      price={listing.price}
+                      amenities={[
+                        { icon: "bed", label: `${listing.bedrooms} bedrooms` },
+                        { icon: "bath", label: `${listing.bathrooms} bathrooms` },
+                      ]}
+                      size="md"
+                    />
                   ))}
                 </div>
 

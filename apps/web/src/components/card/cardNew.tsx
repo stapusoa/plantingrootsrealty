@@ -98,12 +98,14 @@ export function Card({
 
         {Array.isArray(amenities) && amenities.length > 0 && (
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            {amenities.map((key) => {
-              const Icon = iconMap[key]
+            {amenities.map((amenity, idx) => {
+              const key = typeof amenity === "string" ? amenity : amenity.icon
+              const label = typeof amenity === "string" ? amenity : amenity.label
+              const Icon = iconMap[key as keyof typeof iconMap]
               return (
-                <div key={key} className="flex items-center">
+                <div key={idx} className="flex items-center">
                   {Icon && <Icon className="w-4 h-4 mr-1" />}
-                  {key}
+                  {label}
                 </div>
               )
             })}

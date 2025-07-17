@@ -19,7 +19,12 @@ export const Image: React.FC<ImageProps> = ({
   const [errored, setErrored] = useState(false)
 
   // If error, show fallback image
-  const displayedSrc = errored ? fallbackSrc : src
+  const displayedSrc =
+    errored
+      ? fallbackSrc
+      : typeof src === "string"
+        ? src
+        : src?.url || fallbackSrc;
 
   return (
     <div

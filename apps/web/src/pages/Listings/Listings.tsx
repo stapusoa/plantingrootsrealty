@@ -8,7 +8,7 @@ const PROPERTY_QUERY = `*[_type == "property"]{
   price,
   bedrooms,
   bathrooms,
-  "imageUrl": images[0].asset->url // adjust this field to match your schema
+  "imageUrl": images[0].asset->url
 }`
 
 type Property = {
