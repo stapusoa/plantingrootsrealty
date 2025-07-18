@@ -10,40 +10,50 @@ export const badgeVariants = cva(
         lg: "h-10",
       },
       color: {
-        default:
-          "border-transparent text-header bg-neutral-300  :hover:bg-primary/90",
-        primary:
-          "border-transparent bg-primary text-white",
-        secondary:
-          "border-transparent bg-secondary text-white [a&]:hover:bg-secondary/90",
-        critical:
-          "border-transparent bg-critical text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        neutral:
-          "text-primary border-neutral-300 border-2 [a&]:hover:text-primary-dark",
+        default: "border-neutral-200",
+        primary: "border-primary",
+        secondary: "border-secondary",
+        contrast: "border-white",
+        critical: "border-error",
+        neutral: "border-neutral-300",
       },
       variant: {
-        default: "bg-transparent",
+        filled: "text-white",
         outlined: "border-2",
         ghost: "bg-transparent border-none",
       },
       shape: {
         rounded: "rounded-full",
-        square: "rounded-none",
+        square: "rounded-lg",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "filled",
       color: "default",
       size: "md",
       shape: "rounded",
     },
     compoundVariants: [
       // Outlined
-      { variant: "outlined", color: "primary", class: "text-primary border-primary hover:bg-primary/90 hover:border-primary-dark hover:text-primary-dark" },
-      { variant: "outlined", color: "secondary", class: "text-secondary border-secondary hover:bg-secondary/90 hover:border-secondary-dark hover:text-secondary-dark" },
-      { variant: "outlined", color: "critical", class: "text-critical border-critical hover:bg-critical/90 hover:border-critical-dark hover:text-critical-dark" },
-      { variant: "outlined", color: "neutral", class: "text-neutral-800 border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400 hover:text-neutral-900" },
-      { variant: "outlined", color: "default", class: "text-header border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400 hover:text-header-dark" },
+      { variant: "outlined", color: "primary", class: "text-primary border-primary" },
+      { variant: "outlined", color: "secondary", class: "text-secondary border-secondary" },
+      { variant: "outlined", color: "critical", class: "text-critical border-critical" },
+      { variant: "outlined", color: "neutral", class: "text-neutral-800 border-neutral-300" },
+      { variant: "outlined", color: "default", class: "text-header border-neutral-300" },
+
+      // Ghost
+      { variant: "ghost", color: "primary", class: "text-primary border-transparent" },
+      { variant: "ghost", color: "secondary", class: "text-secondary border-transparent" },
+      { variant: "ghost", color: "critical", class: "text-critical border-transparent" },
+      { variant: "ghost", color: "neutral", class: "text-neutral-800 border-transparent" },
+      { variant: "ghost", color: "default", class: "text-header border-transparent" },
+
+      // Filled
+      { variant: "filled", color: "primary", class: "bg-primary" },
+      { variant: "filled", color: "secondary", class: "bg-secondary" },
+      { variant: "filled", color: "critical", class: "bg-critical" },
+      { variant: "filled", color: "neutral", class: "bg-neutral-500" },
+      { variant: "filled", color: "default", class: "bg-neutral-400" },
     ]
     }
 );

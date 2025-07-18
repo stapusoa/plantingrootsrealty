@@ -1,11 +1,13 @@
+@import "./colors.css";
+
 @layer utilities {
-  .bg-default { color: var(--color-white); }
-  .bg-content { color: var(--color-neutral-100); }
-  .bg-body { color: var(--color-neutral-400); }
-  .bg-subtle { color: var(--color-neutral-50); }
+  .bg-page-default { color: var(--color-white); }
+  .bg-page-content { color: var(--color-neutral-100); }
+  .bg-page-body { color: var(--color-neutral-400); }
+  .bg-page-subtle { color: var(--color-neutral-50); }
   .bg-disabled { color: var(--color-neutral-100); }
 
-  .bg-primary { color: var(--color-primary); }
+  .bg-primary { color: var(--color-primary, #5e4684); }
   .bg-primary-light { color: var(--color-primary-light); }
   .bg-primary-dark { color: var(--color-primary-dark); }
   .bg-secondary { color: var(--color-secondary); }

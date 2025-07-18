@@ -8,12 +8,27 @@ const meta: Meta<BadgeProps> = {
   argTypes: {
     variant: {
       control: { type: 'radio' },
-      options: ['default', 'secondary', 'destructive', 'outline'],
+      options: ['filled', 'outlined', 'ghost'],
     },
-    // REMOVE children control to allow JSX
+    color: {
+      control: { type: 'radio' },
+      options: ['primary', 'secondary', 'critical', 'neutral', 'default'],
+    },
+    size: {
+      control: { type: 'radio' },
+      options: ['sm', 'md', 'lg'],
+    },
+    shape: {
+      control: { type: 'radio' },
+      options: ['rounded', 'square'],
+    },
   },
   args: {
-    variant: 'default',
+    variant: 'filled',
+    color: "primary",
+    size: "md",
+    shape: "rounded",
+    children: 'New',
   },
 };
 
@@ -22,5 +37,10 @@ export default meta;
 type Story = StoryObj<BadgeProps>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    children: "New",
+    color: "primary",
+    size: "md",
+    shape: "rounded",
+  },
 };

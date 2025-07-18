@@ -1,22 +1,21 @@
-import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
-
-import type { BadgeProps } from "./types";
 import { badgeVariants } from "./styles";
+import type { BadgeProps } from "./types";
 
 export function Badge({
   className,
-  variant = "default",
-  asChild = false,
-  ...props
+  color = "default",
+  variant = "filled",
+  size = "md",
+  shape = "rounded",
+  children,
 }: BadgeProps) {
-  const Comp = asChild ? Slot : "span";
-
   return (
-    <Comp
+    <span
       data-slot="badge"
-      className={cn(badgeVariants({ variant }), className)}
-      {...props}
-    />
+      className={cn(badgeVariants({ color, size, shape, variant }), className)}
+    >
+      {children}
+    </span>
   );
 }
