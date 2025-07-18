@@ -1,8 +1,12 @@
-export type BadgeVariant = "default" | "primary" | "secondary" | "critical" | "outline";
-export const BADGE_VARIANTS: BadgeVariant[] = [
+export type BadgeSize = "sm" | "md" | "lg";
+export type BadgeColor = "default" | "primary" | "secondary" | "critical" | "neutral";
+export const BADGE_COLOR: BadgeColor[] = [
   "default",
   "primary",
   "secondary",
   "critical",
-  "outline",
+  "neutral",
 ];
+export type BadgeVariant = "default" | "outlined" | "ghost";
+export const BADGE_VARIANT: BadgeVariant[] = ["default", "outlined", "ghost"];
+export type BadgeShape = "rounded" | "square";
