@@ -71,7 +71,7 @@ export function Card({
             className="w-full h-full object-cover"
           />
           {badge && (
-            <Badge variant="secondary" className="absolute z-100 top-2 left-2 capitalize">{badge}</Badge>
+            <Badge variant="filled" color="primary" className="absolute z-100 top-2 left-2 capitalize">{badge}</Badge>
           )}
         </div>
       )}
@@ -117,12 +117,12 @@ export function Card({
         {tag?.length > 0 && (
           <div className="flex flex-wrap gap-1 pt-2">
             {tag.slice(0, 3).map((t) => (
-              <Badge key={t} variant="default" className="text-xs">
+              <Badge key={t} variant="filled" color="primary" className="text-xs">
                 {t}
               </Badge>
             ))}
             {tag.length > 3 && (
-              <Badge variant="default" className="text-xs">
+              <Badge variant="filled" color="primary" className="text-xs">
                 +{tag.length - 3} more
               </Badge>
             )}

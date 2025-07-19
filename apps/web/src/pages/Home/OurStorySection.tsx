@@ -80,7 +80,7 @@ export function OurStorySection({ onNavigate }: { onNavigate: (page: PageType) =
                 <div className="basis-0 grow min-h-px min-w-px relative self-stretch shrink-0 animate-fade-in-left">
                   <div className="relative size-full flex flex-col justify-center space-y-8">
                     {/* About Badge */}
-                    <Badge variant="secondary" className="w-fit bg-[#45a9a7]/10 text-[#45a9a7] border-0">
+                    <Badge variant="filled" color="secondary" className="w-fit bg-[#45a9a7]/10 text-[#45a9a7] border-0">
                       About
                     </Badge>
                     
