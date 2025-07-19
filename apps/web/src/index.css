@@ -1,13 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
-@import "./styles/colors.css";
-@import "./styles/colorTextUtils.css";
-@import "./styles/colorBgUtils.css";
-@import "./styles/colorBorderUtils.css";
-
-@import "./styles/layout.css";
-@import "./styles/typography.css";
+@import "@/styles/colors.css";
+@import "@/styles/colorBgUtils.css";
+@import "@/styles/colorTextUtils.css";
+@import "@/styles/colorBorderUtils.css";
+@import "@/styles/layout.css";
+@import "@/styles/typography.css";
 
 @custom-variant dark (&:is(.dark *));
 
