@@ -142,4 +142,23 @@
   .hover\:border-info-light:hover { border-color: var(--color-info-light); }
   .hover\:border-info-dark:hover { border-color: var(--color-info-dark); }
   .hover\:border-info-opacity:hover { border-color: var(--color-info-opacity); }
+
+  .after\:border-r-primary::after {
+  border-right-color: var(--color-primary);
+}
+.after\:border-r-secondary::after {
+  border-right-color: var(--color-secondary);
+}
+.after\:border-r-critical::after {
+  border-right-color: var(--color-blush-300);
+}
+.after\:border-r-neutral::after {
+  border-right-color: var(--color-neutral-500);
+}
+.after\:border-r-default::after {
+  border-right-color: var(--color-neutral-800);
+}
+.after\:border-r-contrast::after {
+  border-right-color: var(--color-white);
+}
 }
