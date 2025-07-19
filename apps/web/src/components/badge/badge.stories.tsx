@@ -12,7 +12,7 @@ const meta: Meta<BadgeProps> = {
     },
     color: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'critical', 'neutral', 'default'],
+      options: ['primary', 'secondary', 'critical', 'neutral', 'default', 'contrast'],
     },
     size: {
       control: { type: 'radio' },
@@ -22,6 +22,9 @@ const meta: Meta<BadgeProps> = {
       control: { type: 'radio' },
       options: ['rounded', 'square'],
     },
+    withPointer: {
+      control: { type: 'boolean' },
+    }
   },
   args: {
     variant: 'filled',
@@ -29,6 +32,7 @@ const meta: Meta<BadgeProps> = {
     size: "md",
     shape: "rounded",
     children: 'New',
+    withPointer: false,
   },
 };
 
@@ -42,5 +46,7 @@ export const Default: Story = {
     color: "primary",
     size: "md",
     shape: "rounded",
+    variant: "filled",
+    withPointer: false,
   },
 };

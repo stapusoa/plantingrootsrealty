@@ -5,6 +5,7 @@ import type {
   BadgeSize,
   BadgeVariant,
   BadgeShape,
+  BadgePointer,
 } from "./constants";
 
 type BadgeCvaProps = VariantProps<typeof badgeVariants>;
@@ -13,9 +14,9 @@ export interface BadgeProps extends Omit<BadgeCvaProps, "size" | "color" | "vari
   className?: string;
   children: React.ReactNode;
   asChild?: boolean;
-
   size?: BadgeSize;
   color?: BadgeColor;
   variant?: BadgeVariant;
   shape?: BadgeShape;
+  withPointer?: BadgePointer;
 }
