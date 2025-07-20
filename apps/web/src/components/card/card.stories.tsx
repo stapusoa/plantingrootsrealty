@@ -9,7 +9,7 @@ const meta: Meta<typeof Card> = {
     location: "San Diego, CA",
     description: "Bright, spacious layout with upgraded finishes and a private balcony.",
     price: 2600,
-    image: "https://placehold.co/400x300",
+    image: "https://cdn.photos.sparkplatform.com/pbb/20240207171037326298000000-o.jpg",
     badge: "apartment",
     tag: ["Pet Friendly", "Washer/Dryer", "Pool"],
     amenities: ["bed", "bath", "sqft"],

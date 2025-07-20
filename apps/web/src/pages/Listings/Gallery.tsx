@@ -5,6 +5,7 @@ import type React from "react"
 import { useState, useMemo, useEffect } from "react"
 import { Input } from "@/components/input"
 import { Button } from "@/components/button"
+import { Link } from "react-router-dom"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/select/select"
 import {
   Pagination,
@@ -267,6 +268,7 @@ export default function RealEstateGallery() {
                   }`}
                 >
                   {paginatedListings.map((listing) => (
+                      <Link key={listing._id} to={`/properties/${listing._id}`}>
                     <Card
                       key={listing._id}
                       title={listing.title}
@@ -279,6 +281,8 @@ export default function RealEstateGallery() {
                       ]}
                       size="md"
                     />
+                      </Link>
+
                   ))}
                 </div>
 

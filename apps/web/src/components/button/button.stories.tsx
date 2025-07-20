@@ -66,6 +66,5 @@ export const IconButton: Story = {
     icon: true,
     children: <Icon name="phone" size="md" />,
     'aria-label': 'phone',
-    className: 'text-white',
   },
 };

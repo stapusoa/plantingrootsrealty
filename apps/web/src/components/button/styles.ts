@@ -48,7 +48,10 @@ export const buttonVariants = cva(
       { variant: "filled", color: "secondary", class: "text-white bg-secondary hover:bg-secondary-dark" },
       { variant: "filled", color: "contrast", class: "text-primary bg-white hover:bg-neutral-200" },
       { variant: "filled", color: "critical", class: "text-white bg-error hover:bg-error-dark" },
-      { variant: "filled", color: "neutral", class: "text-neutral-900 bg-neutral-200 hover:bg-neutral-300" },
+      { variant: "filled", color: "neutral", icon: false, class: "text-neutral-900 bg-neutral-200 hover:bg-neutral-300" },
+
+      // With Icon
+      { variant: "filled", color: "neutral", icon: true, class: "bg-neutral-200 text-default hover:bg-neutral-300" },
     ],
     defaultVariants: {
       size: "md",
