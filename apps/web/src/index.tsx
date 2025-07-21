@@ -10,6 +10,8 @@ import { withLDProvider } from "launchdarkly-react-client-sdk";
 import  RealEstateGallery  from "./pages/Listings/Gallery";
 import { AboutOld } from "./pages/Home/AboutOld";
 import { Footer } from './components/navigation/footer'
+import ListingDetails from "./pages/Listings/ListingDetails";
+
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const handleNavigate = (page: PageType) => setCurrentPage(page);
@@ -21,6 +23,8 @@ function App() {
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
         <Route path="/:slug" element={<MarkdownPage />} />
         <Route path="/listings" element={<RealEstateGallery />} />
+          <Route path="/listings/:id" element={<ListingDetails />} /> {/* Add this */}
+
         {/*<Route path="/resources" element={<BlogsOld />} /> */}
         <Route path="/our-story" element={<AboutOld />} />
       </Routes>

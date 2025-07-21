@@ -18,7 +18,7 @@ export const badgeVariants = cva(
         neutral: "",
       },
       variant: {
-        filled: "border-none",
+        filled: "border-none text-white",
         outlined: "border-2",
         ghost: "bg-transparent border-none",
       },
@@ -56,20 +56,20 @@ export const badgeVariants = cva(
       { variant: "ghost", color: "contrast", class: "text-neutral-100 border-transparent" },
 
       // Filled
-      { variant: "filled", color: "primary", class: "bg-badge-primary text-primary" },
-      { variant: "filled", color: "secondary", class: "bg-badge-secondary text-secondary" },
-      { variant: "filled", color: "critical", class: "bg-badge-critical text-blush-700" },
+      { variant: "filled", color: "primary", class: "bg-badge-primary" },
+      { variant: "filled", color: "secondary", class: "bg-badge-secondary" },
+      { variant: "filled", color: "critical", class: "bg-badge-critical" },
       { variant: "filled", color: "neutral", class: "bg-badge-neutral text-header" },
-      { variant: "filled", color: "default", class: "bg-badge-default text-white" },
+      { variant: "filled", color: "default", class: "bg-badge-default" },
       { variant: "filled", color: "contrast", class: "bg-badge-contrast text-header" },
 
       // With Pointer
-      { variant: "filled", color: "primary", shape: "square", pointer: true, class: "bg-grape-light text-primary after:border-b-primary after:border-r-primary rounded-bl-none" },
-      { variant: "filled", color: "secondary", shape: "square", pointer: true, class: "bg-teal-light text-secondary after:border-b-secondary after:border-r-secondary rounded-bl-none" },
-      { variant: "filled", color: "critical", shape: "square", pointer: true, class: "bg-blush-light text-blush-700 after:border-b-blush-700 after:border-r-blush-700 rounded-bl-none" },
-      { variant: "filled", color: "neutral", shape: "square", pointer: true, class: "bg-badge-neutral text-header after:border-b-neutral after:border-r-neutral rounded-bl-none" },
-      { variant: "filled", color: "default", shape: "square", pointer: true, class: "bg-badge-default text-white after:border-b-default after:border-r-default rounded-bl-none" },
-      { variant: "filled", color: "contrast", shape: "square", pointer: true, class: "bg-white text-header after:border-b-neutral-200 after:border-r-neutral-200 rounded-bl-none" },
+      { variant: "filled", color: "primary", shape: "square", pointer: true, class: "bg-badge-primary after:border-b-primary-dark after:border-r-primary-dark rounded-bl-none" },
+      { variant: "filled", color: "secondary", shape: "square", pointer: true, class: "bg-badge-secondary after:border-b-secondary-dark after:border-r-secondary-dark rounded-bl-none" },
+      { variant: "filled", color: "critical", shape: "square", pointer: true, class: "bg-badge-critical after:border-b-critical-dark after:border-r-critical-dark rounded-bl-none" },
+      { variant: "filled", color: "neutral", shape: "square", pointer: true, class: "bg-badge-neutral after:border-b-black after:border-r-black rounded-bl-none" },
+      { variant: "filled", color: "default", shape: "square", pointer: true, class: "bg-badge-default after:border-b-black after:border-r-black rounded-bl-none" },
+      { variant: "filled", color: "contrast", shape: "square", pointer: true, class: "bg-badge-contrast text-header after:border-b-neutral-200 after:border-r-neutral-200 rounded-bl-none" },
     ]
     }
 );

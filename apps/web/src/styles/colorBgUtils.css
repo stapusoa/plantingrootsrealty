@@ -151,12 +151,12 @@
   .hover\:bg-neutral-300:hover { background-color: var(--color-neutral-300); }
   .hover\:bg-neutral-900:hover { background-color: var(--color-neutral-900); }
 
-  .bg-badge-primary { background-color: var(--color-grape-300-opacity); }
-  .bg-badge-secondary { background-color: var(--color-teal-200-opacity); }
-  .bg-badge-critical { background-color: var(--color-blush-300-opacity); }
-  .bg-badge-neutral { background-color: var(--color-neutral-400); }
+  .bg-badge-primary { background-color: var(--color-primary); }
+  .bg-badge-secondary { background-color: var(--color-secondary); }
+  .bg-badge-critical { background-color: var(--color-error); }
+  .bg-badge-neutral { background-color: var(--color-neutral-300); }
   .bg-badge-default { background-color: var(--color-neutral-1000); }
-  .bg-badge-contrast { background-color: var(--color-white-opacity); }
+  .bg-badge-contrast { background-color: var(--color-white); }
   .bg-grape-light { background-color: var(--color-grape-light); }
   .bg-teal-light { background-color: var(--color-teal-light); }
   .bg-blush-light { background-color: var(--color-blush-light); }

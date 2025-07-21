@@ -6,7 +6,8 @@ import {
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import type { PaginationLinkProps } from "./types"
 
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
@@ -37,22 +38,36 @@ function PaginationItem({ ...props }: React.ComponentProps<"li">) {
   return <li data-slot="pagination-item" {...props} />
 }
 
-type PaginationLinkProps = {
-  isActive?: boolean
-} & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<"a">
 
 function PaginationLink({
   className,
   isActive,
   size = "icon",
+  as = "a",
   ...props
 }: PaginationLinkProps) {
+  const Comp = as
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
+  ) => {
+    if (as === "a" && (props as any).href === "#") {
+      e.preventDefault()
+    }
+    if (typeof props.onClick === "function") {
+      props.onClick(e as any)
+    }
+  }
+
+  // Separate props for <a> and <button>
+  const { type, ...restProps } = props as any
+
   return (
-    <a
+    <Comp
       aria-current={isActive ? "page" : undefined}
       data-slot="pagination-link"
       data-active={isActive}
+      onClick={handleClick as any}
       className={cn(
         buttonVariants({
           variant: isActive ? "outline" : "ghost",
@@ -60,7 +75,9 @@ function PaginationLink({
         }),
         className
       )}
-      {...props}
+      // Only pass 'type' if rendering a button
+      {...(as === "button" ? { type: type ?? "button" } : {})}
+      {...restProps}
     />
   )
 }
