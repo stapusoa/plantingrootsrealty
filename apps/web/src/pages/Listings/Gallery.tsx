@@ -4,7 +4,18 @@ import { useState, useEffect, useMemo } from "react"
 import { Link } from "react-router-dom"
 import { Grid, List, SlidersHorizontal } from "lucide-react"
 
-import { Button, Card, FiltersSidebar, SearchBar, PaginationControls, Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/index"
+import {
+  Button,
+  Card,
+  FiltersSidebar,
+  SearchBar,
+  PaginationControls,
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from "@/components/index"
 
 import { sanity } from "@/lib/sanityClient"
 import { PROPERTY_QUERY } from "@/lib/queries"
@@ -23,21 +34,21 @@ export default function RealEstateGallery() {
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
 
   useEffect(() => {
-  const fetchData = async () => {
-    if (!sanity) {
-      console.warn("Sanity client is not initialized")
-      return
+    const fetchProperties = async () => {
+      try {
+        if (!sanity) {
+          console.error("Sanity client is not initialized.")
+          return
+        }
+        const data = await sanity.fetch<Property[]>(PROPERTY_QUERY)
+        setProperties(data)
+        console.log("Fetched properties:", data)
+      } catch (error) {
+        console.error("Failed to fetch properties from Sanity:", error)
+      }
     }
-    try {
-      const data = await sanity.fetch<Property[]>(PROPERTY_QUERY)
-      setProperties(data)
-    } catch (err) {
-      console.error("Failed to fetch properties from Sanity:", err)
-    }
-  }
-
-  fetchData()
-}, [])
+    fetchProperties()
+  }, [])
 
   const filteredListings = useMemo(
     () => getFilteredListings(properties, filters, searchQuery, sortBy),

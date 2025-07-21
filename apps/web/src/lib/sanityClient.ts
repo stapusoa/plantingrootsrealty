@@ -1,8 +1,8 @@
-import { createClient } from "@sanity/client"
+import { createClient, type SanityClient } from "@sanity/client"
 
 const isProd = import.meta.env.VITE_SANITY_DATASET === "production"
 
-function createSanityClient() {
+function createSanityClient(): SanityClient | null {
   const projectId = import.meta.env.VITE_SANITY_PROJECT_ID
   const dataset = import.meta.env.VITE_SANITY_DATASET
   const token = isProd
@@ -23,7 +23,16 @@ function createSanityClient() {
   })
 }
 
-export const sanity = createSanityClient()
+const sanity = createSanityClient()
+
+export function getSanityClient(): SanityClient {
+  if (!sanity) {
+    throw new Error("[Sanity] Client not initialized. Check your env vars.")
+  }
+  return sanity
+}
+
+export { sanity }
 
 console.log("🔍 Sanity ENV", {
   mode: import.meta.env.MODE,
