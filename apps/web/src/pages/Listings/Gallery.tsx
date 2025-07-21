@@ -23,17 +23,21 @@ export default function RealEstateGallery() {
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await sanity.fetch<Property[]>(PROPERTY_QUERY)
-        setProperties(data)
-      } catch (err) {
-        console.error("Failed to fetch properties from Sanity:", err)
-      }
+  const fetchData = async () => {
+    if (!sanity) {
+      console.warn("Sanity client is not initialized")
+      return
     }
+    try {
+      const data = await sanity.fetch<Property[]>(PROPERTY_QUERY)
+      setProperties(data)
+    } catch (err) {
+      console.error("Failed to fetch properties from Sanity:", err)
+    }
+  }
 
-    fetchData()
-  }, [])
+  fetchData()
+}, [])
 
   const filteredListings = useMemo(
     () => getFilteredListings(properties, filters, searchQuery, sortBy),
