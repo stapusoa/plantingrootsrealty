@@ -60,11 +60,12 @@ export default function ListingDetails() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [showAllImages, setShowAllImages] = useState(false)
 
-  useEffect(() => {
-    if (id) {
-      sanity.fetch(query, { id }).then(setProperty)
-    }
-  }, [id])
+ useEffect(() => {
+  console.log("ListingDetails id param:", id)
+  if (id) {
+    sanity.fetch(query, { id }).then(setProperty)
+  }
+}, [id])
 
   if (property === null) return <div>Loading...</div>
   if (!property) return <div className="p-8 text-center text-red-600">Property not found.</div>
