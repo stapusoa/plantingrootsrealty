@@ -4,9 +4,21 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { sanity } from "@/lib/sanityClient"
 import { Badge } from "@/components/badge"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/breadcrumbs"
+import { ScheduleTour } from "@/components/listings/ScheduleTour"
+import { MortgageCalculator } from "@/components/listings/MortgageCalculator"
+import { AgentCard } from "@/components/listings/AgentCard"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/button"
-import { Card, CardContent, CardHeader, CardTitle, CardImage } from "@/components/card/cardNew"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar"
+import { ContactForm } from "@/components/listings/ContactForm"
+import { Card, CardContent, CardImage } from "@/components/card/cardNew"
 import {
   Bed,
   Bath,
@@ -15,9 +27,6 @@ import {
   MapPin,
   Heart,
   Share2,
-  Phone,
-  Mail,
-  Star,
   Dumbbell,
   Trees,
   ShoppingCart,
@@ -60,26 +69,28 @@ export default function ListingDetails() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [showAllImages, setShowAllImages] = useState(false)
 
- useEffect(() => {
-  console.log("ListingDetails id param:", id)
-  if (id) {
-    sanity.fetch(query, { id }).then(setProperty)
-  }
-}, [id])
+  useEffect(() => {
+    console.log("ListingDetails id param:", id)
+    if (id) {
+      sanity.fetch(query, { id }).then((result) => {
+        console.log("Fetched property from Sanity:", result)
+        setProperty(result)
+      })
+    }
+  }, [id])
 
   if (property === null) return <div>Loading...</div>
   if (!property) return <div className="p-8 text-center text-red-600">Property not found.</div>
 
   // Use images from Sanity or fallback placeholders
   const images =
-    property.images && property.images.length > 0
-      ? property.images.map((img: any) => img.asset.url)
-      : [
-        "/placeholder.svg?height=600&width=800",
-        "/placeholder.svg?height=600&width=800",
-        "/placeholder.svg?height=600&width=800",
-        "/placeholder.svg?height=600&width=800",
-      ]
+    property?.images?.length > 0
+      ? property.images
+        .map((img: any) => img.asset?.url)
+        .filter((url: string | undefined): url is string => !!url)
+      : []
+
+  console.log("Parsed image URLs:", images)
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length)
@@ -96,10 +107,25 @@ export default function ListingDetails() {
         <header className="border-b">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Home className="h-6 w-6" />
-                <span className="text-xl font-bold">RealEstate</span>
-              </div>
+              <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/listings">Listings</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{property.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
               <div className="flex items-center gap-2">
                 <Button variant="outlined" size="sm">
                   <Heart className="h-4 w-4 mr-2" />
@@ -123,10 +149,10 @@ export default function ListingDetails() {
                 <div className="relative">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                     <CardImage
-                      src={images[currentImageIndex] || "/placeholder.svg"}
-                      alt={`Property image ${currentImageIndex + 1}`}
+                      src={images[currentImageIndex] || "/placeholder.svg?height=600&width=800"}
+                      alt={`Image ${currentImageIndex + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                     />
                     <Button
                       variant="filled"
@@ -167,15 +193,14 @@ export default function ListingDetails() {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`relative aspect-square overflow-hidden rounded-md border-2 ${
-                        currentImageIndex === index ? "border-primary" : "border-transparent"
-                      }`}
+                      className={`relative aspect-square overflow-hidden rounded-md border-2 ${currentImageIndex === index ? "border-primary" : "border-transparent"
+                        }`}
                     >
                       <CardImage
-                        src={image || "/placeholder.svg"}
+                        src={image || "/placeholder.svg?height=600&width=800"}
                         alt={`Thumbnail ${index + 1}`}
                         fill
-                        className="object-cover"
+                        className="object-cover w-full h-full"
                       />
                     </button>
                   ))}
@@ -412,42 +437,13 @@ export default function ListingDetails() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Agent Card */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Agent</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Avatar className="h-12 w-12">
-                      <AvatarImage src="/placeholder.svg?height=48&width=48" alt="Agent" />
-                      <AvatarFallback>SA</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <h3 className="font-semibold">Sarah Anderson</h3>
-                      <p className="text-sm text-muted-foreground">Licensed Real Estate Agent</p>
-                      <div className="flex items-center gap-1 mt-1">
-                        <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                        <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                        <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                        <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                        <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                        <span className="text-xs text-muted-foreground ml-1">5.0 (127 reviews)</span>
-                      </div>
-                    </div>
-                  </div>
+              < AgentCard />
+              < ContactForm />
+              {/* Schedule Tour */}
+              <ScheduleTour />
+              {/* Mortgage Calculator */}
+              <MortgageCalculator />
 
-                  <div className="space-y-2">
-                    <Button className="w-full" size="lg">
-                      <Phone className="h-4 w-4 mr-2" />
-                      Call (555) 123-4567
-                    </Button>
-                    <Button variant="outlined" className="w-full bg-transparent">
-                      <Mail className="h-4 w-4 mr-2" />
-                      Send Email
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
