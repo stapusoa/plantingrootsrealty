@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
         <Route path="/:slug" element={<MarkdownPage />} />
         <Route path="/listings" element={<RealEstateGallery />} />
-          <Route path="/properties/:id" element={<ListingDetails />} /> {/* Add this */}
+          <Route path="/listings/:id" element={<ListingDetails />} /> {/* Add this */}
 
         {/*<Route path="/resources" element={<BlogsOld />} /> */}
         <Route path="/our-story" element={<AboutOld />} />
