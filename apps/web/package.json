@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -43,6 +44,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.25.0",
     "@repo/ui": "workspace:*",
     "@storybook/addon-docs": "^9.0.16",
@@ -58,6 +61,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^9.0.16",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
     "postcss": "^8.5.4",
     "tailwindcss": "^4.1.8",
     "tw-animate-css": "^1.3.4",
