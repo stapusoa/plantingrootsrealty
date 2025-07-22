@@ -1,54 +1,140 @@
-# React + TypeScript + Vite
+# Planting Roots Realty – Website (`apps/web`)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the main marketing and listings website for Planting Roots Realty, built with React, Vite, Tailwind CSS, and TypeScript. It lives inside the `plantingrootsrealty` monorepo under `apps/web`. It uses `pnpm` as the package manager.
 
-Currently, two official plugins are available:
+Content is sourced from [Sanity](https://www.sanity.io/) via a read-only integration. Sanity is **not included** in this repo — it is managed separately.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This folder is part of a larger monorepo. Key structure:
+plantingrootsrealty/
+├── apps/
+│   ├── web/        → This folder (the public-facing website)
+│   └── cms/        → Sanity Studio (managed separately)
+├── packages/       → Shared components/utilities
+└── …
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠 Setup & Development
+
+### Install dependencies
+
+From the monorepo root:
+
+```bash
+pnpm install
+### Install dependencies
+
+This installs all dependencies across the monorepo, including shared packages.
+
+### Run development server
+
+```bash
+pnpm dev --filter web
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open your browser to [http://localhost:3000](http://localhost:3000) (or the port shown in the console) to view the app.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Environment Variables
+
+Create an `.env` file in the root of the repo with the following:
+
+```env
+VITE_PUBLIC_SANITY_PROJECT_ID=
+VITE_PUBLIC_SANITY_DATASET=
+VITE_PUBLIC_SANITY_API_VERSION=
+VITE_PUBLIC_SANITY_PREVIEW_TOKEN=
 ```
+
+Replace the placeholders with your actual credentials and URLs.
+These credentials connect the site to the headless Sanity CMS (read-only access).
+
+---
+
+## Git & Deployment
+
+### Save SSH Key Passphrase (Optional)
+
+If your SSH key has a passphrase and you want to avoid entering it every time:
+
+```bash
+# Start SSH agent
+eval "$(ssh-agent -s)"
+
+# Add your SSH key (update the path if necessary)
+ssh-add ~/.ssh/id_ed25519
+```
+
+Add these lines to your shell profile (`~/.zshrc`, `~/.bashrc`, etc.) to automate this on terminal start.
+
+---
+
+### Push Changes to CMS Repository
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
+
+Verify your remote:
+
+```bash
+git remote -v
+```
+
+If the remote is missing or incorrect, add it with:
+
+```bash
+git remote add origin git@github.com:your-username/your-cms-repo.git
+```
+
+Replace `your-username/your-cms-repo` with your actual GitHub path.
+
+---
+
+## Build & Preview
+
+### Build production-ready files
+
+```bash
+pnpm build
+```
+
+### Preview the production build locally
+
+```bash
+pnpm preview
+```
+
+The `build` command outputs the production assets to the `dist/` folder.
+
+---
+
+## Deployment Notes
+
+- The site is deployed via Vercel, using apps/web as the project root.
+- Configure all required environment variables via Vercel’s dashboard.
+- No Sanity Studio is hosted here — only Sanity integration (via its API).
+- The Cloudflare-managed domain points to Vercel.
+
+
+---
+
+## Additional Tips
+
+- Keep `.env` files out of Git to protect secrets.
+
+- Use `.gitignore` to exclude `node_modules/`, `.env`, and other local files.
+
+- Use pnpm workspaces to manage dependencies across the monorepo.
+- Shared UI components and utilities may live in /packages.
+- For CMS edits or schema changes, use the Sanity Studio project, managed separately.
+
+---
+
+Happy coding! 🚀
