@@ -1,0 +1,29 @@
+# .gitmessage
+
+# <type>(optional-scope): concise summary in present tense
+#
+# Example:
+# feat(listings): add filter by property type
+# fix(header): correct logo alignment on mobile
+# chore: update Tailwind to v4
+# refactor(utils): simplify slug generation logic
+#
+# Common types:
+# feat     → New feature
+# fix      → Bug fix
+# docs     → Documentation only
+# style    → Formatting, no code change
+# refactor → Code change that doesn't affect behavior
+# perf     → Performance improvements
+# test     → Adding or updating tests
+# chore    → Maintenance, tooling, or dependencies
+# build    → CI/CD or build system changes
+
+<type>(scope): short, imperative summary
+
+# Optional body:
+# - Explain what changed and why
+# - Reference related issues or context
+# - Wrap lines at ~72 characters if long
+
+# BREAKING CHANGE: Describe the breaking change here
