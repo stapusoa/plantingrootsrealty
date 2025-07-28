@@ -11,7 +11,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:cms": "git subtree push --prefix=apps/cms cms main",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint apps/web --ext .ts,.tsx",
+    "lint --fix": "eslint apps/web --fix",
+    "release": "semantic-release"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [
@@ -30,19 +33,30 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.3",
+    "@semantic-release/npm": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.0.3",
     "@typescript-eslint/eslint-plugin": "^8.34.0",
     "@typescript-eslint/parser": "^8.34.0",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-regexp": "^2.9.0",
+    "eslint-plugin-storybook": "^9.0.16",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "prettier": "^3.5.3",
+    "semantic-release": "^24.2.7",
     "stylelint": "^16.22.0",
     "turbo": "^2.5.4",
     "typescript": "^5.8.3"
