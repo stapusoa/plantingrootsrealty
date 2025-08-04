@@ -1,5 +1,7 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "buildCommand": "pnpm install && pnpm build",
+  "devCommand": "vite",
+  "outputDirectory": "dist",
+  "rootDirectory": "apps/web"
 }
