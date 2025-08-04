@@ -33,7 +33,7 @@ jobs:
       - name: 🧶 Install dependencies
         run: pnpm install
         env:
-          HUSKY: 0  # disables husky during CI installs
+          HUSKY: 0
 
       - name: 🐞 Debug PATH environment variable
         run: echo $PATH
