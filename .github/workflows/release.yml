@@ -24,9 +24,12 @@ jobs:
         run: corepack enable
 
       - name: 🔧 Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup
         with:
           version: 8
+
+      - name: 🔍 Check pnpm version
+        run: pnpm --version
 
       - name: 🧶 Install dependencies
         run: pnpm install
