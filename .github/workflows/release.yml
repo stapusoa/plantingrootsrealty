@@ -9,8 +9,6 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    env:
-      HUSKY: 0  # ⛔ Disable husky in CI
 
     steps:
       - name: ⬇️ Checkout repository
@@ -20,7 +18,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: 'pnpm'
+
+      - name: 🔧 Enable corepack (for pnpm)
+        run: corepack enable
 
       - name: 🔧 Setup pnpm
         uses: pnpm/action-setup@v3
@@ -29,8 +30,10 @@ jobs:
 
       - name: 🧶 Install dependencies
         run: pnpm install
+        env:
+          HUSKY: 0 # ⛔️ disables husky in CI
 
       - name: 🚀 Run semantic-release
+        run: pnpm release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: pnpm release
