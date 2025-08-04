@@ -20,21 +20,24 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: 🔧 Enable corepack (for pnpm)
+      - name: 🔧 Enable Corepack (which manages pnpm automatically)
         run: corepack enable
 
-      - name: 🔧 Setup pnpm
+      - name: 🔧 Setup pnpm (preferred method)
         uses: pnpm/action-setup@v4
         with:
           version: 8
 
-      - name: 🔍 Check pnpm version
+      - name: 🔍 Verify pnpm version
         run: pnpm --version
 
       - name: 🧶 Install dependencies
         run: pnpm install
         env:
-          HUSKY: 0 # ⛔️ disables husky in CI
+          HUSKY: 0  # disables husky during CI installs
+
+      - name: 🐞 Debug PATH environment variable
+        run: echo $PATH
 
       - name: 🚀 Run semantic-release
         run: pnpm release
