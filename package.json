@@ -11,7 +11,7 @@
   "scripts": {
     "deploy:cms": "git subtree push --prefix=apps/cms cms main",
     "prepare": "is-ci || husky",
-    "build": "pnpm -r build",
+    "build": "pnpm turbo run build",
     "release": "semantic-release",
     "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
