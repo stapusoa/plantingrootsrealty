@@ -9,12 +9,14 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:cms": "git subtree push --prefix=apps/cms cms main",
     "prepare": "is-ci || husky",
-    "lint": "eslint apps/web --ext .ts,.tsx",
-    "lint --fix": "eslint apps/web --fix",
-    "release": "semantic-release"
+    "build": "pnpm turbo run build",
+    "release": "semantic-release",
+    "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
+    "test": "vitest run",
+    "check": "pnpm lint && pnpm test && pnpm build"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [
@@ -57,7 +59,8 @@
     "semantic-release": "^24.2.7",
     "stylelint": "^16.23.1",
     "turbo": "^2.5.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "express": "^5.1.0"
