@@ -9,12 +9,14 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:cms": "git subtree push --prefix=apps/cms cms main",
     "prepare": "is-ci || husky",
-    "lint": "eslint apps/web --ext .ts,.tsx",
-    "lint --fix": "eslint apps/web --fix",
-    "release": "semantic-release"
+    "build": "pnpm -r build",
+    "release": "semantic-release",
+    "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
+    "test": "pnpm vitest run",
+    "check": "pnpm lint && pnpm test && pnpm build"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [
