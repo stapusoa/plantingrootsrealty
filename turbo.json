@@ -1,5 +1,5 @@
 {
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "build/**"]
@@ -8,6 +8,9 @@
       "cache": false
     },
     "lint": {},
-    "check-types": {}
+    "check-types": {},
+    "test": {
+      "outputs": []
+    }
   }
 }

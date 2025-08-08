@@ -49,3 +49,5 @@ const LDApp = withLDProvider({
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <LDApp />
 );
+
+export { App };
