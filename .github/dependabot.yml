@@ -9,11 +9,34 @@ updates:
       prefix: "chore"
       include: "scope"
     ignore:
-      - dependency-name: "pnpm" # optional, if you don’t want updates for pnpm itself
+      - dependency-name: "pnpm" # ignore pnpm updates to manage manually
     groups:
-      all-dependencies:
+      dev-dependencies:
+        patterns:
+          - "eslint*"
+          - "typescript"
+          - "jest"
+          - "prettier"
+          - "husky"
+          - "commitlint"
+          - "lint-staged"
+          - "tailwind*"
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
+      dependencies:
         patterns:
           - "*"
+          - "!eslint*"
+          - "!typescript"
+          - "!jest"
+          - "!prettier"
+          - "!husky"
+          - "!commitlint"
+          - "!lint-staged"
+          - "!tailwind*"
         update-types:
+          - "major"
           - "minor"
           - "patch"
