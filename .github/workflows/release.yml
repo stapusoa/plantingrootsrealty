@@ -19,13 +19,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: 🔧 Enable Corepack (which manages pnpm automatically)
+      - name: 🔧 Enable Corepack (manages pnpm automatically)
         run: corepack enable
 
       - name: 🔧 Setup pnpm (preferred method)
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 8
+
+      - name: 🐞 Debug pnpm binary location
+        run: which pnpm || echo "pnpm not found in PATH"
+
+      - name: 📦 Install pnpm manually (fallback if pnpm/action-setup fails)
+        if: ${{ failure() }}
+        run: npm install -g pnpm@8
 
       - name: 🔍 Verify pnpm version
         run: pnpm --version
@@ -33,7 +40,7 @@ jobs:
       - name: 🧶 Install dependencies
         run: pnpm install
         env:
-          HUSKY: 0
+          HUSKY: 0 # disable husky hooks in CI
 
       - name: 🐞 Debug PATH environment variable
         run: echo $PATH

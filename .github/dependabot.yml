@@ -1,5 +1,10 @@
+# Dependabot configuration for a pnpm monorepo
+# - Runs weekly against the repo root (where pnpm-workspace.yaml & pnpm-lock.yaml live)
+# - Targets main branch
+# - Groups minor/patch updates together
 version: 2
 updates:
+  # Root npm workspace (monorepo root)
   - package-ecosystem: "npm"
     directory: "/" # root for monorepo workspace
     schedule:
@@ -9,7 +14,7 @@ updates:
       prefix: "chore"
       include: "scope"
     ignore:
-      - dependency-name: "pnpm" # optional, if you don’t want updates for pnpm itself
+      - dependency-name: "pnpm" # optional: skip pnpm updates
     groups:
       all-dependencies:
         patterns:
@@ -17,3 +22,40 @@ updates:
         update-types:
           - "minor"
           - "patch"
+
+  # Specific app folder npm (example)
+  - package-ecosystem: "npm"
+    directory: "/apps/web"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # GitHub Actions workflows updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Docker dependencies updates
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "chore"
+      include: "scope"
