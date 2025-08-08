@@ -17,9 +17,9 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # do not add cache here
+          node-version: 20
 
-      - name: 🔧 Enable Corepack (manages pnpm automatically)
+      - name: 🔧 Enable Corepack (which manages pnpm automatically)
         run: corepack enable
 
       - name: 🔧 Setup pnpm (preferred method)
@@ -33,7 +33,7 @@ jobs:
       - name: 🧶 Install dependencies
         run: pnpm install
         env:
-          HUSKY: 0 # disable husky hooks in CI
+          HUSKY: 0
 
       - name: 🐞 Debug PATH environment variable
         run: echo $PATH
