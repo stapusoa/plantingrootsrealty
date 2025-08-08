@@ -1,3 +1,19 @@
+## [1.0.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.0.0...v1.0.1) (2025-08-08)
+
+
+### Bug Fixes
+
+* **ci:** remove invalid '--filter=...' from Turbo commands in PR workflow ([d8ba699](https://github.com/stapusoa/plantingrootsrealty/commit/d8ba6991fa0bf4b176d0f7fd445a5cc73afead63))
+* export App component to enable React Fast Refresh hot reload ([a477edf](https://github.com/stapusoa/plantingrootsrealty/commit/a477edf8901ebef376942db77e23f68295eee769))
+* refactor buttonOld component ([729b44b](https://github.com/stapusoa/plantingrootsrealty/commit/729b44be5ea3c57ad6742757f48e2a6d0bfab909))
+* **storybook:** wrap Pagination interactive story render in a component to fix hook rules ([b2fd438](https://github.com/stapusoa/plantingrootsrealty/commit/b2fd43826c80e9d7fa97a682aea5c123b38f485b))
+* **test:** add a dummy button component with a passing to package/ui ([898f1d1](https://github.com/stapusoa/plantingrootsrealty/commit/898f1d1708fce5b3806bc121c1d11e5bc25665d7))
+* **test:** add test script to @repo/package ([50b024a](https://github.com/stapusoa/plantingrootsrealty/commit/50b024a777bd5c1dae03bde6b34672f7eed663fe))
+* **test:** add test task to turbo.json config to fix missing task error in CI ([5a5db3d](https://github.com/stapusoa/plantingrootsrealty/commit/5a5db3d5ec2cea8e02196cddb488cb55c118a679))
+* **test:** change name to Button.test.tsx to passtest ([ab5b0ad](https://github.com/stapusoa/plantingrootsrealty/commit/ab5b0ad528a1fd997be7b7dda390403d865a2d96))
+* **test:** install vitest ([2a996a0](https://github.com/stapusoa/plantingrootsrealty/commit/2a996a00c1e9e7fff5740ef88101078cd961b474))
+* **test:** remove nested pnpm call from test script for Turborepo compatibility ([449d42d](https://github.com/stapusoa/plantingrootsrealty/commit/449d42dfcf220f1d672a032321b8b7b213c5fa29))
+
 # 1.0.0 (2025-08-04)
 
 
