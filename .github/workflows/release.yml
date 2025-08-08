@@ -23,7 +23,7 @@ jobs:
         run: corepack enable
 
       - name: 🔧 Setup pnpm (preferred method)
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v3
         with:
           version: 8
 
