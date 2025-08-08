@@ -27,13 +27,6 @@ jobs:
         with:
           version: 8
 
-      - name: 🐞 Debug pnpm binary location
-        run: which pnpm || echo "pnpm not found in PATH"
-
-      - name: 📦 Install pnpm manually (fallback if pnpm/action-setup fails)
-        if: ${{ failure() }}
-        run: npm install -g pnpm@8
-
       - name: 🔍 Verify pnpm version
         run: pnpm --version
 
