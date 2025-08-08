@@ -8,8 +8,8 @@ export default {
     [
       '@semantic-release/npm',
       {
-        pkgRoot: 'apps/web',
-        tarballDir: 'dist',
+        pkgRoot: 'apps/web',    // where your package.json lives
+        tarballDir: 'dist',    // optional: if you produce tarballs
       },
     ],
     [
