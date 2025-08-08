@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card/cardNew"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/buttonOld/button"
 import { Input } from "@/components/input"
 import { Label } from "@/components/label"
 import { Textarea } from "@/components/textarea"

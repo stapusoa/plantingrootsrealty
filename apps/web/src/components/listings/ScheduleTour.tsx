@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card/cardNew"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/buttonOld/button"
 import { Calendar } from "lucide-react"
 
 export function ScheduleTour() {

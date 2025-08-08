@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card/cardNew"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/buttonOld/button"
 import { Input } from "@/components/input"
 import { Label } from "@/components/label"
 import { useState } from "react"
