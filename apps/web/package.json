@@ -45,7 +45,7 @@
     "@chromatic-com/storybook": "^4.1.0",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@eslint/js": "^9.25.0",
+    "@eslint/js": "^9.33.0",
     "@repo/ui": "workspace:*",
     "@storybook/addon-docs": "^9.1.1",
     "@storybook/react-vite": "^9.1.1",
