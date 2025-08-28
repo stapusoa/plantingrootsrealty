@@ -3,6 +3,24 @@ import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { useSanityPage } from "@/lib/cms/hooks/useSanityPages";
 import { useEffect } from "react";
 
+type TextBlock = {
+  _type: "textBlock"
+  heading?: string
+  headingLevel?: "h2" | "h3" | "h4" | "h5" | "h6"
+  headingAlignment?: "left" | "center" | "right"
+  body?: any
+  textAlignment?: "left" | "center" | "right"
+}
+
+type ImageBlock = {
+  _type: "imageBlock"
+  asset: { url: string }
+  alt?: string
+  alignment?: "left" | "center" | "right"
+}
+
+type PageContentBlock = TextBlock | ImageBlock
+
 export function SanityPage() {
   const { slug } = useParams<{ slug: string }>();
   const page = useSanityPage(slug);
@@ -104,7 +122,7 @@ export function SanityPage() {
         )}
 
         {/* Page Content */}
-        {page.content?.map((block, i) => {
+        {page.content?.map((block: PageContentBlock, i: number) => {
           if (block._type === "textBlock") {
             return (
               <div key={i} className="w-full">
