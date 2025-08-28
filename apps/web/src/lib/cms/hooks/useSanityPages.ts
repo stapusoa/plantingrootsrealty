@@ -9,14 +9,24 @@ export function useSanityPage(slug?: string) {
   useEffect(() => {
     if (!slug) return;
 
+    let isMounted = true;
     const client = getSanityClient();
 
     async function fetchPage() {
-      const result = await client.fetch(PAGE_QUERY, { slug });
-      setPage(result);
+      try {
+        const result: Page | null = await client.fetch(PAGE_QUERY, { slug });
+        if (isMounted) setPage(result);
+      } catch (err) {
+        console.error("Failed to fetch page:", err);
+        if (isMounted) setPage(null);
+      }
     }
 
     fetchPage();
+
+    return () => {
+      isMounted = false;
+    };
   }, [slug]);
 
   return page;

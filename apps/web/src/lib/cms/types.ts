@@ -19,13 +19,33 @@ export type Page = {
   metaDescription?: string;
   canonicalUrl?: string;
   robots?: string;
-  h1?: string;
-  subheader?: { text?: string; alignment?: "left" | "center" };
-  cta?: { text?: string; url?: string };
-  body?: any[];
-  images?: {
-    _key: string;
-    alt?: string;
-    asset: { url: string };
-  }[];
+
+  hero?: {
+    title?: string;
+    titleAlignment?: "left" | "center";
+    subheader?: string;
+    subheaderAlignment?: "left" | "center";
+    ctaText?: string;
+    ctaLink?: string;
+    heroImageSM?: { asset: { url: string } };
+    heroImageMD?: { asset: { url: string } };
+    heroImageLG?: { asset: { url: string } };
+  };
+
+  content?: Array<
+    | {
+        _type: "textBlock";
+        heading?: string;
+        headingLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
+        headingAlignment?: "left" | "center";
+        body?: any[];
+        textAlignment?: "left" | "center";
+      }
+    | {
+        _type: "imageBlock";
+        alt?: string;
+        alignment?: "left" | "center" | "right";
+        asset: { url: string };
+      }
+  >;
 };

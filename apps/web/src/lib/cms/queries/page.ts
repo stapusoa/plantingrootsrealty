@@ -4,21 +4,27 @@ export const PAGE_QUERY = `*[_type == "page" && slug.current == $slug][0]{
   metaDescription,
   canonicalUrl,
   robots,
-  h1,
-  subheader {
-    text,
-    alignment
+  hero {
+    title,
+    titleAlignment,
+    subheader,
+    subheaderAlignment,
+    ctaText,
+    ctaLink,
+    heroImageSM { asset->{url} },
+    heroImageMD { asset->{url} },
+    heroImageLG { asset->{url} }
   },
-  cta {
-    text,
-    url
-  },
-  body,
-  images[]{
-    _key,
+  content[]{
+    _type,
+    ...,
+    heading,
+    headingLevel,
+    headingAlignment,
+    body,
+    textAlignment,
     alt,
-    asset->{
-      url
-    }
+    alignment,
+    asset->{url}
   }
 }`;
