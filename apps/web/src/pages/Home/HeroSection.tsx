@@ -22,7 +22,7 @@ export function HeroSection({ onNavigate }: { onNavigate: (page: PageType) => vo
     <div className="h-210 relative shrink-0 w-full">
       <div className="box-border content-stretch flex flex-col gap-60 h-220 items-start justify-start max-w-inherit overflow-clip p-0 relative w-full">
         {/* Background with Gradient */}
-        <div className="h-[800px] relative shrink-0 w-full">
+        <div className="relative min-h-screen w-full">
           <div className="absolute bottom-0 left-0 right-0 top-0">
             {/* Background Image */}
             <BackgroundImages imageSM={images.imageSM}
