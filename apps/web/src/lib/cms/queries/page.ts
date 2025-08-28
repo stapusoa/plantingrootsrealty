@@ -1,12 +1,24 @@
-export const PAGE_QUERY = `*[_type == "page"]{
+export const PAGE_QUERY = `*[_type == "page" && slug.current == $slug][0]{
   _id,
   title,
-  subheader,
-  heroButtonText,
-  heroButtonLink,
-  "heroImageSM": heroImageSM.asset->url,
-  "heroImageMD": heroImageMD.asset->url,
-  "heroImageLG": heroImageLG.asset->url,
+  metaDescription,
+  canonicalUrl,
+  robots,
+  h1,
+  subheader {
+    text,
+    alignment
+  },
+  cta {
+    text,
+    url
+  },
   body,
-  slug
+  images[]{
+    _key,
+    alt,
+    asset->{
+      url
+    }
+  }
 }`;
