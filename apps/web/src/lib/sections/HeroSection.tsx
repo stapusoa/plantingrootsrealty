@@ -1,6 +1,6 @@
 import { Button } from "@/components/button/button";
-import { BackgroundImages } from "../layout/BG";
-import { Overlay } from "../Overlay"; // Adjust path as needed
+import { BackgroundImages } from "@/lib/layout/BG";
+import { Overlay } from "@/lib/layout/Overlay"; // Adjust path as needed
 
 export type HeroSectionProps = {
   title: string;

@@ -1,6 +1,6 @@
 import type { PageType } from "@/components/navigation/types";
 import { Button } from "@/components/button/button";
-import { BackgroundImages } from "../layout/BG";
+import { BackgroundImages } from "@/lib/layout/BG";
 import imageSM from '@/assets/bgHomeHero-sm.webp';
 import imageMD from '@/assets/bgHomeHero-md.webp';
 import imageLG from '@/assets/bgHomeHero-lg.webp';
