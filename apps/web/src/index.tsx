@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Home} from "./pages/Home";
-import { MarkdownPage } from "./pages/MarkdownPage";
+import {Home} from "@/pages/Home";
+import { MarkdownPage } from "@/lib/cms/components/MarkdownPage";
 import "./index.css";
-import { Navigation } from "./components/navigation";
-import type { PageType } from "./components/navigation/types";
+import { Navigation } from "@/components/navigation";
+import type { PageType } from "@/components/navigation/types";
 import { withLDProvider } from "launchdarkly-react-client-sdk";
-import  RealEstateGallery  from "./pages/Listings/Gallery";
-import { AboutOld } from "./pages/Home/AboutOld";
-import { Footer } from './components/navigation/footer'
-import ListingDetails from "./pages/Listings/ListingDetails";
+import  RealEstateGallery  from "@/pages/Listings/Gallery";
+import { AboutOld } from "@/pages/About/AboutOld";
+import { Footer } from '@/components/navigation/footer'
+import ListingDetails from "@/pages/Listings/ListingDetails";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');

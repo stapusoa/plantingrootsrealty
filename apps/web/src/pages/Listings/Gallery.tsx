@@ -18,9 +18,9 @@ import {
 } from "@/components/index"
 
 import { sanity } from "@/lib/cms/sanityClient"
-import { PROPERTY_QUERY } from "@/lib/cms/queries/queries"
-import { getFilteredListings } from "@/lib/utils/propertyUtils"
-import { ITEMS_PER_PAGE, DEFAULT_FILTERS, SORT_OPTIONS } from "@/lib/constants"
+import { PROPERTY_QUERY } from "@/lib/cms/queries"
+import { getFilteredListings } from "@/lib/cms/utils/propertyUtils"
+import { ITEMS_PER_PAGE, DEFAULT_FILTERS, SORT_OPTIONS } from "@/lib/cms/constants"
 
 import type { Property } from "@/lib/cms/types"
 
