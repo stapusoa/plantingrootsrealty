@@ -7,13 +7,12 @@ export function SanityPage() {
   const { slug } = useParams<{ slug: string }>();
   const page = useSanityPage(slug);
 
-  // --- SEO Meta Updates ---
+  // SEO meta updates
   useEffect(() => {
     if (!page) return;
 
     document.title = page.title || "";
 
-    // Meta description
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
@@ -23,15 +22,13 @@ export function SanityPage() {
     metaDesc.content = page.metaDescription || "";
 
     // Canonical
-    if (page.canonicalUrl) {
-      let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-      if (!linkCanonical) {
-        linkCanonical = document.createElement("link");
-        linkCanonical.rel = "canonical";
-        document.head.appendChild(linkCanonical);
-      }
-      linkCanonical.href = page.canonicalUrl;
+    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement("link");
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
     }
+    linkCanonical.href = page.canonicalUrl || `${window.location.origin}/${slug}`;
 
     // Open Graph
     const setOgTag = (property: string, content?: string) => {
@@ -46,57 +43,103 @@ export function SanityPage() {
     };
     setOgTag("og:title", page.title);
     setOgTag("og:description", page.metaDescription);
-    setOgTag("og:image", page.images?.[0]?.asset.url);
+    if (page.hero?.heroImageSM?.asset?.url) {
+      setOgTag("og:image", page.hero.heroImageSM.asset.url);
+    }
     setOgTag("og:type", "website");
-  }, [page]);
+  }, [page, slug]);
 
   if (!page) return <p>Loading...</p>;
 
-  // Portable Text components
   const portableComponents: Partial<PortableTextComponents> = {
     block: {
-      h1: ({ children }) => <h1 className="font-bold text-8xl mb-8">{children}</h1>,
-      h2: ({ children }) => <h2 className="font-bold text-4xl mb-4">{children}</h2>,
       normal: ({ children }) => <p className="text-base mb-4">{children}</p>,
+      h2: ({ children }) => <h2 className="font-bold text-3xl mb-4">{children}</h2>,
+      h3: ({ children }) => <h3 className="font-semibold text-2xl mb-3">{children}</h3>,
+      h4: ({ children }) => <h4 className="font-semibold text-xl mb-2">{children}</h4>,
+      h5: ({ children }) => <h5 className="font-semibold text-lg mb-2">{children}</h5>,
+      h6: ({ children }) => <h6 className="font-semibold text-base mb-2">{children}</h6>,
     },
   };
 
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-6xl mx-auto px-4 md:px-12 flex flex-col items-center gap-8">
-
-        {/* H1 */}
-        {page.h1 && <h1 className="font-bold text-6xl md:text-8xl leading-tight">{page.h1}</h1>}
-
-        {/* Subheader */}
-        {page.subheader?.text && (
-          <p className={page.subheader.alignment === "center" ? "text-center text-xl mb-4" : "text-left text-xl mb-4"}>
-            {page.subheader.text}
-          </p>
+        {/* Hero Section */}
+        {page.hero && (
+          <div className="w-full flex flex-col items-center gap-4">
+            {page.hero.title && (
+              <h1
+                className={`font-bold text-6xl md:text-8xl leading-tight ${page.hero.titleAlignment === "center" ? "text-center" : "text-left"
+                  }`}
+              >
+                {page.hero.title}
+              </h1>
+            )}
+            {page.hero.subheader && (
+              <p
+                className={`text-lg md:text-xl ${page.hero.subheaderAlignment === "center" ? "text-center" : "text-left"
+                  }`}
+              >
+                {page.hero.subheader}
+              </p>
+            )}
+            {page.hero.ctaText && page.hero.ctaLink && (
+              <button onClick={() => page.hero?.ctaLink && (window.location.href = page.hero.ctaLink)}>
+                {page.hero?.ctaText || "Get Started"}
+              </button>
+            )}
+            <div className="flex flex-row gap-4 mt-8 w-full justify-center flex-wrap">
+              {page.hero.heroImageSM && (
+                <img src={page.hero.heroImageSM.asset.url} alt="Hero SM" className="w-1/3 rounded" />
+              )}
+              {page.hero.heroImageMD && (
+                <img src={page.hero.heroImageMD.asset.url} alt="Hero MD" className="w-1/3 rounded" />
+              )}
+              {page.hero.heroImageLG && (
+                <img src={page.hero.heroImageLG.asset.url} alt="Hero LG" className="w-1/3 rounded" />
+              )}
+            </div>
+          </div>
         )}
 
-        {/* CTA */}
-        {page.cta?.text && (
-          <button
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg"
-            onClick={() => page.cta?.url && (window.location.href = page.cta.url)}
-          >
-            {page.cta.text}
-          </button>
-        )}
+        {/* Page Content */}
+        {page.content?.map((block, i) => {
+          if (block._type === "textBlock") {
+            return (
+              <div key={i} className="w-full">
+                {block.heading && (
+                  <div className={`${block.headingAlignment === "center" ? "text-center" : "text-left"}`}>
+                    {block.headingLevel === "h2" && <h2 className="font-bold text-3xl mb-4">{block.heading}</h2>}
+                    {block.headingLevel === "h3" && <h3 className="font-semibold text-2xl mb-3">{block.heading}</h3>}
+                    {block.headingLevel === "h4" && <h4 className="font-semibold text-xl mb-2">{block.heading}</h4>}
+                    {block.headingLevel === "h5" && <h5 className="font-semibold text-lg mb-2">{block.heading}</h5>}
+                    {block.headingLevel === "h6" && <h6 className="font-semibold text-base mb-2">{block.heading}</h6>}
+                  </div>
+                )}
+                {block.body && (
+                  <div className={`${block.textAlignment === "center" ? "text-center" : "text-left"}`}>
+                    <PortableText value={block.body} components={portableComponents} />
+                  </div>
+                )}
+              </div>
+            );
+          }
 
-        {/* Body */}
-        <div className="w-full">
-          <PortableText value={page.body || []} components={portableComponents} />
-        </div>
+          if (block._type === "imageBlock") {
+            return (
+              <div
+                key={i}
+                className={`w-full flex justify-${block.alignment === "center" ? "center" : block.alignment === "right" ? "end" : "start"
+                  }`}
+              >
+                <img src={block.asset.url} alt={block.alt} className="rounded mb-4" />
+              </div>
+            );
+          }
 
-        {/* Images */}
-        <div className="flex flex-row gap-4 mt-8 w-full justify-center">
-          {page.images?.map((img) => (
-            <img key={img._key} src={img.asset.url} alt={img.alt || ""} className="w-1/3 rounded" />
-          ))}
-        </div>
-
+          return null;
+        })}
       </div>
     </div>
   );
