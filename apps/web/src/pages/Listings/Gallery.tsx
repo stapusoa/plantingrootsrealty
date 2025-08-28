@@ -17,12 +17,12 @@ import {
   SelectValue,
 } from "@/components/index"
 
-import { sanity } from "@/lib/sanityClient"
-import { PROPERTY_QUERY } from "@/lib/queries"
-import { getFilteredListings } from "@/lib/utils/propertyUtils"
-import { ITEMS_PER_PAGE, DEFAULT_FILTERS, SORT_OPTIONS } from "@/lib/constants"
+import { sanity } from "@/lib/cms/sanityClient"
+import { PROPERTY_QUERY } from "@/lib/cms/queries"
+import { getFilteredListings } from "@/lib/cms/utils/propertyUtils"
+import { ITEMS_PER_PAGE, DEFAULT_FILTERS, SORT_OPTIONS } from "@/lib/cms/constants"
 
-import type { Property } from "@/lib/types"
+import type { Property } from "@/lib/cms/types"
 
 export default function RealEstateGallery() {
   const [properties, setProperties] = useState<Property[]>([])

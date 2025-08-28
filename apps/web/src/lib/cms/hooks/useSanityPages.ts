@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getSanityClient } from "@/lib/sanityClient";
+import { getSanityClient } from "@/lib/cms/sanityClient";
 
 export type Page = {
   _id: string;

@@ -1,6 +1,6 @@
 import type { PageType } from "@/components/navigation/types";
 import { Button } from "@/components/button/button";
-import { BackgroundImages } from "../../lib/BG";
+import { BackgroundImages } from "@/lib/layout/BG";
 import imageSM from '@/assets/bgHomeHero-sm.webp';
 import imageMD from '@/assets/bgHomeHero-md.webp';
 import imageLG from '@/assets/bgHomeHero-lg.webp';
@@ -10,7 +10,7 @@ const images = { imageSM, imageMD, imageLG };
 
 function Overlay() {
   return (
-    <div className="overflow-clip relative size-full">
+    <div className="overflow-clip relative w-full">
       <WaveSeparator />
     </div>
   );
@@ -22,7 +22,7 @@ export function HeroSection({ onNavigate }: { onNavigate: (page: PageType) => vo
     <div className="h-210 relative shrink-0 w-full">
       <div className="box-border content-stretch flex flex-col gap-60 h-220 items-start justify-start max-w-inherit overflow-clip p-0 relative w-full">
         {/* Background with Gradient */}
-        <div className="relative min-h-screen w-full">
+        <div className="h-[800px] relative shrink-0 w-full">
           <div className="absolute bottom-0 left-0 right-0 top-0">
             {/* Background Image */}
             <BackgroundImages imageSM={images.imageSM}

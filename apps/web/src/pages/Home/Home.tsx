@@ -14,9 +14,9 @@ import {
   FAQSection,
   Footer
 } from "./index";
-import { OurStoryOld } from "./OurStoryOld";
-import { ContactFormOld } from "./ContactFormOld"
-import { TestimonialsOld } from "./TestimonialsOld";
+import { OurStoryOld } from "@/pages/About/OurStoryOld";
+import { ContactFormOld } from "@/pages/Contact/ContactFormOld"
+import { TestimonialsOld } from "@/pages/Testimonials/TestimonialsOld";
 interface HomePageProps {
   onNavigate: (page: PageType) => void;
 }

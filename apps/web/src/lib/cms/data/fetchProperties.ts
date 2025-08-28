@@ -1,5 +1,5 @@
 // fetchProperties.ts
-import { sanity } from './sanityClient'
+import { sanity } from '@/lib/cms/sanityClient'
 
 export async function fetchProperties() {
   const query = `
