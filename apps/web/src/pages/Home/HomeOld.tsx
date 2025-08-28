@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { useMarkdownPages } from "@/useMarkdownPages";
+import { useMarkdownPages } from "@/lib/cms/hooks/useMarkdownPages";
 
 export function Simple() {
   const { slug } = useParams(); // URL param like /page/:slug

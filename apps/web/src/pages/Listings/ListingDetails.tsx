@@ -2,7 +2,7 @@
 
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { sanity } from "@/lib/sanityClient"
+import { sanity } from "@/lib/cms/sanityClient"
 import { Badge } from "@/components/badge"
 import {
   Breadcrumb,

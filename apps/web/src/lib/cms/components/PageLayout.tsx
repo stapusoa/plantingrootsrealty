@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
-import { useSanityPages } from "@/useSanityPages";
-import { HeroSection } from "@/lib/HeroSection";
+import { useSanityPages } from "@/lib/cms/hooks/useSanityPages";
+import { HeroSection } from "@/lib/sections/HeroSection";
 import { useEffect } from "react";
 
 export function SanityPage() {

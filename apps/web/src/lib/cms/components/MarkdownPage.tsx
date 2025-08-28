@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { useMarkdownPages } from "@/useMarkdownPages";
-import { HeroSection } from "@/lib/HeroSection";
+import { useMarkdownPages } from "@/lib/cms/hooks/useMarkdownPages";
+import { HeroSection } from "@/lib/sections/HeroSection";
 
 export function MarkdownPage() {
   const { slug } = useParams();

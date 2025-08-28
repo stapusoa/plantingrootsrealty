@@ -1,4 +1,4 @@
-import type { Property } from "@/lib/types"
+import type { Property } from "@/lib/cms/types"
 
 export const getFilteredListings = (
   properties: Property[],

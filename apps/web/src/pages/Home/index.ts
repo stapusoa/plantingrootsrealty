@@ -1,6 +1,6 @@
-export {BuyersGuide} from "./BuyersGuide";
-export {FAQSection} from "./FAQSection";
-export {Footer} from "./Footer";
+export {BuyersGuide} from "../Guides/BuyersGuide";
+export {FAQSection} from "../FAQ/FAQSection";
+export {Footer} from "../../lib/layout/Footer";
 export {IconsModule} from "./IconsModule";
 export {LogoCloud} from "./LogoCloud";
 export {MarketStats} from "./MarketStats";
@@ -9,5 +9,5 @@ export {QuickContactSection} from "./QuickContactSection";
 export {ResourcesSection} from "./ResourcesSection";
 export {ServiceAreas} from "./ServiceAreas";
 export {TestimonialsSection} from "./TestimonialsSection";
-export {HeroSection} from "./HeroSection";
+export {HeroSection} from "../../lib/sections/HomeHero";
 export { Home } from "./Home";
