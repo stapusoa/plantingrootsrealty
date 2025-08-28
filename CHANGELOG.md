@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.1.2...v1.2.0) (2025-08-28)
+
+
+### Bug Fixes
+
+* prr-53 fix the page schema to match sanity studio content ([8924a05](https://github.com/stapusoa/plantingrootsrealty/commit/8924a0536cbfc50a17d23061f72a4ce9f842e6c7))
+
+
+### Features
+
+* add eagle mountain markdown content and frontmatter ([c66d28e](https://github.com/stapusoa/plantingrootsrealty/commit/c66d28eec4120c07d5c79a511e3b23775e4904c4))
+
 ## [1.1.2](https://github.com/stapusoa/plantingrootsrealty/compare/v1.1.1...v1.1.2) (2025-08-28)
 
 
