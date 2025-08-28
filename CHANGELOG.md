@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/stapusoa/plantingrootsrealty/compare/v1.1.1...v1.1.2) (2025-08-28)
+
+
+### Bug Fixes
+
+* correct the imports in Listings and index ([8a93d00](https://github.com/stapusoa/plantingrootsrealty/commit/8a93d00bcf115edab547ee158d3a30e898d83099))
+* fix all imports in lib ([aac695b](https://github.com/stapusoa/plantingrootsrealty/commit/aac695b280211b737f5fdd53152ebe8fddd82892))
+
 ## [1.1.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.1.0...v1.1.1) (2025-08-28)
 
 
