@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { getSanityClient } from "@/lib/cms/sanityClient";
-import { PAGE_QUERY } from "@/lib/cms/queries";
 import type { Page } from "@/lib/cms/types";
 
 export function useSanityPage(slug?: string) {
@@ -10,14 +8,15 @@ export function useSanityPage(slug?: string) {
     if (!slug) return;
 
     let isMounted = true;
-    const client = getSanityClient();
 
     async function fetchPage() {
       try {
-        const result: Page | null = await client.fetch(PAGE_QUERY, { slug });
-        if (isMounted) setPage(result);
+        const res = await fetch(`http://localhost:3000/page/${slug}`);
+        if (!res.ok) throw new Error("Failed to fetch page");
+        const data: Page = await res.json();
+        if (isMounted) setPage(data);
       } catch (err) {
-        console.error("Failed to fetch page:", err);
+        console.error(err);
         if (isMounted) setPage(null);
       }
     }

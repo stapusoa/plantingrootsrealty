@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Grid, List, SlidersHorizontal } from "lucide-react"
 
@@ -17,46 +17,52 @@ import {
   SelectValue,
 } from "@/components/index"
 
-import { sanity } from "@/lib/cms/sanityClient"
-import { PROPERTY_QUERY } from "@/lib/cms/queries"
-import { getFilteredListings } from "@/lib/cms/utils/propertyUtils"
-import { ITEMS_PER_PAGE, DEFAULT_FILTERS, SORT_OPTIONS } from "@/lib/cms/constants"
+import type { FiltersSidebarProps } from "@/components/listings/FiltersSidebar"
+import type { Property } from "../../../../api/src/lib/cms/types"
 
-import type { Property } from "@/lib/cms/types"
+type Filters = FiltersSidebarProps["filters"]
+
+const DEFAULT_FILTERS: Filters = {
+  priceRange: [200000, 2000000],
+  propertyTypes: [],
+  bedrooms: "any",
+  bathrooms: "any",
+}
 
 export default function RealEstateGallery() {
   const [properties, setProperties] = useState<Property[]>([])
   const [searchQuery, setSearchQuery] = useState("")
-  const [sortBy, setSortBy] = useState("newest")
+  const [sortBy, setSortBy] = useState<string>("price-low") // <-- widened to string
   const [currentPage, setCurrentPage] = useState(1)
   const [showFilters, setShowFilters] = useState(true)
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
-  const [filters, setFilters] = useState(DEFAULT_FILTERS)
+  const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS)
 
+  const ITEMS_PER_PAGE = 9 // frontend pagination
+
+  // Fetch properties from backend API
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        if (!sanity) {
-          console.error("Sanity client is not initialized.")
-          return
-        }
-        const data = await sanity.fetch<Property[]>(PROPERTY_QUERY)
+        const queryParams = new URLSearchParams({
+          searchQuery,
+          sortBy,
+          filters: JSON.stringify(filters),
+        })
+
+        const res = await fetch(`http://localhost:3000/listings?${queryParams.toString()}`)
+        const data: Property[] = await res.json()
         setProperties(data)
-        console.log("Fetched properties:", data)
-      } catch (error) {
-        console.error("Failed to fetch properties from Sanity:", error)
+      } catch (err) {
+        console.error("Failed to fetch properties:", err)
       }
     }
+
     fetchProperties()
-  }, [])
+  }, [filters, searchQuery, sortBy])
 
-  const filteredListings = useMemo(
-    () => getFilteredListings(properties, filters, searchQuery, sortBy),
-    [properties, filters, searchQuery, sortBy]
-  )
-
-  const totalPages = Math.ceil(filteredListings.length / ITEMS_PER_PAGE)
-  const paginatedListings = filteredListings.slice(
+  const totalPages = Math.ceil(properties.length / ITEMS_PER_PAGE)
+  const paginatedListings = properties.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   )
@@ -66,7 +72,7 @@ export default function RealEstateGallery() {
     setCurrentPage(1)
   }
 
-  const handleFiltersChange = (newFilters: typeof filters) => {
+  const handleFiltersChange = (newFilters: Filters) => {
     setFilters(newFilters)
     setCurrentPage(1)
   }
@@ -82,18 +88,12 @@ export default function RealEstateGallery() {
         {/* Header */}
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Real Estate Listings</h1>
-          <p className="text-gray-600">
-            Find your perfect home from our curated selection of properties
-          </p>
+          <p className="text-gray-600">Find your perfect home from our curated selection of properties</p>
         </header>
 
         {/* Search, View Controls, Sort */}
         <section className="mb-6 space-y-4">
-          <SearchBar
-            query={searchQuery}
-            onChange={setSearchQuery}
-            onSubmit={handleSearch}
-          />
+          <SearchBar query={searchQuery} onChange={setSearchQuery} onSubmit={handleSearch} />
 
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div className="flex gap-2">
@@ -123,15 +123,23 @@ export default function RealEstateGallery() {
             </div>
 
             <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">
-                {filteredListings.length} properties found
-              </span>
-              <Select value={sortBy} onValueChange={setSortBy}>
+              <span className="text-sm text-gray-600">{properties.length} properties found</span>
+              <Select
+                value={sortBy}
+                onValueChange={(value) =>
+                  setSortBy(value as "price-low" | "price-high" | "newest" | "oldest")
+                }
+              >
                 <SelectTrigger className="w-48">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {SORT_OPTIONS.map(({ label, value }) => (
+                  {[
+                    { label: "Price: Low to High", value: "price-low" },
+                    { label: "Price: High to Low", value: "price-high" },
+                    { label: "Newest", value: "newest" },
+                    { label: "Oldest", value: "oldest" },
+                  ].map(({ label, value }) => (
                     <SelectItem key={value} value={value}>
                       {label}
                     </SelectItem>
@@ -157,14 +165,8 @@ export default function RealEstateGallery() {
           <section className="flex-1">
             {paginatedListings.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">
-                  No properties found matching your criteria.
-                </p>
-                <Button
-                  variant="outlined"
-                  onClick={handleClearFilters}
-                  className="mt-4 bg-transparent"
-                >
+                <p className="text-gray-500 text-lg">No properties found matching your criteria.</p>
+                <Button variant="outlined" onClick={handleClearFilters} className="mt-4 bg-transparent">
                   Clear Filters
                 </Button>
               </div>
@@ -182,10 +184,7 @@ export default function RealEstateGallery() {
                       <Card
                         title={listing.title}
                         description={listing.description}
-                        image={{
-                          url: listing.imageUrl,
-                          imagePosition: "inline",
-                        }}
+                        image={{ url: listing.imageUrl, imagePosition: "inline" }}
                         price={listing.price}
                         amenities={[
                           { icon: "bed", label: `${listing.bedrooms} bedrooms` },
