@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.0.1...v1.1.0) (2025-08-28)
+
+
+### Bug Fixes
+
+* **page:** prr-52 update page.ts schema and component for sanity integration ([2db00e9](https://github.com/stapusoa/plantingrootsrealty/commit/2db00e92f9635bb043d84270feaa727171a7665b))
+* prr-52 update pnpm-lock ([ebb0820](https://github.com/stapusoa/plantingrootsrealty/commit/ebb08206beb30deb22b7c1075b01552e85d4de45))
+
+
+### Features
+
+* **home:** prr-52 update content and styling on home page ([c9f025b](https://github.com/stapusoa/plantingrootsrealty/commit/c9f025bbf4e9f301bdca4f89ba1063ed95ecb98e))
+
 ## [1.0.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.0.0...v1.0.1) (2025-08-08)
 
 
