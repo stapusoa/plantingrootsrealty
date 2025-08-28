@@ -30,6 +30,8 @@ export function SanityPage() {
   if (!page) return <p>Loading...</p>;
 
   return (
+        <div className="min-h-screen mt-50 bg-gray-50">
+      <div className="container mx-auto px-4 py-8"></div>
     <div className="flex flex-col items-center relative w-full">
       {/* Hero Section */}
       {page.h1 && page.heroImageSM && (
@@ -73,6 +75,7 @@ export function SanityPage() {
           </button>
         </div>
       )}
+    </div>
     </div>
   );
 }
