@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.0...v1.2.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* refine the styling of page layout component and fix the schema ([a1ada39](https://github.com/stapusoa/plantingrootsrealty/commit/a1ada39a402d49a8598c3ef062ee78770697c6aa))
+
 # [1.2.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.1.2...v1.2.0) (2025-08-28)
 
 
