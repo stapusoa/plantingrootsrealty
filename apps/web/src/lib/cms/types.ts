@@ -14,14 +14,18 @@ export type Property = {
 }
 
 export type Page = {
-  _id: string
-  title: string
-  subheader?: string
-  heroButtonText?: string
-  heroButtonLink?: string
-  "heroImageSM"?: string
-  "heroImageMD"?: string
-  "heroImageLG"?: string
-  body?: any[]
-  slug?: { current: string }
-}
+  _id: string;
+  title?: string;
+  metaDescription?: string;
+  canonicalUrl?: string;
+  robots?: string;
+  h1?: string;
+  subheader?: { text?: string; alignment?: "left" | "center" };
+  cta?: { text?: string; url?: string };
+  body?: any[];
+  images?: {
+    _key: string;
+    alt?: string;
+    asset: { url: string };
+  }[];
+};

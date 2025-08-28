@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Home} from "@/pages/Home";
-import { MarkdownPage } from "@/lib/cms/components/MarkdownPage";
+import { SanityPage } from "@/lib/cms/components/PageLayout";
 import "./index.css";
 import { Navigation } from "@/components/navigation";
 import type { PageType } from "@/components/navigation/types";
@@ -21,7 +21,7 @@ function App() {
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <Routes>
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
-        <Route path="/:slug" element={<MarkdownPage />} />
+        <Route path="/:slug" element={<SanityPage />} />
         <Route path="/listings" element={<RealEstateGallery />} />
           <Route path="/listings/:id" element={<ListingDetails />} /> {/* Add this */}
 
