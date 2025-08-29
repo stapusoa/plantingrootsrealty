@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.5...v1.2.6) (2025-08-29)
+
+
+### Bug Fixes
+
+* prr-53 rebuild api ([9f7bc56](https://github.com/stapusoa/plantingrootsrealty/commit/9f7bc56f25db63b8673f985e03e81083b1ff3ed8))
+
 ## [1.2.5](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.4...v1.2.5) (2025-08-29)
 
 
