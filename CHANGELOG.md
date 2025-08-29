@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.4...v1.2.5) (2025-08-29)
+
+
+### Bug Fixes
+
+* prr-53 add production url to cors ([c7c0d31](https://github.com/stapusoa/plantingrootsrealty/commit/c7c0d31b94df3fb4155010a2f56e9971632af3ba))
+
 ## [1.2.4](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.3...v1.2.4) (2025-08-29)
 
 
