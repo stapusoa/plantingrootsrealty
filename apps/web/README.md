@@ -11,10 +11,11 @@ Content is sourced from [Sanity](https://www.sanity.io/) via a read-only integra
 This folder is part of a larger monorepo. Key structure:
 plantingrootsrealty/
 ├── apps/
-│   ├── web/        → This folder (the public-facing website)
-│   └── cms/        → Sanity Studio (managed separately)
-├── packages/       → Shared components/utilities
+│ ├── web/ → This folder (the public-facing website)
+│ └── cms/ → Sanity Studio (managed separately)
+├── packages/ → Shared components/utilities
 └── …
+
 ---
 
 ## 🛠 Setup & Development
@@ -23,7 +24,7 @@ plantingrootsrealty/
 
 From the monorepo root:
 
-```bash
+````bash
 pnpm install
 ### Install dependencies
 
@@ -33,7 +34,7 @@ This installs all dependencies across the monorepo, including shared packages.
 
 ```bash
 pnpm dev --filter web
-```
+````
 
 Open your browser to [http://localhost:3000](http://localhost:3000) (or the port shown in the console) to view the app.
 
@@ -66,7 +67,7 @@ If your SSH key has a passphrase and you want to avoid entering it every time:
 eval "$(ssh-agent -s)"
 
 # Add your SSH key (update the path if necessary)
-ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519_personal
 ```
 
 Add these lines to your shell profile (`~/.zshrc`, `~/.bashrc`, etc.) to automate this on terminal start.
@@ -95,6 +96,12 @@ git remote add origin git@github.com:your-username/your-cms-repo.git
 
 Replace `your-username/your-cms-repo` with your actual GitHub path.
 
+For the backend repo to push:
+
+```
+git subtree push --prefix apps/api api main
+```
+
 ---
 
 ## Build & Preview
@@ -121,7 +128,6 @@ The `build` command outputs the production assets to the `dist/` folder.
 - Configure all required environment variables via Vercel’s dashboard.
 - No Sanity Studio is hosted here — only Sanity integration (via its API).
 - The Cloudflare-managed domain points to Vercel.
-
 
 ---
 
