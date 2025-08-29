@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.9...v1.2.10) (2025-08-29)
+
+
+### Bug Fixes
+
+* imports in backend dist ([ca5225a](https://github.com/stapusoa/plantingrootsrealty/commit/ca5225acca5a5bf707f3a7c9ba5f803fbfc45322))
+
 ## [1.2.9](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.8...v1.2.9) (2025-08-29)
 
 
