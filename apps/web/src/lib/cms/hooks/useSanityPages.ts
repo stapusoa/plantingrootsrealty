@@ -11,12 +11,14 @@ export function useSanityPage(slug?: string) {
 
     async function fetchPage() {
       try {
+        // Use relative path so it works in dev + prod
         const res = await fetch(`http://localhost:3000/page/${slug}`);
-        if (!res.ok) throw new Error("Failed to fetch page");
+        if (!res.ok) throw new Error(`Failed to fetch page: ${res.status}`);
+
         const data: Page = await res.json();
         if (isMounted) setPage(data);
       } catch (err) {
-        console.error(err);
+        console.error("Error fetching page:", err);
         if (isMounted) setPage(null);
       }
     }
