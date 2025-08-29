@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.8...v1.2.9) (2025-08-29)
+
+
+### Bug Fixes
+
+* change vercel version in backend ([5de6eae](https://github.com/stapusoa/plantingrootsrealty/commit/5de6eae7da3f7d3facb8f83a82ed09c395852584))
+
 ## [1.2.8](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.7...v1.2.8) (2025-08-29)
 
 
