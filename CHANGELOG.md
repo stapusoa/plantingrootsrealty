@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.10...v1.2.11) (2025-08-29)
+
+
+### Bug Fixes
+
+* add js file types to imports in backend for building the project ([488872f](https://github.com/stapusoa/plantingrootsrealty/commit/488872fe9d8e17ca23f00ff3ead1348bf73d0188))
+
 ## [1.2.10](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.9...v1.2.10) (2025-08-29)
 
 
