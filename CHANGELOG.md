@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.6...v1.2.7) (2025-08-29)
+
+
+### Bug Fixes
+
+* fix env url for api ([8abe09b](https://github.com/stapusoa/plantingrootsrealty/commit/8abe09b53d5ec5dd92798855a93008f6ca639cd2))
+
 ## [1.2.6](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.5...v1.2.6) (2025-08-29)
 
 
