@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.2...v1.2.3) (2025-08-29)
+
+
+### Bug Fixes
+
+* fetch the sanity page schema content from api ([784e557](https://github.com/stapusoa/plantingrootsrealty/commit/784e5575d064823eeb9d17cd711c7318bafc49f4))
+
 ## [1.2.2](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.1...v1.2.2) (2025-08-29)
 
 
