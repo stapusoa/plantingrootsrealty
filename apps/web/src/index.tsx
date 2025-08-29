@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Home} from "@/pages/Home";
+import { Home } from "@/pages/Home";
 import { SanityPage } from "@/lib/cms/components/PageLayout";
 import "./index.css";
 import { Navigation } from "@/components/navigation";
 import type { PageType } from "@/components/navigation/types";
 import { withLDProvider } from "launchdarkly-react-client-sdk";
-import  RealEstateGallery  from "@/pages/Listings/Gallery";
+import RealEstateGallery from "@/pages/Listings/Gallery";
 import { AboutOld } from "@/pages/About/AboutOld";
 import { Footer } from '@/components/navigation/footer'
 import ListingDetails from "@/pages/Listings/ListingDetails";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
         <Route path="/:slug" element={<SanityPage />} />
         <Route path="/listings" element={<RealEstateGallery />} />
-          <Route path="/listings/:id" element={<ListingDetails />} /> {/* Add this */}
+        <Route path="/listings/:id" element={<ListingDetails />} />
 
         {/*<Route path="/resources" element={<BlogsOld />} /> */}
         <Route path="/our-story" element={<AboutOld />} />
