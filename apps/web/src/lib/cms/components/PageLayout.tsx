@@ -4,42 +4,56 @@ import { useSanityPage } from "@/lib/cms/hooks/useSanityPages";
 import { useEffect } from "react";
 
 type TextBlock = {
-  _type: "textBlock"
-  heading?: string
-  headingLevel?: "h2" | "h3" | "h4" | "h5" | "h6"
-  headingAlignment?: "left" | "center" | "right"
-  body?: any
-  textAlignment?: "left" | "center" | "right"
-}
+  _type: "textBlock";
+  heading?: string;
+  headingLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
+  headingAlignment?: "left" | "center" | "right";
+  body?: any;
+  textAlignment?: "left" | "center" | "right";
+};
 
 type ImageBlock = {
-  _type: "imageBlock"
-  asset: { url: string }
-  alt?: string
-  alignment?: "left" | "center" | "right"
-}
+  _type: "imageBlock";
+  asset: { url: string };
+  alt?: string;
+  alignment?: "left" | "center" | "right";
+};
 
-type PageContentBlock = TextBlock | ImageBlock
+type PageContentBlock = TextBlock | ImageBlock;
 
 export function SanityPage() {
   const { slug } = useParams<{ slug: string }>();
   const page = useSanityPage(slug);
+  console.log("Fetched page:", page);
+
+  // Helper to set or create meta tags
+  const setMetaTag = (nameOrProperty: string, content: string, isProperty = false) => {
+    if (!content) return;
+    const selector = isProperty
+      ? `meta[property="${nameOrProperty}"]`
+      : `meta[name="${nameOrProperty}"]`;
+    let tag = document.querySelector(selector) as HTMLMetaElement | null;
+    if (!tag) {
+      tag = document.createElement("meta");
+      if (isProperty) tag.setAttribute("property", nameOrProperty);
+      else tag.name = nameOrProperty;
+      document.head.appendChild(tag);
+    }
+    tag.content = content;
+  };
 
   // SEO meta updates
   useEffect(() => {
     if (!page) return;
 
-    document.title = page.title || "";
+    document.title = page.title || "Untitled Page";
+    setMetaTag("description", page.metaDescription || "");
+    setMetaTag("og:title", page.title || "", true);
+    setMetaTag("og:description", page.metaDescription || "", true);
+    setMetaTag("og:image", page.hero?.heroImageSM?.asset?.url || "", true);
+    setMetaTag("og:type", "website", true);
 
-    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = page.metaDescription || "";
-
-    // Canonical
+    // Canonical link
     let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!linkCanonical) {
       linkCanonical = document.createElement("link");
@@ -47,24 +61,6 @@ export function SanityPage() {
       document.head.appendChild(linkCanonical);
     }
     linkCanonical.href = page.canonicalUrl || `${window.location.origin}/${slug}`;
-
-    // Open Graph
-    const setOgTag = (property: string, content?: string) => {
-      if (!content) return;
-      let tag = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
-      if (!tag) {
-        tag = document.createElement("meta");
-        tag.setAttribute("property", property);
-        document.head.appendChild(tag);
-      }
-      tag.content = content;
-    };
-    setOgTag("og:title", page.title);
-    setOgTag("og:description", page.metaDescription);
-    if (page.hero?.heroImageSM?.asset?.url) {
-      setOgTag("og:image", page.hero.heroImageSM.asset.url);
-    }
-    setOgTag("og:type", "website");
   }, [page, slug]);
 
   if (!page) return <p>Loading...</p>;
@@ -81,7 +77,7 @@ export function SanityPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen mt-50 bg-gray-50 py-16">
       <div className="max-w-6xl mx-auto px-4 md:px-12 flex flex-col items-center gap-8">
         {/* Hero Section */}
         {page.hero && (
@@ -103,19 +99,35 @@ export function SanityPage() {
               </p>
             )}
             {page.hero.ctaText && page.hero.ctaLink && (
-              <button onClick={() => page.hero?.ctaLink && (window.location.href = page.hero.ctaLink)}>
-                {page.hero?.ctaText || "Get Started"}
+              <button
+                onClick={() =>
+                  page.hero?.ctaLink && (window.location.href = page.hero.ctaLink)
+                }
+              >
+                {page.hero.ctaText}
               </button>
             )}
             <div className="flex flex-row gap-4 mt-8 w-full justify-center flex-wrap">
               {page.hero.heroImageSM && (
-                <img src={page.hero.heroImageSM.asset.url} alt="Hero SM" className="w-1/3 rounded" />
+                <img
+                  src={page.hero.heroImageSM.asset.url}
+                  alt="Hero SM"
+                  className="w-1/3 rounded"
+                />
               )}
               {page.hero.heroImageMD && (
-                <img src={page.hero.heroImageMD.asset.url} alt="Hero MD" className="w-1/3 rounded" />
+                <img
+                  src={page.hero.heroImageMD.asset.url}
+                  alt="Hero MD"
+                  className="w-1/3 rounded"
+                />
               )}
               {page.hero.heroImageLG && (
-                <img src={page.hero.heroImageLG.asset.url} alt="Hero LG" className="w-1/3 rounded" />
+                <img
+                  src={page.hero.heroImageLG.asset.url}
+                  alt="Hero LG"
+                  className="w-1/3 rounded"
+                />
               )}
             </div>
           </div>
@@ -127,16 +139,32 @@ export function SanityPage() {
             return (
               <div key={i} className="w-full">
                 {block.heading && (
-                  <div className={`${block.headingAlignment === "center" ? "text-center" : "text-left"}`}>
-                    {block.headingLevel === "h2" && <h2 className="font-bold text-3xl mb-4">{block.heading}</h2>}
-                    {block.headingLevel === "h3" && <h3 className="font-semibold text-2xl mb-3">{block.heading}</h3>}
-                    {block.headingLevel === "h4" && <h4 className="font-semibold text-xl mb-2">{block.heading}</h4>}
-                    {block.headingLevel === "h5" && <h5 className="font-semibold text-lg mb-2">{block.heading}</h5>}
-                    {block.headingLevel === "h6" && <h6 className="font-semibold text-base mb-2">{block.heading}</h6>}
+                  <div
+                    className={`${block.headingAlignment === "center" ? "text-center" : "text-left"
+                      }`}
+                  >
+                    {block.headingLevel === "h2" && (
+                      <h2 className="font-bold text-3xl mb-4">{block.heading}</h2>
+                    )}
+                    {block.headingLevel === "h3" && (
+                      <h3 className="font-semibold text-2xl mb-3">{block.heading}</h3>
+                    )}
+                    {block.headingLevel === "h4" && (
+                      <h4 className="font-semibold text-xl mb-2">{block.heading}</h4>
+                    )}
+                    {block.headingLevel === "h5" && (
+                      <h5 className="font-semibold text-lg mb-2">{block.heading}</h5>
+                    )}
+                    {block.headingLevel === "h6" && (
+                      <h6 className="font-semibold text-base mb-2">{block.heading}</h6>
+                    )}
                   </div>
                 )}
                 {block.body && (
-                  <div className={`${block.textAlignment === "center" ? "text-center" : "text-left"}`}>
+                  <div
+                    className={`${block.textAlignment === "center" ? "text-center" : "text-left"
+                      }`}
+                  >
                     <PortableText value={block.body} components={portableComponents} />
                   </div>
                 )}
@@ -148,10 +176,14 @@ export function SanityPage() {
             return (
               <div
                 key={i}
-                className={`w-full flex justify-${block.alignment === "center" ? "center" : block.alignment === "right" ? "end" : "start"
+                className={`w-full flex justify-${block.alignment === "center"
+                    ? "center"
+                    : block.alignment === "right"
+                      ? "end"
+                      : "start"
                   }`}
               >
-                <img src={block.asset.url} alt={block.alt} className="rounded mb-4" />
+                <img src={block.asset.url} alt={block.alt || ""} className="rounded mb-4" />
               </div>
             );
           }
