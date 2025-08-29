@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.7...v1.2.8) (2025-08-29)
+
+
+### Bug Fixes
+
+* prr-53 add api to vercel as separate project ([6f8f44c](https://github.com/stapusoa/plantingrootsrealty/commit/6f8f44ca6171153033aa7cfbe76117e1eb433342))
+
 ## [1.2.7](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.6...v1.2.7) (2025-08-29)
 
 
