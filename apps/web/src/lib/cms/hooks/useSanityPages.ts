@@ -11,7 +11,6 @@ export function useSanityPage(slug?: string) {
 
     async function fetchPage() {
       try {
-        // Use relative path so it works in dev + prod
         const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
         const res = await fetch(`${API_URL}/page/${slug}`);
         if (!res.ok) throw new Error(`Failed to fetch page: ${res.status}`);
