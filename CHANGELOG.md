@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.11...v1.2.12) (2025-08-29)
+
+
+### Bug Fixes
+
+* readd api to git ([4008ad6](https://github.com/stapusoa/plantingrootsrealty/commit/4008ad6587269b310e3221b4b25ac2151fa5fdb8))
+
 ## [1.2.11](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.10...v1.2.11) (2025-08-29)
 
 
