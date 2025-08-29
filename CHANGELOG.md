@@ -1,3 +1,22 @@
+## [1.2.2](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.1...v1.2.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* add types.ts back into web/lib ([067fd5e](https://github.com/stapusoa/plantingrootsrealty/commit/067fd5ecc71386d4d5fec564fcc8dabe5b768a25))
+* change test script to vitest ([18ddde1](https://github.com/stapusoa/plantingrootsrealty/commit/18ddde1950e410df28531afc5bdc5718085c85f7))
+* eslint errors in button component (buttonOld) ([483c414](https://github.com/stapusoa/plantingrootsrealty/commit/483c4145002d0d5edf4f0fa64a56606160a01579))
+* move types into cms ([c6dc158](https://github.com/stapusoa/plantingrootsrealty/commit/c6dc158949f20b3d8fdd38acc6f54536242da051))
+* readd test script to web package ([d011c40](https://github.com/stapusoa/plantingrootsrealty/commit/d011c404977ccedc83fbd01ab163d21d3a64f5e6))
+* remove test script in api package ([0d41481](https://github.com/stapusoa/plantingrootsrealty/commit/0d41481b6e5fc5b9b93676e721adf97b11100be8))
+* resintall @types/react to root of monorepo to fix type errors ([4bcfb4f](https://github.com/stapusoa/plantingrootsrealty/commit/4bcfb4f03f2522679f895c81e3ac06de2080db57))
+* sanity file structure and add to backend ([c92ad24](https://github.com/stapusoa/plantingrootsrealty/commit/c92ad24a8907d72dd81ff30e90fc88984daae42f))
+* sanity file structure and add to backend ([cefc5c9](https://github.com/stapusoa/plantingrootsrealty/commit/cefc5c94a1674f9f34833c3cc2f7ff2696056047))
+* skip testing for test script in web package ([462823d](https://github.com/stapusoa/plantingrootsrealty/commit/462823ddac1b76450821f548c0eaf9f6189f98b9))
+* specify file type in imports ([fa9626d](https://github.com/stapusoa/plantingrootsrealty/commit/fa9626dc5b4b5715d92f884c3f42d0b8da00e6c0))
+* typescript errors in PageLayout ([d5fc29a](https://github.com/stapusoa/plantingrootsrealty/commit/d5fc29a42dd99fae1ba4412ab3f69023130deb90))
+* update imports for buttonOld ([c7d7e28](https://github.com/stapusoa/plantingrootsrealty/commit/c7d7e28e2c94406cc8a92f7615080b33d4b52ae6))
+
 ## [1.2.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.0...v1.2.1) (2025-08-28)
 
 
