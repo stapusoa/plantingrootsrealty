@@ -1,3 +1,10 @@
+## [1.2.13](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.12...v1.2.13) (2025-08-29)
+
+
+### Bug Fixes
+
+* prr-53 adjust the corsfunction to handle dynamic matching ([e113d44](https://github.com/stapusoa/plantingrootsrealty/commit/e113d44978158a77d2e5a828e47d3a50003c06f9))
+
 ## [1.2.12](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.11...v1.2.12) (2025-08-29)
 
 
