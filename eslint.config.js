@@ -44,4 +44,23 @@ export default [
     },
     settings: { react: { version: 'detect' } },
   },
+   {
+    files: ['apps/api/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: './apps/api/tsconfig.json', // 👈 use API tsconfig here
+        tsconfigRootDir: process.cwd(),
+        ecmaVersion: 2020,
+        sourceType: 'module',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 ];

@@ -1,7 +1,7 @@
-// fetchProperties.ts
-import { sanity } from '@/lib/cms/sanityClient'
+import { getSanityClient } from '../sanityClient'
 
 export async function fetchProperties() {
+  const client = getSanityClient() // <— call the function to get the client
   const query = `
     *[_type == "property"]{
       title,
@@ -14,11 +14,9 @@ export async function fetchProperties() {
       }
     }
   `
+
   try {
-    if (!sanity) {
-      throw new Error("Sanity client is not initialized.");
-    }
-    const properties = await sanity.fetch(query)
+    const properties = await client.fetch(query) // <— use fetch on the client
     return properties
   } catch (error) {
     console.error("Failed to fetch properties:", error)

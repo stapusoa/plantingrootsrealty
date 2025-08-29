@@ -13,7 +13,7 @@ import {
 } from "@/components/select"
 import { Button } from "@/components/button"
 
-interface FiltersSidebarProps {
+export interface FiltersSidebarProps {
   filters: {
     priceRange: [number, number]
     propertyTypes: string[]

@@ -2,7 +2,6 @@
 
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { sanity } from "@/lib/cms/sanityClient"
 import { Badge } from "@/components/badge"
 import {
   Breadcrumb,
@@ -43,26 +42,6 @@ import {
   Shield,
 } from "lucide-react"
 
-const query = `*[_type == "property" && _id == $id][0]{
-  _id,
-  title,
-  description,
-  address,
-  price,
-  bedrooms,
-  bathrooms,
-  sqft,
-  garage,
-  dateAdded,
-  type,
-  features,
-  images[] {
-    asset-> {
-      url
-    }
-  }
-}`
-
 export default function ListingDetails() {
   const { id } = useParams()
   const [property, setProperty] = useState<any>(null)
@@ -70,18 +49,12 @@ export default function ListingDetails() {
   const [showAllImages, setShowAllImages] = useState(false)
 
   useEffect(() => {
-  console.log("ListingDetails id param:", id)
-  if (id && sanity) {
-    sanity.fetch(query, { id })
-      .then((result) => {
-        console.log("Fetched property from Sanity:", result)
-        setProperty(result)
-      })
-      .catch((error) => {
-        console.error("Error fetching property:", error)
-      })
-  }
-}, [id])
+    if (!id) return
+    fetch(`http://localhost:3000/listings/${id}`)
+      .then((res) => res.json())
+      .then((data) => setProperty(data))
+      .catch((err) => console.error("Failed to fetch property:", err))
+  }, [id])
 
   if (property === null) return <div>Loading...</div>
   if (!property) return <div className="p-8 text-center text-red-600">Property not found.</div>
