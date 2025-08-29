@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.3...v1.2.4) (2025-08-29)
+
+
+### Bug Fixes
+
+* prr-53 add cors to api to allow both frontend and backend origins ([65d1b12](https://github.com/stapusoa/plantingrootsrealty/commit/65d1b126f23186378f6b9a99efc12a75fa92fef2))
+
 ## [1.2.3](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.2...v1.2.3) (2025-08-29)
 
 
