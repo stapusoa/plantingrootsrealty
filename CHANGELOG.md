@@ -1,3 +1,10 @@
+## [1.2.14](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.13...v1.2.14) (2025-09-03)
+
+
+### Bug Fixes
+
+* prr-54 Refactor home hero component removing redundancies ([c12bb5a](https://github.com/stapusoa/plantingrootsrealty/commit/c12bb5ab0c38e79cd940013caf859be483ca3df7))
+
 ## [1.2.13](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.12...v1.2.13) (2025-08-29)
 
 
