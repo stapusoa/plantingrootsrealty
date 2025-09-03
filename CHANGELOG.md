@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.14...v1.3.0) (2025-09-03)
+
+
+### Bug Fixes
+
+* prr-56 adjust width of viewBox to waveSeparator svg ([44bf76c](https://github.com/stapusoa/plantingrootsrealty/commit/44bf76c20fc9b93314d5bd639c23ef690f65d608))
+* prr-56 move Hero component to layout helper components ([3e94024](https://github.com/stapusoa/plantingrootsrealty/commit/3e94024130eabaa71cfe06ef5b0c1a36a592b852))
+* prr-56 refactor tailwind classes in hero containers ([dc04259](https://github.com/stapusoa/plantingrootsrealty/commit/dc04259c815524bd452340ab95c10a5530d61d26))
+
+
+### Features
+
+* add basic layouts aligned to global page container for core pages ([0c8fa76](https://github.com/stapusoa/plantingrootsrealty/commit/0c8fa760a927923a00ff70579b101136abe4af43))
+
 ## [1.2.14](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.13...v1.2.14) (2025-09-03)
 
 
