@@ -36,7 +36,6 @@ export function HeroSection({
             imageMD={images.imageMD}
             imageLG={images.imageLG}
           />
-
           {/* Overlays */}
           {overlays?.map((variant, i) => (
             <Overlay key={i} variant={variant} />
@@ -49,7 +48,7 @@ export function HeroSection({
           <h1 className={heroTitleClass}>{title}</h1>
           <p className={heroSubheaderClass}>{subheader}</p>
 
-          <div className="max-w-[1140px] w-full animate-fade-in-up mt-8">
+          <div className="max-w-285 w-full animate-fade-in-up mt-8">
             <div className="flex flex-col items-center justify-center w-full">
               <Button
                 size="lg"
@@ -63,7 +62,6 @@ export function HeroSection({
         </div>
       </div>
 
-      {/* Children (wave separator, etc.) */}
       {children && <div className="absolute bottom-0 left-0 right-0">{children}</div>}
     </div>
   )
