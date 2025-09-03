@@ -1,29 +1,40 @@
-interface BackgroundImagesProps {
-  imageSM: string;
-  imageMD: string;
-  imageLG: string;
-}
+import { BGImage } from "@/components/image"
+import { bgStyles } from "@/lib/styles"
+import { DEFAULT_BACKGROUND_ALT } from "@/lib/constants"
+import type { BGProps } from "@/lib/types"
 
-export function BackgroundImages({ imageSM, imageMD, imageLG }: BackgroundImagesProps) {
+export function BackgroundImages({
+  imageSM,
+  imageMD,
+  imageLG,
+  alt = DEFAULT_BACKGROUND_ALT,
+  className,
+}: BGProps) {
   return (
     <>
-      <img
-        alt="Background image for large screens"
+      {/* Large screens */}
+      <BGImage
+        alt={alt}
         src={imageLG}
-        className="fixed inset-0 w-full h-full object-cover object-top-right hidden lg:block z-0"
+        loading="lazy"
+        className={`${bgStyles.lg} ${className ?? ""}`}
       />
-      <img
-        alt="Background image for tablets"
+
+      {/* Tablets */}
+      <BGImage
+        alt={alt}
         src={imageMD}
-        className="fixed inset-0 w-full h-full object-cover bg-center hidden md:block lg:hidden z-0"
+        loading="lazy"
+        className={`${bgStyles.md} ${className ?? ""}`}
       />
-      <img
-        alt="Background image for mobile"
+
+      {/* Mobile — eager load to ensure quick display */}
+      <BGImage
+        alt={alt}
         src={imageSM}
-        className="fixed inset-0 w-full h-full object-cover bg-center block md:hidden z-0"
+        loading="eager"
+        className={`${bgStyles.sm} ${className ?? ""}`}
       />
     </>
-  );
+  )
 }
-
-

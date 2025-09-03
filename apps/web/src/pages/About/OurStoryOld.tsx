@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { PageType } from "@/components/navigation/types";
+import img1 from "@/assets/img1.jpg";
 
 function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, onSlideSelect }: {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
   onPrev: () => void;
   onSlideSelect: (index: number) => void;
 }) {
+
   return (
     <div className="relative h-[560px] rounded-[24px] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 shadow-2xl group">
       {/* Main Content */}
@@ -66,7 +68,7 @@ export function OurStoryOld({  }: { onNavigate: (page: PageType) => void }) {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-br from-white to-gray-50 py-16 px-4 md:px-12">
+    <div className="relative w-full bg-white py-16 px-4 md:px-12 -mt-1">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Text Content */}
         <div className="space-y-6">
@@ -97,7 +99,7 @@ export function OurStoryOld({  }: { onNavigate: (page: PageType) => void }) {
         >
           {/* Example slide content */}
           <img
-            src="https://plantingrootsrealty.com/wp-content/uploads/2025/01/20230526_100510-768x768.jpg"
+            src={img1}
             alt="20230526"
             className="object-cover w-full h-full"
           />

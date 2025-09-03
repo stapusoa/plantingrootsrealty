@@ -1,17 +1,15 @@
-import React from "react";
-import clsx from "clsx";
+import React from "react"
+import clsx from "clsx"
+import { overlayBaseClass, overlayHomeClass, overlayDarkClass } from "@/lib/styles"
+import type { OverlayProps } from "@/lib/types"
 
-type OverlayProps = {
-  className?: string;
-};
+export const Overlay: React.FC<OverlayProps> = ({ variant = "base", className }) => {
+  const overlayClass = clsx(
+    variant === "base" && overlayBaseClass,
+    variant === "home" && overlayHomeClass,
+    variant === "dark" && overlayDarkClass,
+    className
+  )
 
-export const Overlay: React.FC<OverlayProps> = ({ className }) => {
-  return (
-    <div
-      className={clsx(
-        "absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20 pointer-events-none",
-        className
-      )}
-    />
-  );
-};
+  return <div className={overlayClass} />
+}
