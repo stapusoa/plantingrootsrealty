@@ -1,18 +1,16 @@
 
 export function WaveSeparator() {
   return (
-    <div className="absolute bottom-0 left-[-0.051%] right-[-0.051%] top-0">
+    <div className="absolute z-20 w-full -translate-y-full">
       {/* Desktop SVG */}
       <svg
-        className="hidden md:block size-full"
+        className="hidden md:block w-full h-auto"
         fill="none"
         preserveAspectRatio="none"
         viewBox="0 0 1362 129"
       >
         <g>
           <svg
-            width="1360"
-            height="129"
             viewBox="0 0 1360 129"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

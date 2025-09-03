@@ -70,7 +70,7 @@ export function OurStorySection({ onNavigate }: { onNavigate: (page: PageType) =
   };
 
   return (
-    <div className="relative shrink-0 w-full bg-gradient-to-br from-white to-gray-50">
+    <div className="relative shrink-0 w-full bg-white">
       <div className="flex flex-col items-center relative size-full">
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[80px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">

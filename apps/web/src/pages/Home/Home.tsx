@@ -2,18 +2,20 @@ import { useState } from 'react';
 import { useFlags } from 'launchdarkly-react-client-sdk';
 import type { PageType } from "@/components/navigation/types";
 import {
-  HeroSection,
+  HomeHero,
   LogoCloud,
   ServiceAreas,
   OurStorySection,
   IconsModule,
-  BuyersGuide,
   TestimonialsSection,
   ResourcesSection,
   QuickContactSection,
+} from "@/lib/sections/index";
+import {
+  BuyersGuide,
   FAQSection,
-  Footer
-} from "./index";
+} from "@/pages/index";
+import { Footer } from "@/components/navigation/footer";
 import { OurStoryOld } from "@/pages/About/OurStoryOld";
 import { ContactFormOld } from "@/pages/Contact/ContactFormOld"
 import { TestimonialsOld } from "@/pages/Testimonials/TestimonialsOld";
@@ -44,7 +46,7 @@ export function Home({ onNavigate }: HomePageProps) {
         <div className="flex flex-col items-center relative size-full">
           <div className="box-border content-stretch flex flex-col items-center justify-start pb-0 pt-0 px-0 relative size-full">
             {/* DO NOT render <Navigation /> here */}
-            <HeroSection onNavigate={onNavigate} />
+            <HomeHero onNavigate={onNavigate} />
             <LogoCloud />
             <ServiceAreas />
             <OurStorySection onNavigate={onNavigate} />
@@ -60,7 +62,7 @@ export function Home({ onNavigate }: HomePageProps) {
       ) : (
         <div className="flex flex-col items-center relative size-full">
           <div className="box-border content-stretch flex flex-col items-center justify-start pb-0 pt-0 px-0 relative size-full">
-            <HeroSection onNavigate={onNavigate} />
+            <HomeHero onNavigate={onNavigate} />
             <OurStoryOld onNavigate={onNavigate} />
             <ContactFormOld />
             <TestimonialsOld />

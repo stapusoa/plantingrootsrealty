@@ -1,13 +1,1 @@
-export {BuyersGuide} from "@/pages/Guides/BuyersGuide";
-export {FAQSection} from "@/pages/FAQ/FAQSection";
-export {Footer} from "@/lib/layout/Footer";
-export {IconsModule} from "@/lib/sections/IconsModule";
-export {LogoCloud} from "@/lib/sections/LogoCloud";
-export {MarketStats} from "@/lib/sections/MarketStats";
-export {OurStorySection} from "@/lib/sections/OurStorySection";
-export {QuickContactSection} from "@/lib/sections/QuickContactSection";
-export {ResourcesSection} from "@/lib/sections/ResourcesSection";
-export {ServiceAreas} from "@/lib/sections/ServiceAreas";
-export {TestimonialsSection} from "@/lib/sections/TestimonialsSection";
-export {HeroSection} from "@/lib/sections/HomeHero";
 export { Home } from "./Home";
