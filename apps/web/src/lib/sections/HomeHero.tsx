@@ -1,5 +1,5 @@
 import type { PageType } from "@/components/navigation/types";
-import { HeroSection } from "@/lib/sections/Hero";
+import { HeroSection } from "@/lib/layout/Hero";
 import { WaveSeparator } from "@/components/separator/waveSeparator";
 
 import imageSM from "@/assets/bgHomeHero-sm.webp";

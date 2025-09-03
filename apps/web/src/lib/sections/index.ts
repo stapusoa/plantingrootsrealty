@@ -1,5 +1,5 @@
 export { HomeHero } from "@/lib/sections/HomeHero";
-export { HeroSection } from "@/lib/sections/Hero";
+export { HeroSection } from "@/lib/layout/Hero";
 export { IconsModule } from "@/lib/sections/IconsModule";
 export { LogoCloud } from "@/lib/sections/LogoCloud";
 export { MarketStats } from "@/lib/sections/MarketStats";

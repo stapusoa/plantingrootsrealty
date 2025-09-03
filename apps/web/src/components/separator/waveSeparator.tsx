@@ -7,7 +7,7 @@ export function WaveSeparator() {
         className="hidden md:block w-full h-auto"
         fill="none"
         preserveAspectRatio="none"
-        viewBox="0 0 1362 129"
+        viewBox="0 0 1360 129"
       >
         <g>
           <svg

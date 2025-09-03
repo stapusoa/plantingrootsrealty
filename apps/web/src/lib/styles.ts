@@ -14,16 +14,16 @@ export const heroBackgroundClass =
   "absolute bottom-0 left-0 right-0 top-0"
 
 export const heroInnerClass =
-"absolute left-1/2 translate-x-[-50%] translate-y-[-50%] w-[1280px] max-w-[90vw]"
+"absolute left-1/2 translate-x-[-50%] translate-y-[-50%] w-320 max-w-[90vw]"
 
 export const heroHeaderClass =
 "box-border content-stretch flex flex-col gap-8 items-center justify-center p-0 relative w-full"
 
 export const heroTitleClass =
-  "flex flex-col z-3 max-w-285 w-fullfont-['Merriweather'] text-6xl md:text-5xl sm:text-4xl justify-center not-italic relative shrink-0 text-white text-center w-full animate-fade-in"
+  "flex flex-col z-3 max-w-285 w-full font-merriweather text-6xl md:text-5xl sm:text-4xl justify-center not-italic relative shrink-0 text-white text-center w-full animate-fade-in"
 
 export const heroSubheaderClass =
-  "flex z-3 max-w-150 w-full mb-8 text-center font-['Karla:Regular',_sans-serif] text-white/90 text-[20px] leading-relaxed animate-fade-in"
+  "flex z-3 max-w-150 w-full mb-8 text-center font-karla text-white/90 text-[20px] leading-relaxed animate-fade-in"
 
 export const heroButtonClass =
   "bg-white/10 z-3 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg px-8 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
