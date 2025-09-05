@@ -1,5 +1,4 @@
 @theme {
-  --color-*: initial;
   --color-tangerine-100:#ffdbc2;
   --color-tangerine-200:#ffc088;
   --color-tangerine-300:#feac55;
@@ -72,10 +71,9 @@
   --color-mint-1000:#205735;
 
   /* Greyscale */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-contrast: #FFFFFF;
-  
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-contrast: #FFF;
   --color-neutral-50:#f6f5f7;
   --color-neutral-100:#f4f2f2;
   --color-neutral-200:#efefef;
@@ -87,13 +85,12 @@
   --color-neutral-800:#5b5757;
   --color-neutral-900:#424040;
   --color-neutral-1000:#2e2b2b;
-
-  --color-error-opacity: rgba(247, 90, 93, 0.08);
-  --color-primary-opacity: rgba(94, 70, 132, 0.08);
-  --color-secondary-opacity: rgba(45, 201, 201, 0.08);
-  --color-warning-opacity: rgba(240, 162, 2, 0.08);
-  --color-success-opacity: rgba(100, 238, 116, 0.08);
-  --color-info-opacity: rgba(34, 166, 211, 0.08);
+  --color-error-opacity: rgb(247 90 93 / 8%);
+  --color-primary-opacity: rgb(94 70 132 / 8%);
+  --color-secondary-opacity: rgb(45 201 201 / 8%);
+  --color-warning-opacity: rgb(240 162 2 / 8%);
+  --color-success-opacity: rgb(100 238 116 / 8%);
+  --color-info-opacity: rgb(34 166 211 / 8%);
 }
 
 :root {
@@ -170,10 +167,9 @@
   --color-mint-1000:#205735;
 
   /* Greyscale */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-contrast: #FFFFFF;
-  
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-contrast: #FFF;
   --color-neutral-50:#f6f5f7;
   --color-neutral-100:#f4f2f2;
   --color-neutral-200:#efefef;
@@ -185,15 +181,14 @@
   --color-neutral-800:#5b5757;
   --color-neutral-900:#424040;
   --color-neutral-1000:#2e2b2b;
-
-  --color-error-opacity: rgba(247, 90, 93, 0.08);
-  --color-primary-opacity: rgba(94, 70, 132, 0.08);
-  --color-secondary-opacity: rgba(45, 201, 201, 0.08);
-  --color-warning-opacity: rgba(240, 162, 2, 0.08);
-  --color-success-opacity: rgba(100, 238, 116, 0.08);
-  --color-info-opacity: rgba(34, 166, 211, 0.08);
-  --color-white-opacity: rgba(255, 255, 255, 0.40);
-  --color-black-opacity: rgba(0, 0, 0, 0.40);
+  --color-error-opacity: rgb(247 90 93 / 8%);
+  --color-primary-opacity: rgb(94 70 132 / 8%);
+  --color-secondary-opacity: rgb(45 201 201 / 8%);
+  --color-warning-opacity: rgb(240 162 2 / 8%);
+  --color-success-opacity: rgb(100 238 116 / 8%);
+  --color-info-opacity: rgb(34 166 211 / 8%);
+  --color-white-opacity: rgb(255 255 255 / 40%);
+  --color-black-opacity: rgb(0 0 0 / 40%);
 
     /* Brand Colors */
   --color-primary:var(--color-grape-800, #5e4684);
@@ -214,10 +209,9 @@
   --color-success-dark: var(--color-mint-600);
   --color-error-dark: var(--color-blush-500);
   --color-info-dark: var(--color-cyan-500);
-
-  --color-grape-300-opacity: rgba(184, 156, 226, 0.40);
-  --color-teal-200-opacity: rgba(147, 211, 208, 0.40);
-  --color-blush-300-opacity: rgba(247, 90, 93, 0.40);
+  --color-grape-300-opacity: rgb(184 156 226 / 40%);
+  --color-teal-200-opacity: rgb(147 211 208 / 40%);
+  --color-blush-300-opacity: rgb(247 90 93 / 40%);
   --color-grape-light: #DDD1EE;
   --color-teal-light: #CEE8E6;
   --color-blush-light: #F6B7B8;
@@ -297,10 +291,9 @@
   --color-mint-100:#205735;
 
   /* Greyscale */
-  --color-white: #000000;
-  --color-black: #FFFFFF;
-  --color-contrast: #000000;
-  
+  --color-white: #000;
+  --color-black: #FFF;
+  --color-contrast: #000;
   --color-neutral-1000:#f6f5f7;
   --color-neutral-900:#f4f2f2;
   --color-neutral-800:#efefef;
