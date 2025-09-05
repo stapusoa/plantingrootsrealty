@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority";
+import { cva } from "class-variance-authority"
 
 export const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-md font-karla font-medium tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 ring-offset-background",
@@ -61,4 +61,4 @@ export const buttonVariants = cva(
       icon: false,
     },
   }
-);
+)

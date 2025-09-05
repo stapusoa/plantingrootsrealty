@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/card/card";
-import { Button } from "@/components/button";
-import type { PageType } from "@/components/navigation/types";
+import { Card, CardContent } from "@/components/card/card"
+import { Button } from "@/components/button"
+import type { PageType } from "@/components/navigation/types"
 
 export function ResourcesSection({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   const resources = [
@@ -40,7 +40,7 @@ export function ResourcesSection({ onNavigate }: { onNavigate: (page: PageType) 
       icon: "💹",
       link: "#"
     }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-white">
@@ -91,5 +91,5 @@ export function ResourcesSection({ onNavigate }: { onNavigate: (page: PageType) 
         </div>
       </div>
     </div>
-  );
+  )
 }

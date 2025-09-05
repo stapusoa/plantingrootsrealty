@@ -89,5 +89,5 @@ export function ContactFormOld() {
         </form>
       </div>
     </div>
-  );
+  )
 }

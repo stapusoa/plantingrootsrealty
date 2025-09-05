@@ -6,6 +6,9 @@ import reactRefreshPlugin from 'eslint-plugin-react-refresh'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import regexpPlugin from 'eslint-plugin-regexp'
 import storybookPlugin from 'eslint-plugin-storybook'
+import prettierPkg from 'eslint-config-prettier'
+
+const prettierConfig = prettierPkg.flatConfig ?? []
 
 export default [
   {
@@ -44,14 +47,6 @@ export default [
       semi: ['error', 'never'],
     },
     settings: { react: { version: 'detect' } },
-    extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:react/recommended',
-      'plugin:jsx-a11y/recommended',
-      'plugin:storybook/recommended',
-      'prettier',
-    ],
   },
   {
     files: ['apps/api/**/*.{ts,tsx}'],
@@ -71,4 +66,5 @@ export default [
       semi: ['error', 'never'],
     },
   },
+  ...prettierConfig,
 ]

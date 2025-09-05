@@ -1,9 +1,9 @@
 // link.tsx
-import * as React from "react";
-import { Link as RouterLink } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { linkBaseStyles } from "./constants";
-import type { StyledLinkProps } from "./types";
+import * as React from "react"
+import { Link as RouterLink } from "react-router-dom"
+import { cn } from "@/lib/utils"
+import { linkBaseStyles } from "./constants"
+import type { StyledLinkProps } from "./types"
 
 const StyledLink = React.forwardRef<HTMLAnchorElement, StyledLinkProps>(
   ({ className, children, ...props }, ref) => {
@@ -15,10 +15,10 @@ const StyledLink = React.forwardRef<HTMLAnchorElement, StyledLinkProps>(
       >
         {children}
       </RouterLink>
-    );
+    )
   }
-);
+)
 
-StyledLink.displayName = "StyledLink";
+StyledLink.displayName = "StyledLink"
 
-export { StyledLink };
+export { StyledLink }

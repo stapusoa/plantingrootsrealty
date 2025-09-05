@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import type { PageType } from "@/components/navigation/types";
-import img1 from "@/assets/img1.jpg";
+import React, { useState } from 'react'
+import type { PageType } from "@/components/navigation/types"
+import img1 from "@/assets/img1.jpg"
 
 function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, onSlideSelect }: {
   children: React.ReactNode;
@@ -52,20 +52,20 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
         ))}
       </div>
     </div>
-  );
+  )
 }
 
 export function OurStoryOld({  }: { onNavigate: (page: PageType) => void }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 10;
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const totalSlides = 10
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+    setCurrentSlide((prev) => (prev + 1) % totalSlides)
+  }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }
 
   return (
     <div className="relative w-full bg-white py-16 px-4 md:px-12 -mt-1">
@@ -106,5 +106,5 @@ export function OurStoryOld({  }: { onNavigate: (page: PageType) => void }) {
         </ModernCarousel>
       </div>
     </div>
-  );
+  )
 }

@@ -1,41 +1,41 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { navitems, PHONE_NUMBER } from "./constants";
-import type { NavigationProps } from "./types";
-import logowhite from "@/assets/logo-contrast.webp";
-import logoprimary from "@/assets/logo-primary.webp";
-import { Icon } from "@/components/Icon/Icon";
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from "react-router-dom"
+import { cn } from "@/lib/utils"
+import { navitems, PHONE_NUMBER } from "./constants"
+import type { NavigationProps } from "./types"
+import logowhite from "@/assets/logo-contrast.webp"
+import logoprimary from "@/assets/logo-primary.webp"
+import { Icon } from "@/components/Icon/Icon"
 
 export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation()
+  const isHomePage = location.pathname === "/"
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
+    setIsMobileMenuOpen((prev) => !prev)
+  }
 
   const handleCallClick = () => {
     if (window.confirm(`Call ${PHONE_NUMBER}?`)) {
-      window.location.href = `tel:${PHONE_NUMBER}`;
+      window.location.href = `tel:${PHONE_NUMBER}`
     }
-  };
+  }
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > heroHeight);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [heroHeight]);
+    const handleScroll = () => setIsScrolled(window.scrollY > heroHeight)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [heroHeight])
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add('overflow-hidden')
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('overflow-hidden')
     }
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen])
 
   return (
     <>
@@ -50,7 +50,7 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
         <div className="flex flex-col items-center relative w-full">
           <div className="flex flex-row items-center justify-between max-w-6xl w-full px-8 py-4">
             {/* Logo */}
-            <Link to="/" onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }} className="h-full w-auto p-0 bg-transparent hover:scale-105 transition-transform flex items-center">
+            <Link to="/" onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false) }} className="h-full w-auto p-0 bg-transparent hover:scale-105 transition-transform flex items-center">
               <img
                 src={isHomePage ? logowhite : logoprimary}
                 alt="Planting Roots Realty"
@@ -61,7 +61,7 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
               {navitems.map((item) => {
                 const isActive =
                   (location.pathname === '/' && item.page === 'home') ||
-                  (item.page !== 'home' && location.pathname.includes(item.page));
+                  (item.page !== 'home' && location.pathname.includes(item.page))
                 return (
                   <li key={item.page} className="group">
                     <Link
@@ -82,7 +82,7 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
                       />
                     </Link>
                   </li>
-                );
+                )
               })}
             </ul>
             {/* Phone CTA and Mobile Menu Toggle Button Wrapper */}
@@ -152,7 +152,7 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
                 <li key={item.page}>
                   <Link
                     to={item.page === 'home' ? '/' : `/${item.page}`}
-                    onClick={() => { onNavigate(item.page); setIsMobileMenuOpen(false); }}
+                    onClick={() => { onNavigate(item.page); setIsMobileMenuOpen(false) }}
                     className="block text-white font-semibold text-lg py-2 hover:text-secondary transition"
                   >
                     {item.text}
@@ -164,5 +164,5 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
         </div>
       )}
     </>
-  );
+  )
 }

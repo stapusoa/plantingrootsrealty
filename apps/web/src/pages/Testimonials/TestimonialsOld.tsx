@@ -34,7 +34,7 @@ const testimonials = [
     name: "Brady M.",
     image: "https://plantingrootsrealty.com/wp-content/uploads/2024/12/PRR-Logo-2.png",
   },
-];
+]
 
 export function TestimonialsOld() {
   return (
@@ -64,5 +64,5 @@ export function TestimonialsOld() {
         </div>
       </div>
     </section>
-  );
+  )
 }

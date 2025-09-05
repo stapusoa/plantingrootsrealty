@@ -1,17 +1,17 @@
-import { useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
-import { useMarkdownPages } from "@/lib/cms/hooks/useMarkdownPages";
-import { HeroSection } from "@/lib/layout/Hero";
+import { useParams } from "react-router-dom"
+import ReactMarkdown from "react-markdown"
+import { useMarkdownPages } from "@/lib/cms/hooks/useMarkdownPages"
+import { HeroSection } from "@/lib/layout/Hero"
 
 export function MarkdownPage() {
-  const { slug } = useParams();
-  const pages = useMarkdownPages();
-  const page = pages.find((p) => p.slug === slug);
+  const { slug } = useParams()
+  const pages = useMarkdownPages()
+  const page = pages.find((p) => p.slug === slug)
 
-  console.log("Available pages:", pages.map((p) => p.slug));
-  console.log("Current slug from URL:", slug);
+  console.log("Available pages:", pages.map((p) => p.slug))
+  console.log("Current slug from URL:", slug)
 
-  if (!page) return <p>Loading page...</p>;
+  if (!page) return <p>Loading page...</p>
 
   const {
     title,
@@ -21,7 +21,7 @@ export function MarkdownPage() {
     heroImageSM,
     heroImageMD,
     heroImageLG,
-  } = page.data;
+  } = page.data
 
   return (
     <div className="flex flex-col items-center relative size-full">
@@ -33,10 +33,10 @@ export function MarkdownPage() {
             buttonText={heroButtonText}
             onButtonClick={() => {
               if (heroButtonLink?.startsWith("#")) {
-                const target = document.querySelector(heroButtonLink);
-                target?.scrollIntoView({ behavior: "smooth" });
+                const target = document.querySelector(heroButtonLink)
+                target?.scrollIntoView({ behavior: "smooth" })
               } else if (heroButtonLink) {
-                window.location.href = heroButtonLink;
+                window.location.href = heroButtonLink
               }
             }}
             images={{
@@ -55,5 +55,5 @@ export function MarkdownPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

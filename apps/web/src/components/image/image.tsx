@@ -24,7 +24,7 @@ export const Image: React.FC<ImageProps> = ({
       ? fallbackSrc
       : typeof src === "string"
         ? src
-        : src?.url || fallbackSrc;
+        : src?.url || fallbackSrc
 
   return (
     <div

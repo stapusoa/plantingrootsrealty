@@ -1,9 +1,9 @@
-import imgLogo from "@/assets/Logo 1.png";
-import imgLogo1 from "@/assets/Logo 2.png";
-import imgLogo2 from "@/assets/Logo 3.png";
-import imgLogo3 from "@/assets/Logo 4.png";
-import imgLogo4 from "@/assets/Logo 5.png";
-import imgLogo5 from "@/assets/Logo 6.png";
+import imgLogo from "@/assets/Logo 1.png"
+import imgLogo1 from "@/assets/Logo 2.png"
+import imgLogo2 from "@/assets/Logo 3.png"
+import imgLogo3 from "@/assets/Logo 4.png"
+import imgLogo4 from "@/assets/Logo 5.png"
+import imgLogo5 from "@/assets/Logo 6.png"
 
 export function LogoCloud() {
   return (
@@ -32,5 +32,5 @@ export function LogoCloud() {
         </div>
       </div>
     </div>
-  );
+  )
 }

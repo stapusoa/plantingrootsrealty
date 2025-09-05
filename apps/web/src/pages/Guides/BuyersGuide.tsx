@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/card/card";
-import { Button } from "@/components/button";
-import type { PageType } from "@/components/navigation/types";
+import { Card, CardContent } from "@/components/card/card"
+import { Button } from "@/components/button"
+import type { PageType } from "@/components/navigation/types"
 
 export function BuyersGuide({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   const steps = [
@@ -40,7 +40,7 @@ export function BuyersGuide({ onNavigate }: { onNavigate: (page: PageType) => vo
       description: "Complete the final paperwork and get the keys to your new home!",
       icon: "🔑"
     }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-white">
@@ -93,5 +93,5 @@ export function BuyersGuide({ onNavigate }: { onNavigate: (page: PageType) => vo
         </div>
       </div>
     </div>
-  );
+  )
 }

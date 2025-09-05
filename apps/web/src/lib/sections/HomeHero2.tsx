@@ -1,10 +1,10 @@
-import type { PageType } from "@/components/navigation/types";
-import {Hero} from '@/lib/layout/Hero2';
-import { WaveSeparator } from "@/components/separator/waveSeparator";
+import type { PageType } from "@/components/navigation/types"
+import {Hero} from '@/lib/layout/Hero2'
+import { WaveSeparator } from "@/components/separator/waveSeparator"
 
-import imageSM from "@/assets/bgHomeHero-sm.webp";
-import imageMD from "@/assets/bgHomeHero-md.webp";
-import imageLG from "@/assets/bgHomeHero-lg.webp";
+import imageSM from "@/assets/bgHomeHero-sm.webp"
+import imageMD from "@/assets/bgHomeHero-md.webp"
+import imageLG from "@/assets/bgHomeHero-lg.webp"
 
 export function HomeHero2({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   return (
@@ -42,5 +42,5 @@ export function HomeHero2({ onNavigate }: { onNavigate: (page: PageType) => void
     >
       <WaveSeparator />
     </Hero>
-  );
+  )
 }

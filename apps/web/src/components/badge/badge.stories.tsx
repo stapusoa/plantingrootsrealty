@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from './badge';
-import type { BadgeProps } from './types';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Badge } from './badge'
+import type { BadgeProps } from './types'
 
 const meta: Meta<BadgeProps> = {
   title: 'Components/Badge',
@@ -34,9 +34,9 @@ const meta: Meta<BadgeProps> = {
     children: 'New',
     withPointer: false,
   },
-};
+}
 
-export default meta;
+export default meta
 
 type Story = StoryObj<BadgeProps>;
 
@@ -49,4 +49,4 @@ export const Default: Story = {
     variant: "filled",
     withPointer: false,
   },
-};
+}

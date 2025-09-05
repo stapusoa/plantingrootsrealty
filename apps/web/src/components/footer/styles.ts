@@ -18,7 +18,7 @@ const styles = {
   nav: "flex flex-wrap justify-center gap-6",
   navLink: "text-gray-600 hover:text-gray-900 transition",
   copyright: "mt-8 text-center text-gray-400 text-sm",
-};
+}
 
-export default styles;
+export default styles
 

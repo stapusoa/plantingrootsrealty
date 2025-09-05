@@ -66,6 +66,6 @@ export const Interactive: Story = {
         </Pagination>
       )
     }
-    return <PaginationExample />;
+    return <PaginationExample />
   }
 }
