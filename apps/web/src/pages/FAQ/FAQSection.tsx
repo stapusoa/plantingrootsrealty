@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/accordion";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/accordion"
 
 export function FAQSection() {
   const faqs = [
@@ -26,7 +26,7 @@ export function FAQSection() {
       question: "How do you determine the right listing price for my home?",
       answer: "I conduct a comprehensive market analysis looking at recent sales, current competition, market trends, and your home's unique features. This data-driven approach ensures we price your home competitively to attract buyers while maximizing your return."
     }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-gradient-to-br from-white to-gray-50">
@@ -62,5 +62,5 @@ export function FAQSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Badge } from "@/components/badge/badge";
-import { Button } from "@/components/button";
-import type { PageType } from "@/components/navigation/types";
-import imgImgOurStory1 from "@/assets/img1.jpg";
+import React, { useState } from 'react'
+import { Badge } from "@/components/badge/badge"
+import { Button } from "@/components/button"
+import type { PageType } from "@/components/navigation/types"
+import imgImgOurStory1 from "@/assets/img1.jpg"
 
 function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, onSlideSelect }: {
   children: React.ReactNode;
@@ -54,20 +54,20 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
         ))}
       </div>
     </div>
-  );
+  )
 }
 
 export function OurStorySection({ onNavigate }: { onNavigate: (page: PageType) => void }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 10;
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const totalSlides = 10
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+    setCurrentSlide((prev) => (prev + 1) % totalSlides)
+  }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }
 
   return (
     <div className="relative shrink-0 w-full bg-white">
@@ -132,5 +132,5 @@ export function OurStorySection({ onNavigate }: { onNavigate: (page: PageType) =
         </div>
       </div>
     </div>
-  );
+  )
 }

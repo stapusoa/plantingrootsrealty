@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useFlags } from 'launchdarkly-react-client-sdk';
-import type { PageType } from "@/components/navigation/types";
+import { useState } from 'react'
+import { useFlags } from 'launchdarkly-react-client-sdk'
+import type { PageType } from "@/components/navigation/types"
 import {
   HomeHero,
   LogoCloud,
@@ -10,26 +10,26 @@ import {
   TestimonialsSection,
   ResourcesSection,
   QuickContactSection,
-} from "@/lib/sections/index";
+} from "@/lib/sections/index"
 import {
   BuyersGuide,
   FAQSection,
-} from "@/pages/index";
-import { Footer } from "@/components/navigation/footer";
-import { OurStoryOld } from "@/pages/About/OurStoryOld";
+} from "@/pages/index"
+import { Footer } from "@/components/navigation/footer"
+import { OurStoryOld } from "@/pages/About/OurStoryOld"
 import { ContactFormOld } from "@/pages/Contact/ContactFormOld"
-import { TestimonialsOld } from "@/pages/Testimonials/TestimonialsOld";
-import {HomeHero2} from '@/lib/sections/HomeHero2';
+import { TestimonialsOld } from "@/pages/Testimonials/TestimonialsOld"
+import {HomeHero2} from '@/lib/sections/HomeHero2'
 
 interface HomePageProps {
   onNavigate: (page: PageType) => void;
 }
 
 export function Home({ onNavigate }: HomePageProps) {
-  const { enableHome001 = false } = useFlags();
-  const [override, setOverride] = useState(false);
+  const { enableHome001 = false } = useFlags()
+  const [override, setOverride] = useState(false)
 
-  const showNewHome = override || enableHome001;
+  const showNewHome = override || enableHome001
 
   return (
     <div className="bg-white relative size-full">
@@ -73,5 +73,5 @@ export function Home({ onNavigate }: HomePageProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

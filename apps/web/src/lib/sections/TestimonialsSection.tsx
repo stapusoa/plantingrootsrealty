@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/card/card";
-import { ImageWithFallback } from "@/assets/ImageWithFallback";
+import { Card, CardContent } from "@/components/card/card"
+import { ImageWithFallback } from "@/assets/ImageWithFallback"
 
 export function TestimonialsSection() {
   const testimonials = [
@@ -31,7 +31,7 @@ export function TestimonialsSection() {
       rating: 5,
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
     }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-gradient-to-br from-gray-50 to-gray-100">
@@ -86,5 +86,5 @@ export function TestimonialsSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }

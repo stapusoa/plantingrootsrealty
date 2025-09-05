@@ -87,7 +87,7 @@ export function CardImage({
         style={background ? { filter: "brightness(0.8)" } : undefined}
       />
     </div>
-  );
+  )
 }
 
 const iconMap = {

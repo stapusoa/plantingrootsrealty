@@ -1,9 +1,9 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/card/card";
-import { Button } from "@/components/button";
-import { Input } from "@/components/input/input";
-import { Textarea } from "@/components/textarea/textarea";
-import { Label } from "@/components/label/label";
-import type { PageType } from "@/components/navigation/types";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/card/card"
+import { Button } from "@/components/button"
+import { Input } from "@/components/input/input"
+import { Textarea } from "@/components/textarea/textarea"
+import { Label } from "@/components/label/label"
+import type { PageType } from "@/components/navigation/types"
 
 export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   return (
@@ -93,5 +93,5 @@ export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageTyp
         </div>
       </div>
     </div>
-  );
+  )
 }

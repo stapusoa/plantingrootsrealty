@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "@/pages/Home";
-import { SanityPage } from "@/lib/cms/components/PageLayout";
-import "./index.css";
-import { Navigation } from "@/components/navigation";
-import type { PageType } from "@/components/navigation/types";
-import { withLDProvider } from "launchdarkly-react-client-sdk";
-import RealEstateGallery from "@/pages/Listings/Gallery";
-import { About } from "@/pages/About/About";
-import { Blog } from "@/pages/Blog/Blog";
-import { ContactPage } from "@/pages/Contact/ContactPage";
+import React, { useState } from "react"
+import ReactDOM from "react-dom/client"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Home } from "@/pages/Home"
+import { SanityPage } from "@/lib/cms/components/PageLayout"
+import "./index.css"
+import { Navigation } from "@/components/navigation"
+import type { PageType } from "@/components/navigation/types"
+import { withLDProvider } from "launchdarkly-react-client-sdk"
+import RealEstateGallery from "@/pages/Listings/Gallery"
+import { About } from "@/pages/About/About"
+import { Blog } from "@/pages/Blog/Blog"
+import { ContactPage } from "@/pages/Contact/ContactPage"
 import { Footer } from '@/components/navigation/footer'
-import ListingDetails from "@/pages/Listings/ListingDetails";
+import ListingDetails from "@/pages/Listings/ListingDetails"
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<PageType>('home');
-  const handleNavigate = (page: PageType) => setCurrentPage(page);
+  const [currentPage, setCurrentPage] = useState<PageType>('home')
+  const handleNavigate = (page: PageType) => setCurrentPage(page)
 
   return (
     <>
@@ -34,7 +34,7 @@ function App() {
       </Routes>
       <Footer onNavigate={handleNavigate} />
     </>
-  );
+  )
 }
 
 const LDApp = withLDProvider({
@@ -48,10 +48,10 @@ const LDApp = withLDProvider({
       <App />
     </BrowserRouter>
   </React.StrictMode>
-));
+))
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <LDApp />
-);
+)
 
-export { App };
+export { App }

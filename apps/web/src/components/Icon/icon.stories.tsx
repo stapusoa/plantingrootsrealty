@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from './Icon';
-import { IconMapping } from './mapping';
-import type { AvailableIcons } from './mapping';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Icon } from './Icon'
+import { IconMapping } from './mapping'
+import type { AvailableIcons } from './mapping'
 
-const iconNames = Object.keys(IconMapping) as AvailableIcons[];
+const iconNames = Object.keys(IconMapping) as AvailableIcons[]
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -22,15 +22,15 @@ const meta: Meta<typeof Icon> = {
     name: iconNames[0],
     size: 'md',
   },
-};
+}
 
-export default meta;
+export default meta
 
 type Story = StoryObj<typeof Icon>;
 
 export const Default: Story = {
   args: {},
-};
+}
 
 export const AllIcons: Story = {
   render: (args) => (
@@ -46,4 +46,4 @@ export const AllIcons: Story = {
   args: {
     size: 'md',
   },
-};
+}

@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import { badgeVariants } from "./styles";
-import type { BadgeProps } from "./types";
+import { cn } from "@/lib/utils"
+import { badgeVariants } from "./styles"
+import type { BadgeProps } from "./types"
 
 export function Badge({
   children,
@@ -22,5 +22,5 @@ export function Badge({
     >
       {children}
     </span>
-  );
+  )
 }

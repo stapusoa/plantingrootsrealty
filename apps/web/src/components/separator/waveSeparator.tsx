@@ -69,5 +69,5 @@ export function WaveSeparator() {
         />
       </svg>
     </div>
-  );
+  )
 }

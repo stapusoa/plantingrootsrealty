@@ -32,15 +32,15 @@ export const HERO_CONTENT_STYLES = {
 export const HERO_VARIANT_STYLES: Record<string, string> = {
   fullscreen: "relative w-full h-screen overflow-hidden flex items-center justify-center",
   section: "relative w-full overflow-hidden flex items-center justify-center",
-};
+}
 
 export const HERO_ALIGNMENT_STYLES: Record<string, string> = {
   center: "items-center justify-center text-center",
   left: "items-start justify-start text-left",
   right: "items-end justify-end text-right",
-};
+}
 
 export const HERO_LAYOUT_STYLES: Record<string, string> = {
   default: "flex-col",
   columns: "grid grid-cols-2 gap-8",
-};
+}

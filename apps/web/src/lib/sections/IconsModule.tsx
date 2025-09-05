@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/card/card";
+import { Card, CardContent } from "@/components/card/card"
 
 export function IconsModule() {
   const features = [
@@ -18,7 +18,7 @@ export function IconsModule() {
       title: "Transaction Management",
       description: "Expert handling of all paperwork and processes to ensure smooth transactions."
     }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-gradient-to-br from-white to-gray-50">
@@ -64,5 +64,5 @@ export function IconsModule() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/card/card";
+import { Card, CardContent } from "@/components/card/card"
 
 export function ServiceAreas() {
   const areas = [
@@ -10,7 +10,7 @@ export function ServiceAreas() {
     { city: "Alpine", description: "Luxury homes with mountain views" },
     { city: "Springville", description: "Art community with historic charm" },
     { city: "Payson", description: "Growing family communities" }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-white">
@@ -48,5 +48,5 @@ export function ServiceAreas() {
         </div>
       </div>
     </div>
-  );
+  )
 }

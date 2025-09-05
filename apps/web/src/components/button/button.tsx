@@ -1,8 +1,8 @@
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "./styles";
+import * as React from "react"
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "./styles"
 import type { ButtonProps } from './types'
-import { Icon } from "@/components/Icon/Icon";
+import { Icon } from "@/components/Icon/Icon"
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -42,7 +42,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <span className="flex items-center justify-center gap-2">{children}</span>
         )}
       </Comp>
-    );
+    )
   }
-);
-Button.displayName = "Button";
+)
+Button.displayName = "Button"

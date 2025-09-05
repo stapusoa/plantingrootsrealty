@@ -1,6 +1,6 @@
-import { Button } from "@/components/button";
-import { Separator } from "@/components/separator/separator";
-import type { PageType } from "@/components/navigation/types";
+import { Button } from "@/components/button"
+import { Separator } from "@/components/separator/separator"
+import type { PageType } from "@/components/navigation/types"
 
 export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   return (
@@ -141,5 +141,5 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
         </div>
       </div>
     </footer>
-  );
+  )
 }

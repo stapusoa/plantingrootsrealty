@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
-import type { ButtonProps } from './types';
-import { Icon } from '@/components/Icon/Icon';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './button'
+import type { ButtonProps } from './types'
+import { Icon } from '@/components/Icon/Icon'
 
 const meta: Meta<ButtonProps> = {
   title: 'Components/Button',
@@ -37,29 +37,29 @@ const meta: Meta<ButtonProps> = {
     icon: false,
     children: 'Button',
   },
-};
+}
 
-export default meta;
+export default meta
 
 type Story = StoryObj<ButtonProps>;
 
 export const Default: Story = {
   args: {},
-};
+}
 
 export const Loading: Story = {
   args: {
     loading: true,
     children: 'Loading…',
   },
-};
+}
 
 export const Disabled: Story = {
   args: {
     disabled: true,
     children: 'Disabled',
   },
-};
+}
 
 export const IconButton: Story = {
   args: {
@@ -67,4 +67,4 @@ export const IconButton: Story = {
     children: <Icon name="phone" size="md" />,
     'aria-label': 'phone',
   },
-};
+}

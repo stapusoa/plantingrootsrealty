@@ -6,7 +6,7 @@ export function MarketStats() {
     { number: "$85M+", label: "Total Sales Volume", icon: "💰" },
     { number: "98%", label: "Client Satisfaction", icon: "⭐" },
     { number: "6", label: "Years Experience", icon: "📈" }
-  ];
+  ]
 
   return (
     <div className="relative shrink-0 w-full bg-gradient-to-r from-[#5e4684] to-[#7a5ba8]">
@@ -34,5 +34,5 @@ export function MarketStats() {
         </div>
       </div>
     </div>
-  );
+  )
 }

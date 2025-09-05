@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import { PortableText, type PortableTextComponents } from "@portabletext/react";
-import { useSanityPage } from "@/lib/cms/hooks/useSanityPages";
-import { useEffect } from "react";
+import { useParams } from "react-router-dom"
+import { PortableText, type PortableTextComponents } from "@portabletext/react"
+import { useSanityPage } from "@/lib/cms/hooks/useSanityPages"
+import { useEffect } from "react"
 
 type TextBlock = {
   _type: "textBlock";
@@ -22,48 +22,48 @@ type ImageBlock = {
 type PageContentBlock = TextBlock | ImageBlock;
 
 export function SanityPage() {
-  const { slug } = useParams<{ slug: string }>();
-  const page = useSanityPage(slug);
-  console.log("Fetched page:", page);
+  const { slug } = useParams<{ slug: string }>()
+  const page = useSanityPage(slug)
+  console.log("Fetched page:", page)
 
   // Helper to set or create meta tags
   const setMetaTag = (nameOrProperty: string, content: string, isProperty = false) => {
-    if (!content) return;
+    if (!content) return
     const selector = isProperty
       ? `meta[property="${nameOrProperty}"]`
-      : `meta[name="${nameOrProperty}"]`;
-    let tag = document.querySelector(selector) as HTMLMetaElement | null;
+      : `meta[name="${nameOrProperty}"]`
+    let tag = document.querySelector(selector) as HTMLMetaElement | null
     if (!tag) {
-      tag = document.createElement("meta");
-      if (isProperty) tag.setAttribute("property", nameOrProperty);
-      else tag.name = nameOrProperty;
-      document.head.appendChild(tag);
+      tag = document.createElement("meta")
+      if (isProperty) tag.setAttribute("property", nameOrProperty)
+      else tag.name = nameOrProperty
+      document.head.appendChild(tag)
     }
-    tag.content = content;
-  };
+    tag.content = content
+  }
 
   // SEO meta updates
   useEffect(() => {
-    if (!page) return;
+    if (!page) return
 
-    document.title = page.title || "Untitled Page";
-    setMetaTag("description", page.metaDescription || "");
-    setMetaTag("og:title", page.title || "", true);
-    setMetaTag("og:description", page.metaDescription || "", true);
-    setMetaTag("og:image", page.hero?.heroImageSM?.asset?.url || "", true);
-    setMetaTag("og:type", "website", true);
+    document.title = page.title || "Untitled Page"
+    setMetaTag("description", page.metaDescription || "")
+    setMetaTag("og:title", page.title || "", true)
+    setMetaTag("og:description", page.metaDescription || "", true)
+    setMetaTag("og:image", page.hero?.heroImageSM?.asset?.url || "", true)
+    setMetaTag("og:type", "website", true)
 
     // Canonical link
-    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     if (!linkCanonical) {
-      linkCanonical = document.createElement("link");
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
+      linkCanonical = document.createElement("link")
+      linkCanonical.rel = "canonical"
+      document.head.appendChild(linkCanonical)
     }
-    linkCanonical.href = page.canonicalUrl || `${window.location.origin}/${slug}`;
-  }, [page, slug]);
+    linkCanonical.href = page.canonicalUrl || `${window.location.origin}/${slug}`
+  }, [page, slug])
 
-  if (!page) return <p>Loading...</p>;
+  if (!page) return <p>Loading...</p>
 
   const portableComponents: Partial<PortableTextComponents> = {
     block: {
@@ -74,7 +74,7 @@ export function SanityPage() {
       h5: ({ children }) => <h5 className="font-semibold text-lg mb-2">{children}</h5>,
       h6: ({ children }) => <h6 className="font-semibold text-base mb-2">{children}</h6>,
     },
-  };
+  }
 
   return (
     <div className="min-h-screen mt-50 bg-gray-50 py-16">
@@ -169,7 +169,7 @@ export function SanityPage() {
                   </div>
                 )}
               </div>
-            );
+            )
           }
 
           if (block._type === "imageBlock") {
@@ -185,12 +185,12 @@ export function SanityPage() {
               >
                 <img src={block.asset.url} alt={block.alt || ""} className="rounded mb-4" />
               </div>
-            );
+            )
           }
 
-          return null;
+          return null
         })}
       </div>
     </div>
-  );
+  )
 }

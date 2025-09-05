@@ -1,12 +1,12 @@
-import type { VariantProps } from "class-variance-authority";
-import type { badgeVariants } from "./styles";
+import type { VariantProps } from "class-variance-authority"
+import type { badgeVariants } from "./styles"
 import type {
   BadgeColor,
   BadgeSize,
   BadgeVariant,
   BadgeShape,
   BadgePointer,
-} from "./constants";
+} from "./constants"
 
 type BadgeCvaProps = VariantProps<typeof badgeVariants>;
 
