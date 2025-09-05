@@ -1,11 +1,11 @@
-import tsParser from '@typescript-eslint/parser';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import reactRefreshPlugin from 'eslint-plugin-react-refresh';
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
-import regexpPlugin from 'eslint-plugin-regexp';
-import storybookPlugin from 'eslint-plugin-storybook';
+import tsParser from '@typescript-eslint/parser'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import reactRefreshPlugin from 'eslint-plugin-react-refresh'
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import regexpPlugin from 'eslint-plugin-regexp'
+import storybookPlugin from 'eslint-plugin-storybook'
 
 export default [
   {
@@ -41,26 +41,34 @@ export default [
       'jsx-a11y/anchor-has-content': 'error',
       'regexp/no-dupe-characters-character-class': 'error',
       'regexp/strict': 'error',
+      semi: ['error', 'never'],
     },
     settings: { react: { version: 'detect' } },
+    extends: [
+      'eslint:recommended',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:react/recommended',
+      'plugin:jsx-a11y/recommended',
+      'plugin:storybook/recommended',
+      'prettier',
+    ],
   },
-   {
+  {
     files: ['apps/api/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: './apps/api/tsconfig.json', // 👈 use API tsconfig here
+        project: './apps/api/tsconfig.json',
         tsconfigRootDir: process.cwd(),
         ecmaVersion: 2020,
         sourceType: 'module',
       },
     },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
+    plugins: { '@typescript-eslint': tsPlugin },
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'off',
+      semi: ['error', 'never'],
     },
   },
-];
+]
