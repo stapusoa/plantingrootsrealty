@@ -14,7 +14,32 @@ module.exports = {
           "variants",
           "responsive",
           "screen",
-          "layer"
+          "layer",
+          "custom-variant",
+          "theme",
+          "themecss",
+          "utility",
+          "utilities",
+          "component",
+          "components",
+          "base",
+          "basecss",
+          "config",
+          "keyframes",
+          "font-face",
+          "import",
+          "supports",
+          "media",
+          "container",
+          "mixin",
+          "include",
+          "function",
+          "return",
+          "if",
+          "else",
+          "each",
+          "for",
+          "while"
         ]
       }
     ]
