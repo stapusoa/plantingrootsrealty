@@ -19,6 +19,8 @@ import { Footer } from "@/components/navigation/footer";
 import { OurStoryOld } from "@/pages/About/OurStoryOld";
 import { ContactFormOld } from "@/pages/Contact/ContactFormOld"
 import { TestimonialsOld } from "@/pages/Testimonials/TestimonialsOld";
+import {HomeHero2} from '@/lib/sections/HomeHero2';
+
 interface HomePageProps {
   onNavigate: (page: PageType) => void;
 }
@@ -46,7 +48,8 @@ export function Home({ onNavigate }: HomePageProps) {
         <div className="flex flex-col items-center relative size-full">
           <div className="box-border content-stretch flex flex-col items-center justify-start pb-0 pt-0 px-0 relative size-full">
             {/* DO NOT render <Navigation /> here */}
-            <HomeHero onNavigate={onNavigate} />
+            {/*<HomeHero onNavigate={onNavigate} /> */}
+            <HomeHero2 onNavigate={onNavigate} />
             <LogoCloud />
             <ServiceAreas />
             <OurStorySection onNavigate={onNavigate} />
