@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.3.0...v1.4.0) (2025-09-05)
+
+
+### Features
+
+* add new Hero component for testing ([d9189ea](https://github.com/stapusoa/plantingrootsrealty/commit/d9189eaeb401a8a58dbd7fe6db482eb06a03e67b))
+
 # [1.3.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.2.14...v1.3.0) (2025-09-03)
 
 
