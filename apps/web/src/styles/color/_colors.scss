@@ -1,0 +1,107 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+
+$palettes: (
+  "tangerine": (
+    "100": #ffdbc2, "200": #ffc088, "300": #feac55, "400": #ff9421, "500": #ff9537,
+    "600": #fb8429, "700": #d96c39, "800": #cf5c27, "900": #ba4914, "1000": #903a12
+  ),
+  "sunset": (
+    "100": #ffe2a7, "200": #ffce68, "300": #ffbe39, "400": #feb92c, "500": #f0a202,
+    "600": #db9c08, "700": #d78e06, "800": #c5790f, "900": #ad6008, "1000": #6d3a0e
+  ),
+  "cyan": (
+    "100": #baeeff, "200": #75d7f7, "300": #50c8f1, "400": #3ac4f4, "500": #22a6d3,
+    "600": #1d8baf, "700": #217f9f, "800": #14617b, "900": #11546a, "1000": #0b3948
+  ),
+  "blush": (
+    "100": #ffd6d7, "200": #ffb4b6, "300": #f75a5d, "400": #d13d40, "500": #c52b2e,
+    "600": #c92530, "700": #ae172e, "800": #a8122d, "900": #811123, "1000": #671213
+  ),
+  "teal": (
+    "100": #d1ffff, "200": #93d3d0, "300": #82c5be, "400": #45a9a7, "500": #3b918f,
+    "600": #2e8281, "700": #23706f, "800": #1f6c69, "900": #126367, "1000": #0b5054
+  ),
+  "grape": (
+    "100": #f7e8ff, "200": #d5b4ee, "300": #b89ce2, "400": #a589ce, "500": #9c80c5,
+    "600": #7d5fab, "700": #7254a0, "800": #5e4684, "900": #43315e, "1000": #302343
+  ),
+  "mint": (
+    "100": #deffe1, "200": #c4feca, "300": #9df994, "400": #75f673, "500": #64ee74,
+    "600": #51dc61, "700": #3ecb73, "800": #3da364, "900": #30794c, "1000": #205735
+  ),
+  "neutral": (
+    "100": #f4f2f2, "200": #efefef, "300": #ebebeb, "400": #ccc9c9, "500": #bdbcbc,
+    "600": #9b9898, "700": #7e7b7b, "800": #5b5757, "900": #424040, "1000": #2e2b2b
+  )
+);
+
+$opacities: (
+  error: 0.08,
+  primary: 0.08,
+  secondary: 0.08,
+  warning: 0.08,
+  success: 0.08,
+  info: 0.08
+);
+
+@function reverse($list) {
+  $result: ();
+  @for $i from list.length($list) through 1 {
+    $result: list.append($result, list.nth($list, $i));
+  }
+  @return $result;
+}
+
+@function str-to-number($str) {
+  @if meta.type-of($str) == "string" {
+    @return $str + 0;
+  }
+  @return $str;
+}
+
+@function reverse-shade($shades, $shade) {
+  $keys: map.keys($shades);
+  $found-index: null;
+
+  @for $i from 1 through list.length($keys) {
+    @if str-to-number(list.nth($keys, $i)) == $shade and $found-index == null {
+      $found-index: $i;
+    }
+  }
+
+  @if $found-index == null {
+    @return map.get($shades, $shade);
+  }
+
+  $reversed-keys: reverse($keys);
+  @return map.get($shades, list.nth($reversed-keys, $found-index));
+}
+
+%color-utilities {
+  @each $name, $shades in $palettes {
+    @each $shade, $color in $shades {
+      .bg-#{$name}-#{$shade} { background-color: #{$color}; }
+      .hover\:bg-#{$name}-#{$shade}:hover { background-color: #{$color}; }
+
+      .dark .dark\:bg-#{$name}-#{$shade} { background-color: #{reverse-shade($shades, $shade)}; }
+      .dark .hover\:dark\:bg-#{$name}-#{$shade}:hover { background-color: #{reverse-shade($shades, $shade)}; }
+
+      .border-#{$name}-#{$shade} { border-color: #{$color}; }
+      .hover\:border-#{$name}-#{$shade}:hover { border-color: #{$color}; }
+      .dark .dark\:border-#{$name}-#{$shade} { border-color: #{reverse-shade($shades, $shade)}; }
+      .dark .hover\:dark\:border-#{$name}-#{$shade}:hover { border-color: #{reverse-shade($shades, $shade)}; }
+
+      .text-#{$name}-#{$shade} { color: #{$color}; }
+      .hover\:text-#{$name}-#{$shade}:hover { color: #{$color}; }
+      .dark .dark\:text-#{$name}-#{$shade} { color: #{reverse-shade($shades, $shade)}; }
+      .dark .hover\:dark\:text-#{$name}-#{$shade}:hover { color: #{reverse-shade($shades, $shade)}; }
+    }
+  }
+}
+
+[disabled], .disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

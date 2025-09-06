@@ -1,18 +1,4 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "@/styles/colors.css";
-@import "@/styles/colorBgUtils.css";
-@import "@/styles/colorTextUtils.css";
-@import "@/styles/colorBorderUtils.css";
+@import '@/styles/colors';
 @import "@/styles/layout.css";
 @import "@/styles/typography.css";
-
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius: 0.625rem;
-}
+@import "@/styles/elevations.css";

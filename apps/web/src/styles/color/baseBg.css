@@ -1,0 +1,27 @@
+@utility bg-default {
+  background-color: var(--color-white);
+}
+
+@utility bg-content {
+  background-color: var(--color-neutral-100);
+}
+
+@utility bg-body {
+  background-color: var(--color-neutral-400);
+}
+
+@utility bg-subtle {
+  background-color: var(--color-neutral-50);
+}
+
+@utility bg-disabled {
+  background-color: var(--color-neutral-100);
+}
+
+@utility bg-white {
+  background-color: var(--color-white);
+}
+
+@utility bg-black {
+  background-color: var(--color-black);
+}

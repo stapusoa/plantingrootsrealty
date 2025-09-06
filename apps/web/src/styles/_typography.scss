@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
+
+$fonts: (
+  merriweather: ("Merriweather", serif),
+  karla: ("Karla", sans-serif)
+);
+
+$font-sizes: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.25rem,
+  2xl: 1.5rem,
+  3xl: 1.75rem,
+  4xl: 2rem,
+  5xl: 2.5rem,
+  6xl: 3rem,
+  7xl: 3.5rem,
+  8xl: 4rem
+);
+
+$line-heights: (
+  cozy: 1.08,
+  tighter: 1.15,
+  tight: 1.25,
+  snug: 1.375,
+  normal: 1.5,
+  relaxed: 1.625
+);
+
+$tracking: (
+  tight: -0.015em,
+  normal: 0,
+  wide: 0.025em,
+  wider: 0.05em,
+  widest: 0.1em,
+  ultra: 0.2em,
+  mega: 0.3em
+);
+
+@each $size-name, $size in $font-sizes {
+  .text-#{$size-name} {
+    font-size: $size;
+  }
+}
+
+.font-merriweather { font-family: map.get($fonts, "merriweather"); }
+.font-karla { font-family: map.get($fonts, "karla"); }
+
+.typography {
+  p {
+    font-family: map.get($fonts, "karla");
+    font-size: map.get($font-sizes, "base");
+    line-height: map.get($line-heights, "tight");
+    color: var(--text-default);
+    margin: 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: map.get($fonts, "merriweather");
+    font-weight: 500;
+    line-height: map.get($line-heights, "tight");
+    letter-spacing: map.get($tracking, normal);
+    margin: 0;
+  }
+
+  h1 { font-size: map.get($font-sizes, 6xl); color: var(--text-primary); }
+  h2 { font-size: map.get($font-sizes, 4xl); color: var(--text-secondary); }
+  h3 { font-size: map.get($font-sizes, 3xl); color: var(--text-black); }
+  h4 { font-size: map.get($font-sizes, 2xl); color: var(--text-black); }
+
+  strong { font-weight: 600; }
+
+  @each $body-size in (lg, sm, xs) {
+    .body-#{$body-size} {
+      font-family: map.get($fonts, "karla");
+      font-size: map.get($font-sizes, if($body-size == lg, lg, if($body-size == sm, sm, xs)));
+      line-height: map.get($line-heights, "tight");
+      color: var(--text-default);
+      margin: 0;
+    }
+  }
+}

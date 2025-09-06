@@ -13,7 +13,7 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
   onSlideSelect: (index: number) => void;
 }) {
   return (
-    <div className="relative h-[560px] rounded-[24px] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 shadow-2xl group">
+    <div className="relative h-[560px] rounded-[24px] overflow-hidden bg-linear-to-br from-slate-100 to-slate-200 shadow-2xl group">
       {/* Main Content */}
       <div className="relative h-full">
         {children}
@@ -80,12 +80,12 @@ export function OurStorySection({ onNavigate }: { onNavigate: (page: PageType) =
                 <div className="basis-0 grow min-h-px min-w-px relative self-stretch shrink-0 animate-fade-in-left">
                   <div className="relative size-full flex flex-col justify-center space-y-8">
                     {/* About Badge */}
-                    <Badge variant="filled" color="secondary" className="w-fit bg-[#45a9a7]/10 text-[#45a9a7] border-0">
+                    <Badge variant="filled" color="secondary" className="w-fit bg-teal-400/10 text-teal-400 border-0">
                       About
                     </Badge>
                     
                     {/* Heading */}
-                    <h2 className="font-['Merriweather:Bold',_sans-serif] text-[32px] text-[#1a1a1a] leading-tight">
+                    <h2 className="font-['Merriweather:Bold',sans-serif] text-[32px] text-[#1a1a1a] leading-tight">
                       Learn Our Story
                     </h2>
 
@@ -102,7 +102,7 @@ export function OurStorySection({ onNavigate }: { onNavigate: (page: PageType) =
                     {/* CTA Button */}
                     <Button 
                       onClick={() => onNavigate('our-story')}
-                      className="w-fit bg-gradient-to-r from-[#5e4684] to-[#7a5ba8] hover:from-[#4a3570] hover:to-[#65487c] text-white px-8 py-3 rounded-xl font-semibold"
+                      className="w-fit bg-linear-to-r from-grape-800 to-[#7a5ba8] hover:from-[#4a3570] hover:to-[#65487c] text-white px-8 py-3 rounded-xl font-semibold"
                     >
                       BE A PART OF OUR STORY
                     </Button>

@@ -64,49 +64,49 @@ export function About() {
           }}
         >
           {/* First set of images */}
-          <div className="flex gap-6 flex-shrink-0">
-            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+          <div className="flex gap-6 shrink-0">
+            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img
                 src="/diverse-team-celebrating-with-raised-hands-in-mode.jpg"
                 alt="Team celebrating success"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img
                 src="/professional-consultation-meeting-in-bright-office.jpg"
                 alt="Professional consultation"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img src="/modern-office-workspace-with-collaborative-team.jpg" alt="Modern workspace" className="w-full h-full object-cover" />
             </div>
-            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img src="/business-meeting-with-laptop-and-documents.jpg" alt="Business meeting" className="w-full h-full object-cover" />
             </div>
           </div>
 
           {/* Duplicate set for seamless loop */}
-          <div className="flex gap-6 flex-shrink-0">
-            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+          <div className="flex gap-6 shrink-0">
+            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img
                 src="/diverse-team-celebrating-with-raised-hands-in-mode.jpg"
                 alt="Team celebrating success"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img
                 src="/professional-consultation-meeting-in-bright-office.jpg"
                 alt="Professional consultation"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+            <div className="w-96 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img src="/modern-office-workspace-with-collaborative-team.jpg" alt="Modern workspace" className="w-full h-full object-cover" />
             </div>
-            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden flex-shrink-0">
+            <div className="w-80 h-64 bg-muted rounded-2xl overflow-hidden shrink-0">
               <img src="/business-meeting-with-laptop-and-documents.jpg" alt="Business meeting" className="w-full h-full object-cover" />
             </div>
           </div>

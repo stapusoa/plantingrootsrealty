@@ -48,10 +48,10 @@ export function BuyersGuide({ onNavigate }: { onNavigate: (page: PageType) => vo
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[80px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
             <div className="text-center mb-16">
-              <h2 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
+              <h2 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
                 Home Buying Guide
               </h2>
-              <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
+              <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
                 Your step-by-step guide to purchasing your dream home in Utah County
               </p>
             </div>
@@ -66,13 +66,13 @@ export function BuyersGuide({ onNavigate }: { onNavigate: (page: PageType) => vo
                   <CardContent className="p-8 text-center">
                     <div className="flex flex-col items-center space-y-6">
                       <div className="text-5xl">{stepItem.icon}</div>
-                      <div className="text-[#45a9a7] text-[32px] font-bold font-['Merriweather:Bold',_sans-serif]">
+                      <div className="text-teal-400 text-[32px] font-bold font-['Merriweather:Bold',sans-serif]">
                         {stepItem.step}
                       </div>
-                      <h3 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[22px] font-semibold">
+                      <h3 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[22px] font-semibold">
                         {stepItem.title}
                       </h3>
-                      <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[16px] leading-relaxed">
+                      <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[16px] leading-relaxed">
                         {stepItem.description}
                       </p>
                     </div>
@@ -84,7 +84,7 @@ export function BuyersGuide({ onNavigate }: { onNavigate: (page: PageType) => vo
             <div className="text-center mt-16">
               <Button 
                 onClick={() => onNavigate('contact')}
-                className="bg-gradient-to-r from-[#5e4684] to-[#7a5ba8] hover:from-[#4a3570] hover:to-[#65487c] text-white px-8 py-4 rounded-xl font-semibold text-lg"
+                className="bg-linear-to-r from-grape-800 to-[#7a5ba8] hover:from-[#4a3570] hover:to-[#65487c] text-white px-8 py-4 rounded-xl font-semibold text-lg"
               >
                 Start Your Home Buying Journey
               </Button>

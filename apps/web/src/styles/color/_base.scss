@@ -1,0 +1,54 @@
+@use 'colors';
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+
+@mixin generate-color-utilities($name, $color) {
+  .bg-#{"" + $name} { background-color: #{$color}; }
+  .hover\:bg-#{"" + $name}:hover { background-color: #{$color}; }
+
+  .border-#{"" + $name} { border-color: #{$color}; }
+  .hover\:border-#{"" + $name}:hover { border-color: #{$color}; }
+
+  .text-#{"" + $name} { color: #{$color}; }
+  .hover\:text-#{"" + $name}:hover { color: #{$color}; }
+
+  .dark .dark\:bg-#{"" + $name} { background-color: #{$color}; }
+  .dark .hover\:dark\:bg-#{"" + $name}:hover { background-color: #{$color}; }
+
+  .dark .dark\:border-#{"" + $name} { border-color: #{$color}; }
+  .dark .hover\:dark\:border-#{"" + $name}:hover { border-color: #{$color}; }
+
+  .dark .dark\:text-#{"" + $name} { color: #{$color}; }
+  .dark .hover\:dark\:text-#{"" + $name}:hover { color: #{$color}; }
+}
+
+$aliases: (
+  default: map.get(map.get(colors.$palettes, "neutral"), "200"),
+  paper: #fff,
+  body: map.get(map.get(colors.$palettes, "neutral"), "700"),
+  content: map.get(map.get(colors.$palettes, "neutral"), "900"),
+  primary: map.get(map.get(colors.$palettes, "grape"), "800"),
+  primary-hover: map.get(map.get(colors.$palettes, "grape"), "900"),
+  secondary: map.get(map.get(colors.$palettes, "teal"), "400"),
+  secondary-hover: map.get(map.get(colors.$palettes, "teal"), "500"),
+  white: #fff,
+  black: #000,
+  contrast: map.get(map.get(colors.$palettes, "neutral"), "1000")
+);
+
+@each $alias, $color in $aliases {
+  @include generate-color-utilities($alias, $color);
+}
+
+@each $palette, $shades in colors.$palettes {
+  @each $shade, $color in $shades {
+    @include generate-color-utilities("#{$palette}-#{$shade}", $color);
+  }
+}
+
+[class*="bg-"][disabled],
+[class*="bg-"].disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

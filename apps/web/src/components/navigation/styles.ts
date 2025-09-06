@@ -2,7 +2,7 @@ export const baseWrapper =
   "fixed top-0 z-50 w-full transition-all duration-500 flex items-center gap-4"
 
 export const navScrolled =
-  "bg-gradient-to-r from-[#5e4684] to-[#7a5ba8] backdrop-blur-md shadow-xl"
+  "bg-linear-to-r from-grape-800 to-[#7a5ba8] backdrop-blur-md shadow-xl"
 
 export const navTransparent = "bg-transparent"
 

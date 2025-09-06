@@ -1,11 +1,11 @@
 import type { OverlayVariant } from "@/lib/constants2"
 
 export const OVERLAY_STYLES: Record<OverlayVariant, string> = {
-  gradient: "fixed inset-0 w-full h-screen bg-gradient-to-br from-[#5e4684]/80 via-[#7a5ba8]/70 to-[#45a9a7]/60 pointer-events-none z-0",
+  gradient: "fixed inset-0 w-full h-screen bg-linear-to-br from-grape-800/80 via-[#7a5ba8]/70 to-teal-400/60 pointer-events-none z-0",
   dark: "fixed inset-0 w-full h-screen bg-black/20 pointer-events-none z-0",
   light: "fixed inset-0 w-full h-screen bg-white/40 pointer-events-none z-0",
   pattern: "fixed inset-0 w-full h-screen bg-[url('/patterns/dots.svg')] opacity-30 pointer-events-none z-0",
-  home: "fixed inset-0 w-full h-screen bg-gradient-to-br from-[#5e4684]/80 via-[#7a5ba8]/70 to-[#45a9a7]/60 pointer-events-none z-0",
+  home: "fixed inset-0 w-full h-screen bg-linear-to-br from-grape-800/80 via-[#7a5ba8]/70 to-teal-400/60 pointer-events-none z-0",
   none: "",
 }
 

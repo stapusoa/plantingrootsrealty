@@ -34,15 +34,15 @@ export function TestimonialsSection() {
   ]
 
   return (
-    <div className="relative shrink-0 w-full bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="relative shrink-0 w-full bg-linear-to-br from-gray-50 to-gray-100">
       <div className="flex flex-col items-center relative size-full">
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[80px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
             <div className="text-center mb-16">
-              <h2 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
+              <h2 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
                 What My Clients Say
               </h2>
-              <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
+              <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
                 Real experiences from families I've helped achieve their real estate goals
               </p>
             </div>
@@ -62,10 +62,10 @@ export function TestimonialsSection() {
                         className="w-16 h-16 rounded-full object-cover"
                       />
                       <div>
-                        <h3 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[18px] font-semibold">
+                        <h3 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[18px] font-semibold">
                           {testimonial.name}
                         </h3>
-                        <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[14px]">
+                        <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[14px]">
                           {testimonial.location}
                         </p>
                         <div className="flex gap-1 mt-1">
@@ -75,7 +75,7 @@ export function TestimonialsSection() {
                         </div>
                       </div>
                     </div>
-                    <blockquote className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[16px] leading-relaxed italic">
+                    <blockquote className="font-['Karla:Regular',sans-serif] text-[#606060] text-[16px] leading-relaxed italic">
                       "{testimonial.text}"
                     </blockquote>
                   </CardContent>

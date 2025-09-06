@@ -1,17 +1,17 @@
-@import "tailwindcss";
-@tailwind utilities;
+@import 'tailwindcss' layer(utilities);
+@import 'tailwindcss/utilities' layer(utilities);
 
 @layer utilities {
   .page {
-    @apply max-w-[49rem] mx-auto px-4 md:px-6 lg:px-8;
+    @apply max-w-196 mx-auto px-4 md:px-6 lg:px-8;
   }
 
   .page-wide {
-    @apply max-w-[56.5rem] mx-auto px-4 md:px-6;
+    @apply max-w-226 mx-auto px-4 md:px-6;
   }
 
   .page-tight {
-    @apply max-w-[37.5rem] mx-auto px-4 md:px-6 lg:px-8;
+    @apply max-w-150 mx-auto px-4 md:px-6 lg:px-8;
   }
 
   .page-tighter {
@@ -27,7 +27,7 @@
   }
 
   .container-center {
-    @apply max-w-screen-xl mx-auto px-4;
+    @apply max-w-(--breakpoint-xl) mx-auto px-4;
   }
 
   .grid-cols-responsive {
@@ -64,57 +64,72 @@
     height: 0;
     border-top: 0.5rem solid transparent;
     border-bottom: 0.5rem solid transparent;
-    border-right: 0.5rem solid currentColor;
+    border-right: 0.5rem solid currentcolor;
   }
+
   .after\:left-8::after {
     left: -2rem; /* Adjust as needed */
   }
+
   .after\:left-4::after {
     left: -1rem; /* Adjust as needed */
   }
+
   .after\:left-6::after {
     left: -1.5rem; /* Adjust as needed */
   }
+
   .after\:top-1\/2::after {
     top: 50%;
     transform: translateY(-50%);
   }
+
   .after\:-translate-y-1\/2::after {
     transform: translateY(-50%);
   }
+
   .after\:w-0::after {
     width: 0;
   }
+
   .after\:h-0::after {
     height: 0;
   }
+
   .after\:border-y-8::after {
     border-top-width: 2rem;
     border-bottom-width: 2rem;
   }
+
   .after\:border-y-4::after {
     border-top-width: 1rem;
     border-bottom-width: 1rem;
   }
+
    .after\:border-y-2::after {
     border-top-width: 0.5rem;
     border-bottom-width: 0.5rem;
   }
+
   .after\:border-y-transparent::after {
     border-top-color: transparent;
     border-bottom-color: transparent;
   }
+
   .after\:border-r-8::after {
     border-right-width: 2rem;
   }
+
   .after\:border-r-4::after {
     border-right-width: 1rem;
   }
+
   .after\:border-r-2::after {
     border-right-width: 0.5rem;
   }
+
   .after\:border-r-current::after {
-    border-right-color: currentColor;
+    border-right-color: currentcolor;
   }
 
 }

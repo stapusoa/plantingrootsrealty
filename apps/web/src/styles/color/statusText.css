@@ -1,0 +1,127 @@
+@utility text-warning {
+  color: var(--color-warning);
+}
+
+@utility text-warning-light {
+  color: var(--color-warning-light);
+}
+
+@utility text-warning-dark {
+  color: var(--color-warning-dark);
+}
+
+@utility text-success {
+  color: var(--color-success);
+}
+
+@utility text-success-light {
+  color: var(--color-success-light);
+}
+
+@utility text-success-dark {
+  color: var(--color-success-dark);
+}
+
+@utility text-error {
+  color: var(--color-error);
+}
+
+@utility text-error-light {
+  color: var(--color-error-light);
+}
+
+@utility text-error-dark {
+  color: var(--color-error-dark);
+}
+
+@utility text-info {
+  color: var(--color-info);
+}
+
+@utility text-info-light {
+  color: var(--color-info-light);
+}
+
+@utility text-info-dark {
+  color: var(--color-info-dark);
+}
+
+@utility text-warning-opacity {
+  color: var(--color-warning-opacity);
+}
+
+@utility text-success-opacity {
+  color: var(--color-success-opacity);
+}
+
+@utility text-info-opacity {
+  color: var(--color-info-opacity);
+}
+
+@utility text-error-opacity {
+  color: var(--color-error-opacity);
+}
+
+@utility hover\:text-warning:hover {
+  color: var(--color-warning);
+}
+
+@utility hover\:text-warning-light:hover {
+  color: var(--color-warning-light);
+}
+
+@utility hover\:text-warning-dark:hover {
+  color: var(--color-warning-dark);
+}
+
+@utility hover\:text-warning-opacity:hover {
+  color: var(--color-warning-opacity);
+}
+
+@utility hover\:text-success:hover {
+  color: var(--color-success);
+}
+
+@utility hover\:text-success-light:hover {
+  color: var(--color-success-light);
+}
+
+@utility hover\:text-success-dark:hover {
+  color: var(--color-success-dark);
+}
+
+@utility hover\:text-success-opacity:hover {
+  color: var(--color-success-opacity);
+}
+
+@utility hover\:text-error:hover {
+  color: var(--color-error);
+}
+
+@utility hover\:text-error-light:hover {
+  color: var(--color-error-light);
+}
+
+@utility hover\:text-error-dark:hover {
+  color: var(--color-error-dark);
+}
+
+@utility hover\:text-error-opacity:hover {
+  color: var(--color-error-opacity);
+}
+
+@utility hover\:text-info:hover {
+  color: var(--color-info);
+}
+
+@utility hover\:text-info-light:hover {
+  color: var(--color-info-light);
+}
+
+@utility hover\:text-info-dark:hover {
+  color: var(--color-info-dark);
+}
+
+@utility hover\:text-info-opacity:hover {
+  color: var(--color-info-opacity);
+}

@@ -124,7 +124,7 @@ export default function ListingDetails() {
               {/* Image Gallery */}
               <div className="space-y-4">
                 <div className="relative">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                  <div className="relative aspect-4/3 overflow-hidden rounded-lg">
                     <CardImage
                       src={images[currentImageIndex] || "/placeholder.svg?height=600&width=800"}
                       alt={`Image ${currentImageIndex + 1}`}
@@ -385,7 +385,7 @@ export default function ListingDetails() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {[1, 2].map((i) => (
                     <Card key={i} className="overflow-hidden">
-                      <div className="relative aspect-[4/3]">
+                      <div className="relative aspect-4/3">
                         <CardImage
                           src="/placeholder.svg?height=300&width=400"
                           alt={`Similar property ${i}`}

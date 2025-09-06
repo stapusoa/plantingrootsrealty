@@ -1,0 +1,42 @@
+$radius: 0.625rem;
+$radius-sm: calc(#{$radius} - 4px);
+$radius-md: calc(#{$radius} - 2px);
+$radius-lg: $radius;
+$radius-xl: calc(#{$radius} + 4px);
+
+$shadow-levels: (
+  sm: 0 1px 2px rgba(0, 0, 0, 0.05),
+  md: 0 4px 6px rgba(0, 0, 0, 0.1),
+  lg: 0 10px 15px rgba(0, 0, 0, 0.15),
+  xl: 0 20px 25px rgba(0, 0, 0, 0.2),
+);
+
+@each $level, $shadow in $shadow-levels {
+  .shadow-#{$level} {
+    box-shadow: $shadow;
+  }
+}
+
+.radius-sm {
+  border-radius: $radius-sm;
+}
+
+.radius-md {
+  border-radius: $radius-md;
+}
+
+.radius-lg {
+  border-radius: $radius-lg;
+}
+
+.radius-xl {
+  border-radius: $radius-xl;
+}
+
+@each $level, $shadow in $shadow-levels {
+  .card-#{$level} {
+    box-shadow: $shadow;
+    border-radius: $radius-md;
+    background-color: var(--bg-default, #fff);
+  }
+}

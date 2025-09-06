@@ -12,7 +12,7 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
 }) {
 
   return (
-    <div className="relative h-[560px] rounded-[24px] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 shadow-2xl group">
+    <div className="relative h-[560px] rounded-[24px] overflow-hidden bg-linear-to-br from-slate-100 to-slate-200 shadow-2xl group">
       {/* Main Content */}
       <div className="relative h-full">
         {children}

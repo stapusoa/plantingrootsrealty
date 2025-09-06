@@ -146,7 +146,7 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <div className="fixed top-0 left-0 z-40 lg:z-40 md:z-40 sm:z-40 w-full h-screen bg-primary-95 backdrop-blur-md shadow-xl flex flex-col overflow-hidden">
-          <div className="flex flex-col flex-grow overflow-y-auto h-full px-6 py-6 pt-50">
+          <div className="flex flex-col grow overflow-y-auto h-full px-6 py-6 pt-50">
             <ul className="flex flex-col gap-4">
               {navitems.map((item) => (
                 <li key={item.page}>

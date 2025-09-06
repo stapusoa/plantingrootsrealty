@@ -1,0 +1,75 @@
+$pages: (
+  default: 49rem,
+  wide: 56.5rem,
+  tight: 37.5rem,
+  tighter: 64rem,
+  full: 100%
+);
+
+@each $name, $width in $pages {
+  .page-#{$name} {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media(min-width: 768px) { padding-left: 1.5rem; padding-right: 1.5rem; }
+    @media(min-width: 1024px) { padding-left: 2rem; padding-right: 2rem; }
+  }
+}
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @media(min-width: 768px) { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-cols-responsive {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+
+  @media(min-width: 640px) { grid-template-columns: repeat(2, 1fr); }
+  @media(min-width: 1024px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.scale-x-0 { transform: scaleX(0); }
+.scale-x-100 { transform: scaleX(1); }
+
+.group:hover .group-hover\:scale-x-100 { transform: scaleX(1); }
+
+$after-sizes: (2:0.5rem, 4:1rem, 6:1.5rem, 8:2rem);
+
+@each $name, $val in $after-sizes {
+  .after-left-#{$name}::after { 
+    content: "";
+    position: absolute;
+    left: -#{$val};
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .after-border-y-#{$name}::after {
+    border-top-width: $val;
+    border-bottom-width: $val;
+  }
+
+  .after-border-r-#{$name}::after {
+    border-right-width: $val;
+  }
+}
+
+.after-top-1\/2::after { top: 50%; transform: translateY(-50%); }
+.after--translate-y-1\/2::after { transform: translateY(-50%); }
+.after-w-0::after { width: 0; }
+.after-h-0::after { height: 0; }
+.after-border-y-transparent::after { border-top-color: transparent; border-bottom-color: transparent; }
+.after-border-r-current::after { border-right-color: currentcolor; }

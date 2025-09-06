@@ -153,7 +153,7 @@ export default function RealEstateGallery() {
         {/* Content */}
         <main className="flex gap-8">
           {showFilters && (
-            <aside className="w-80 flex-shrink-0">
+            <aside className="w-80 shrink-0">
               <FiltersSidebar
                 filters={filters}
                 onFiltersChange={handleFiltersChange}

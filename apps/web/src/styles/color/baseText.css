@@ -1,0 +1,35 @@
+  @utility text-default {
+    color: var(--color-neutral-700);
+  }
+
+  @utility text-header {
+    color: var(--color-neutral-900, #424040);
+  }
+
+  @utility text-body {
+    color: var(--color-neutral-600);
+  }
+
+  @utility text-subtle {
+    color: var(--color-neutral-500);
+  }
+
+  @utility text-disabled {
+    color: var(--color-neutral-400);
+  }
+
+  @utility text-contrast {
+    color: var(--color-contrast);
+  }
+
+  @utility hover\:text-black:hover {
+    color: var(--color-black);
+  }
+
+  @utility text-white {
+    color: var(--color-white);
+  }
+
+  @utility text-black {
+    color: var(--color-black);
+  }

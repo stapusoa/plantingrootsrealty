@@ -1,0 +1,31 @@
+@utility border-default {
+  border-color: var(--color-neutral-400);
+}
+
+@utility border-subtle {
+  border-color: var(--color-neutral-300);
+}
+
+@utility border-disabled {
+  border-color: var(--color-neutral-200);
+}
+
+@utility border-white {
+  border-color: var(--color-white);
+}
+
+@utility border-black {
+  border-color: var(--color-black);
+}
+
+@utility after\:border-r-black::after {
+  border-right-color: var(--color-black);
+}
+
+@utility after\:border-r-default::after {
+  border-right-color: var(--color-neutral-800);
+}
+
+@utility after\:border-r-contrast::after {
+  border-right-color: var(--color-white);
+}

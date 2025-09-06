@@ -48,10 +48,10 @@ export function ResourcesSection({ onNavigate }: { onNavigate: (page: PageType) 
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[80px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
             <div className="text-center mb-16">
-              <h2 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
+              <h2 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
                 Helpful Resources
               </h2>
-              <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
+              <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
                 Tools and information to help you make informed real estate decisions
               </p>
             </div>
@@ -69,16 +69,16 @@ export function ResourcesSection({ onNavigate }: { onNavigate: (page: PageType) 
                       <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
                         {resource.icon}
                       </div>
-                      <h3 className="font-['Merriweather:Bold',_sans-serif] text-[#45a9a7] text-[18px] font-semibold group-hover:text-[#3a8e8c] transition-colors">
+                      <h3 className="font-['Merriweather:Bold',sans-serif] text-teal-400 text-[18px] font-semibold group-hover:text-[#3a8e8c] transition-colors">
                         {resource.title}
                       </h3>
-                      <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[14px] leading-relaxed">
+                      <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[14px] leading-relaxed">
                         {resource.description}
                       </p>
                       <Button 
                         size="sm" 
                         variant="outlined"
-                        className="border-[#5e4684] text-[#5e4684] hover:bg-[#5e4684] hover:text-white"
+                        className="border-grape-800 text-grape-800 hover:bg-grape-800 hover:text-white"
                       >
                         Learn More
                       </Button>

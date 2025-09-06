@@ -11,7 +11,7 @@ export function BlogHero() {
           backgroundImage: `url('/dramatic-desert-landscape-with-rock-formations-at-.jpg')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
       {/* Hero Content */}

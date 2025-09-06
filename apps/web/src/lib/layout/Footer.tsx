@@ -12,23 +12,23 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
               {/* Company Info */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-['Merriweather:Bold',_sans-serif] text-[24px] font-bold mb-4">
+                  <h3 className="font-['Merriweather:Bold',sans-serif] text-[24px] font-bold mb-4">
                     Planting Roots Realty
                   </h3>
-                  <p className="font-['Karla:Regular',_sans-serif] text-white/80 text-[16px] leading-relaxed">
+                  <p className="font-['Karla:Regular',sans-serif] text-white/80 text-[16px] leading-relaxed">
                     Your trusted Utah County real estate expert, helping families find their perfect home with nearly 6 years of experience.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <p className="font-['Karla:Medium',_sans-serif] text-white font-medium">Brittni Bingham</p>
-                  <p className="font-['Karla:Regular',_sans-serif] text-white/80 text-[14px]">Licensed Real Estate Agent</p>
-                  <p className="font-['Karla:Regular',_sans-serif] text-white/80 text-[14px]">Utah County & Surrounding Areas</p>
+                  <p className="font-['Karla:Medium',sans-serif] text-white font-medium">Brittni Bingham</p>
+                  <p className="font-['Karla:Regular',sans-serif] text-white/80 text-[14px]">Licensed Real Estate Agent</p>
+                  <p className="font-['Karla:Regular',sans-serif] text-white/80 text-[14px]">Utah County & Surrounding Areas</p>
                 </div>
               </div>
 
               {/* Quick Links */}
               <div className="space-y-6">
-                <h4 className="font-['Merriweather:Bold',_sans-serif] text-[20px] font-bold">Quick Links</h4>
+                <h4 className="font-['Merriweather:Bold',sans-serif] text-[20px] font-bold">Quick Links</h4>
                 <div className="space-y-3">
                   {[
                     { text: 'Home', page: 'home' as PageType },
@@ -40,7 +40,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
                     <button
                       key={index}
                       onClick={() => onNavigate(link.page)}
-                      className="block font-['Karla:Regular',_sans-serif] text-white/80 hover:text-white transition-colors text-[16px] text-left"
+                      className="block font-['Karla:Regular',sans-serif] text-white/80 hover:text-white transition-colors text-[16px] text-left"
                     >
                       {link.text}
                     </button>
@@ -50,7 +50,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
 
               {/* Services */}
               <div className="space-y-6">
-                <h4 className="font-['Merriweather:Bold',_sans-serif] text-[20px] font-bold">Services</h4>
+                <h4 className="font-['Merriweather:Bold',sans-serif] text-[20px] font-bold">Services</h4>
                 <div className="space-y-3">
                   {[
                     'Home Buying',
@@ -60,7 +60,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
                     'First-Time Buyers',
                     'Relocation Services'
                   ].map((service, index) => (
-                    <p key={index} className="font-['Karla:Regular',_sans-serif] text-white/80 text-[16px]">
+                    <p key={index} className="font-['Karla:Regular',sans-serif] text-white/80 text-[16px]">
                       {service}
                     </p>
                   ))}
@@ -69,23 +69,23 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
 
               {/* Contact Info */}
               <div className="space-y-6">
-                <h4 className="font-['Merriweather:Bold',_sans-serif] text-[20px] font-bold">Get In Touch</h4>
+                <h4 className="font-['Merriweather:Bold',sans-serif] text-[20px] font-bold">Get In Touch</h4>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <span className="text-[20px]">📱</span>
-                    <a href="tel:+18014009242" className="font-['Karla:Regular',_sans-serif] text-white/80 hover:text-white transition-colors">
+                    <a href="tel:+18014009242" className="font-['Karla:Regular',sans-serif] text-white/80 hover:text-white transition-colors">
                       (801) 400-9242
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-[20px]">📧</span>
-                    <a href="mailto:brittni@plantingrootsrealty.com" className="font-['Karla:Regular',_sans-serif] text-white/80 hover:text-white transition-colors">
+                    <a href="mailto:brittni@plantingrootsrealty.com" className="font-['Karla:Regular',sans-serif] text-white/80 hover:text-white transition-colors">
                       brittni@plantingrootsrealty.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-[20px]">📍</span>
-                    <span className="font-['Karla:Regular',_sans-serif] text-white/80">
+                    <span className="font-['Karla:Regular',sans-serif] text-white/80">
                       Utah County, UT
                     </span>
                   </div>
@@ -93,7 +93,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
 
                 {/* Social Links */}
                 <div className="space-y-3">
-                  <h5 className="font-['Karla:Medium',_sans-serif] text-white font-medium">Follow Me</h5>
+                  <h5 className="font-['Karla:Medium',sans-serif] text-white font-medium">Follow Me</h5>
                   <div className="flex gap-3">
                     {['Facebook', 'Instagram', 'LinkedIn', 'YouTube'].map((platform, index) => (
                       <Button
@@ -114,17 +114,17 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
 
             {/* Bottom Footer */}
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="font-['Karla:Regular',_sans-serif] text-white/60 text-[14px]">
+              <div className="font-['Karla:Regular',sans-serif] text-white/60 text-[14px]">
                 © 2024 Planting Roots Realty. All rights reserved.
               </div>
               <div className="flex gap-6">
-                <button className="font-['Karla:Regular',_sans-serif] text-white/60 hover:text-white/80 transition-colors text-[14px]">
+                <button className="font-['Karla:Regular',sans-serif] text-white/60 hover:text-white/80 transition-colors text-[14px]">
                   Privacy Policy
                 </button>
-                <button className="font-['Karla:Regular',_sans-serif] text-white/60 hover:text-white/80 transition-colors text-[14px]">
+                <button className="font-['Karla:Regular',sans-serif] text-white/60 hover:text-white/80 transition-colors text-[14px]">
                   Terms of Service
                 </button>
-                <button className="font-['Karla:Regular',_sans-serif] text-white/60 hover:text-white/80 transition-colors text-[14px]">
+                <button className="font-['Karla:Regular',sans-serif] text-white/60 hover:text-white/80 transition-colors text-[14px]">
                   Equal Housing Opportunity
                 </button>
               </div>
@@ -132,7 +132,7 @@ export function Footer({ onNavigate }: { onNavigate: (page: PageType) => void })
 
             {/* License Info */}
             <div className="mt-6 pt-6 border-t border-white/20">
-              <p className="font-['Karla:Regular',_sans-serif] text-white/60 text-[12px] text-center leading-relaxed">
+              <p className="font-['Karla:Regular',sans-serif] text-white/60 text-[12px] text-center leading-relaxed">
                 Brittni Bingham - Licensed Real Estate Agent in Utah. 
                 All information deemed reliable but not guaranteed. 
                 Equal Housing Opportunity.

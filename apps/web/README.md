@@ -104,6 +104,17 @@ git subtree push --prefix apps/api api main
 
 ---
 
+## Future Styling Plans
+
+Eventually I plan to move to scss but it will be a heavy lift.
+
+This is the command to run when compiling into index.css
+```
+pnpm exec sass src/styles/index.scss src/index.css
+```
+
+---
+
 ## Build & Preview
 
 ### Build production-ready files

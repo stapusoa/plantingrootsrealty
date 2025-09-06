@@ -7,10 +7,10 @@ import imgLogo5 from "@/assets/Logo 6.png"
 
 export function LogoCloud() {
   return (
-    <div className="bg-gradient-to-b from-[#ffffff] to-[#f8f9fa] relative shrink-0 w-full">
+    <div className="bg-linear-to-b from-[#ffffff] to-[#f8f9fa] relative shrink-0 w-full">
       <div className="flex flex-col items-center max-w-inherit relative size-full">
         <div className="box-border content-stretch flex flex-col gap-[40px] items-center justify-start max-w-inherit px-0 py-[60px] relative w-full">
-          <div className="font-['Karla:Regular',_sans-serif] font-normal leading-[0] relative shrink-0 text-[#6f6f6f] text-[16px] text-left text-nowrap tracking-[-0.075px] animate-fade-in">
+          <div className="font-['Karla:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#6f6f6f] text-[16px] text-left text-nowrap tracking-[-0.075px] animate-fade-in">
             <p className="adjustLetterSpacing block leading-[1.4] whitespace-pre">Trusted by:</p>
           </div>
           <div className="relative shrink-0 w-full">

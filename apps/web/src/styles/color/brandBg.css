@@ -1,0 +1,67 @@
+@utility bg-primary {
+  background-color: var(--color-primary, #5e4684);
+}
+
+@utility bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+@utility bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+@utility bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+@utility bg-secondary-light {
+  background-color: var(--color-secondary-light);
+}
+
+@utility bg-secondary-dark {
+  background-color: var(--color-secondary-dark);
+}
+
+@utility bg-primary-opacity {
+  background-color: var(--color-primary-opacity);
+}
+
+@utility bg-secondary-opacity {
+  background-color: var(--color-secondary-opacity);
+}
+
+@utility bg-primary-95 {
+  background-color: rgb(94 70 132 / 95%);
+}
+
+@utility hover\:bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+@utility hover\:bg-primary-light:hover {
+  background-color: var(--color-primary-light);
+}
+
+@utility hover\:bg-primary-dark:hover {
+  background-color: var(--color-primary-dark);
+}
+
+@utility hover\:bg-primary-opacity:hover {
+  background-color: var(--color-primary-opacity);
+}
+
+@utility hover\:bg-secondary:hover {
+  background-color: var(--color-secondary);
+}
+
+@utility hover\:bg-secondary-light:hover {
+  background-color: var(--color-secondary-light);
+}
+
+@utility hover\:bg-secondary-dark:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+@utility hover\:bg-secondary-opacity:hover {
+  background-color: var(--color-secondary-opacity);
+}

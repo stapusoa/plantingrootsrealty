@@ -21,15 +21,15 @@ export function IconsModule() {
   ]
 
   return (
-    <div className="relative shrink-0 w-full bg-gradient-to-br from-white to-gray-50">
+    <div className="relative shrink-0 w-full bg-linear-to-br from-white to-gray-50">
       <div className="flex flex-col items-center relative size-full">
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-20 relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
             <div className="text-center mb-16">
-              <h2 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
+              <h2 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
                 Why Choose Planting Roots Realty
               </h2>
-              <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
+              <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
                 Experience the difference of working with a dedicated professional
               </p>
             </div>
@@ -38,7 +38,7 @@ export function IconsModule() {
                 {features.map((feature, index) => (
                   <Card
                     key={index}
-                    className={`basis-0 grow min-h-px min-w-[265px] relative shrink-0 group hover:shadow-xl transition-all duration-500 rounded-2xl border-l-4 border-l-[#5e4684] bg-white/70 backdrop-blur-sm animate-fade-in-up hover:-translate-y-2`}
+                    className={`basis-0 grow min-h-px min-w-[265px] relative shrink-0 group hover:shadow-xl transition-all duration-500 rounded-2xl border-l-4 border-l-grape-800 bg-white/70 backdrop-blur-sm animate-fade-in-up hover:-translate-y-2`}
                     style={{ animationDelay: `${(index + 1) * 100}ms` }}
                   >
                     <CardContent className="p-8">
@@ -47,10 +47,10 @@ export function IconsModule() {
                           
                         </div>
                         <div className="space-y-4">
-                          <h3 className="font-['Merriweather:Regular',_sans-serif] text-[#45a9a7] text-[20px] group-hover:text-[#3a8e8c] transition-colors duration-300 font-semibold">
+                          <h3 className="font-['Merriweather:Regular',sans-serif] text-teal-400 text-[20px] group-hover:text-[#3a8e8c] transition-colors duration-300 font-semibold">
                             {feature.title}
                           </h3>
-                          <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[16px] leading-relaxed">
+                          <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[16px] leading-relaxed">
                             {feature.description}
                           </p>
                         </div>

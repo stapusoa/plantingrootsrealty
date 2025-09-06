@@ -1,0 +1,23 @@
+@utility bg-badge-primary {
+  background-color: var(--color-primary);
+}
+
+@utility bg-badge-secondary {
+  background-color: var(--color-secondary);
+}
+
+@utility bg-badge-critical {
+  background-color: var(--color-error);
+}
+
+@utility bg-badge-neutral {
+  background-color: var(--color-neutral-300);
+}
+
+@utility bg-badge-default {
+  background-color: var(--color-neutral-1000);
+}
+
+@utility bg-badge-contrast {
+  background-color: var(--color-white);
+}

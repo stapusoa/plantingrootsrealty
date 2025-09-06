@@ -1,0 +1,71 @@
+@utility border-primary {
+  border-color: var(--color-primary);
+}
+
+@utility border-primary-light {
+  border-color: var(--color-primary-light);
+}
+
+@utility border-primary-dark {
+  border-color: var(--color-primary-dark);
+}
+
+@utility border-secondary {
+  border-color: var(--color-secondary);
+}
+
+@utility border-secondary-light {
+  border-color: var(--color-secondary-light);
+}
+
+@utility border-secondary-dark {
+  border-color: var(--color-secondary-dark);
+}
+
+@utility border-primary-opacity {
+  border-color: var(--color-primary-opacity);
+}
+
+@utility border-secondary-opacity {
+  border-color: var(--color-secondary-opacity);
+}
+
+@utility hover\:border-primary:hover {
+  border-color: var(--color-primary);
+}
+
+@utility hover\:border-primary-light:hover {
+  border-color: var(--color-primary-light);
+}
+
+@utility hover\:border-primary-dark:hover {
+  border-color: var(--color-primary-dark);
+}
+
+@utility hover\:border-primary-opacity:hover {
+  border-color: var(--color-primary-opacity);
+}
+
+@utility hover\:border-secondary:hover {
+  border-color: var(--color-secondary);
+}
+
+@utility hover\:border-secondary-light:hover {
+  border-color: var(--color-secondary-light);
+}
+
+@utility hover\:border-secondary-dark:hover {
+  border-color: var(--color-secondary-dark);
+}
+
+@utility hover\:border-secondary-opacity:hover {
+  border-color: var(--color-secondary-opacity);
+}
+
+@utility after\:border-r-primary-dark::after {
+  border-right-color: var(--color-primary-dark);
+}
+
+@utility after\:border-r-secondary-dark::after {
+  border-right-color: var(--color-secondary-dark);
+}

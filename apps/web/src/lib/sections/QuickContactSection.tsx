@@ -7,17 +7,17 @@ import type { PageType } from "@/components/navigation/types"
 
 export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   return (
-    <div className="relative shrink-0 w-full bg-gradient-to-r from-[#5e4684] to-[#7a5ba8]">
+    <div className="relative shrink-0 w-full bg-linear-to-r from-grape-800 to-[#7a5ba8]">
       <div className="flex flex-col items-center relative size-full">
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[80px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="text-white space-y-6">
-                <h2 className="font-['Merriweather:Bold',_sans-serif] text-[42px] font-bold leading-tight">
+                <h2 className="font-['Merriweather:Bold',sans-serif] text-[42px] font-bold leading-tight">
                   Ready to Get Started?
                 </h2>
-                <p className="font-['Karla:Regular',_sans-serif] text-white/90 text-[18px] leading-relaxed">
+                <p className="font-['Karla:Regular',sans-serif] text-white/90 text-[18px] leading-relaxed">
                   Whether you're buying, selling, or investing, I'm here to help you achieve your real estate goals. Let's connect today!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -39,7 +39,7 @@ export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageTyp
               {/* Quick Contact Form */}
               <Card className="border-0 shadow-2xl bg-white/95 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="font-['Merriweather:Bold',_sans-serif] text-[24px]">Quick Contact</CardTitle>
+                  <CardTitle className="font-['Merriweather:Bold',sans-serif] text-[24px]">Quick Contact</CardTitle>
                   <CardDescription>
                     Get a response within 24 hours
                   </CardDescription>
@@ -51,7 +51,7 @@ export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageTyp
                       <Input 
                         id="quickName"
                         placeholder="Your name"
-                        className="h-10 rounded-lg border-gray-200 focus:border-[#5e4684] focus:ring-[#5e4684]"
+                        className="h-10 rounded-lg border-gray-200 focus:border-grape-800 focus:ring-grape-800"
                       />
                     </div>
                     <div className="space-y-2">
@@ -59,7 +59,7 @@ export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageTyp
                       <Input 
                         id="quickPhone"
                         placeholder="(801) 555-0123"
-                        className="h-10 rounded-lg border-gray-200 focus:border-[#5e4684] focus:ring-[#5e4684]"
+                        className="h-10 rounded-lg border-gray-200 focus:border-grape-800 focus:ring-grape-800"
                       />
                     </div>
                   </div>
@@ -69,7 +69,7 @@ export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageTyp
                       id="quickEmail"
                       type="email"
                       placeholder="your@email.com"
-                      className="h-10 rounded-lg border-gray-200 focus:border-[#5e4684] focus:ring-[#5e4684]"
+                      className="h-10 rounded-lg border-gray-200 focus:border-grape-800 focus:ring-grape-800"
                     />
                   </div>
                   <div className="space-y-2">
@@ -77,12 +77,12 @@ export function QuickContactSection({ onNavigate }: { onNavigate: (page: PageTyp
                     <Textarea 
                       id="quickMessage"
                       placeholder="How can I help you?"
-                      className="rounded-lg border-gray-200 focus:border-[#5e4684] focus:ring-[#5e4684] resize-none"
+                      className="rounded-lg border-gray-200 focus:border-grape-800 focus:ring-grape-800 resize-none"
                       rows={3}
                     />
                   </div>
                   <Button 
-                    className="w-full bg-gradient-to-r from-[#5e4684] to-[#7a5ba8] hover:from-[#4a3570] hover:to-[#65487c] text-white rounded-lg font-semibold"
+                    className="w-full bg-linear-to-r from-grape-800 to-[#7a5ba8] hover:from-[#4a3570] hover:to-[#65487c] text-white rounded-lg font-semibold"
                   >
                     Send Message
                   </Button>

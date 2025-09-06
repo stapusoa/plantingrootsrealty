@@ -1,0 +1,127 @@
+@utility bg-success {
+  background-color: var(--color-success);
+}
+
+@utility bg-success-light {
+  background-color: var(--color-success-light);
+}
+
+@utility bg-success-dark {
+  background-color: var(--color-success-dark);
+}
+
+@utility bg-warning {
+  background-color: var(--color-warning);
+}
+
+@utility bg-warning-light {
+  background-color: var(--color-warning-light);
+}
+
+@utility bg-warning-dark {
+  background-color: var(--color-warning-dark);
+}
+
+@utility bg-error {
+  background-color: var(--color-error);
+}
+
+@utility bg-error-light {
+  background-color: var(--color-error-light);
+}
+
+@utility bg-error-dark {
+  background-color: var(--color-error-dark);
+}
+
+@utility bg-info {
+  background-color: var(--color-info);
+}
+
+@utility bg-info-light {
+  background-color: var(--color-info-light);
+}
+
+@utility bg-info-dark {
+  background-color: var(--color-info-dark);
+}
+
+@utility bg-success-opacity {
+  background-color: var(--color-success-opacity);
+}
+
+@utility bg-warning-opacity {
+  background-color: var(--color-warning-opacity);
+}
+
+@utility bg-error-opacity {
+  background-color: var(--color-error-opacity);
+}
+
+@utility bg-info-opacity {
+  background-color: var(--color-info-opacity);
+}
+
+@utility hover\:bg-warning:hover {
+  background-color: var(--color-warning);
+}
+
+@utility hover\:bg-warning-light:hover {
+  background-color: var(--color-warning-light);
+}
+
+@utility hover\:bg-warning-dark:hover {
+  background-color: var(--color-warning-dark);
+}
+
+@utility hover\:bg-warning-opacity:hover {
+  background-color: var(--color-warning-opacity);
+}
+
+@utility hover\:bg-success:hover {
+  background-color: var(--color-success);
+}
+
+@utility hover\:bg-success-light:hover {
+  background-color: var(--color-success-light);
+}
+
+@utility hover\:bg-success-dark:hover {
+  background-color: var(--color-success-dark);
+}
+
+@utility hover\:bg-success-opacity:hover {
+  background-color: var(--color-success-opacity);
+}
+
+@utility hover\:bg-error:hover {
+  background-color: var(--color-error);
+}
+
+@utility hover\:bg-error-light:hover {
+  background-color: var(--color-error-light);
+}
+
+@utility hover\:bg-error-dark:hover {
+  background-color: var(--color-error-dark);
+}
+
+@utility hover\:bg-error-opacity:hover {
+  background-color: var(--color-error-opacity);
+}
+
+@utility hover\:bg-info:hover {
+  background-color: var(--color-info);
+}
+
+@utility hover\:bg-info-light:hover {
+  background-color: var(--color-info-light);
+}
+
+@utility hover\:bg-info-dark:hover {
+  background-color: var(--color-info-dark);
+}
+
+@utility hover\:bg-info-opacity:hover {
+  background-color: var(--color-info-opacity);
+}

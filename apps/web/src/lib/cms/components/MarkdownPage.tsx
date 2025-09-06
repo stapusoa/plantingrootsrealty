@@ -47,7 +47,7 @@ export function MarkdownPage() {
           />
         )}
         <div className="bg-white w-full relative flex flex-col gap-2 ">
-              <div className="relative w-full bg-gradient-to-br from-white to-gray-50 py-16 px-4 md:px-12">
+              <div className="relative w-full bg-linear-to-br from-white to-gray-50 py-16 px-4 md:px-12">
       <div className="max-w-6xl mx-auto flex flex-col gap-10 items-start">
           <ReactMarkdown>{page.content}</ReactMarkdown>
           </div>

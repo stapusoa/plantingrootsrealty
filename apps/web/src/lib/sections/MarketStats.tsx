@@ -9,7 +9,7 @@ export function MarketStats() {
   ]
 
   return (
-    <div className="relative shrink-0 w-full bg-gradient-to-r from-[#5e4684] to-[#7a5ba8]">
+    <div className="relative shrink-0 w-full bg-linear-to-r from-grape-800 to-[#7a5ba8]">
       <div className="flex flex-col items-center relative size-full">
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[60px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
@@ -21,10 +21,10 @@ export function MarketStats() {
                   style={{ animationDelay: `${(index + 1) * 100}ms` }}
                 >
                   <div className="text-4xl mb-4">{stat.icon}</div>
-                  <div className="font-['Merriweather:Bold',_sans-serif] text-[48px] font-bold text-white mb-2">
+                  <div className="font-['Merriweather:Bold',sans-serif] text-[48px] font-bold text-white mb-2">
                     {stat.number}
                   </div>
-                  <div className="font-['Karla:Regular',_sans-serif] text-white/90 text-[16px] uppercase tracking-wide">
+                  <div className="font-['Karla:Regular',sans-serif] text-white/90 text-[16px] uppercase tracking-wide">
                     {stat.label}
                   </div>
                 </div>

@@ -18,10 +18,10 @@ export function ServiceAreas() {
         <div className="box-border content-stretch flex flex-col items-center justify-start px-2.5 py-[80px] relative w-full">
           <div className="max-w-[1140px] relative shrink-0 w-full">
             <div className="text-center mb-16">
-              <h2 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
+              <h2 className="font-['Merriweather:Bold',sans-serif] text-[#1a1a1a] text-[42px] font-bold mb-6">
                 Service Areas
               </h2>
-              <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
+              <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[18px] max-w-2xl mx-auto leading-relaxed">
                 Proudly serving Utah County and surrounding areas
               </p>
             </div>
@@ -34,10 +34,10 @@ export function ServiceAreas() {
                   style={{ animationDelay: `${(index + 1) * 50}ms` }}
                 >
                   <CardContent className="p-6">
-                    <h3 className="font-['Merriweather:Bold',_sans-serif] text-[#45a9a7] text-[20px] font-semibold mb-2">
+                    <h3 className="font-['Merriweather:Bold',sans-serif] text-teal-400 text-[20px] font-semibold mb-2">
                       {area.city}
                     </h3>
-                    <p className="font-['Karla:Regular',_sans-serif] text-[#606060] text-[14px] leading-relaxed">
+                    <p className="font-['Karla:Regular',sans-serif] text-[#606060] text-[14px] leading-relaxed">
                       {area.description}
                     </p>
                   </CardContent>

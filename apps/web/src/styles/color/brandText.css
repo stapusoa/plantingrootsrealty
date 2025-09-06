@@ -1,0 +1,63 @@
+@utility text-primary {
+  color: var(--color-primary);
+}
+
+@utility text-primary-light {
+  color: var(--color-primary-light);
+}
+
+@utility text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+@utility text-secondary {
+  color: var(--color-secondary);
+}
+
+@utility text-secondary-light {
+  color: var(--color-secondary-light);
+}
+
+@utility text-secondary-dark {
+  color: var(--color-secondary-dark);
+}
+
+@utility text-primary-opacity {
+  color: var(--color-primary-opacity);
+}
+
+@utility text-secondary-opacity {
+  color: var(--color-secondary-opacity);
+}
+
+@utility hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+@utility hover\:text-primary-light:hover {
+  color: var(--color-primary-light);
+}
+
+@utility hover\:text-primary-dark:hover {
+  color: var(--color-primary-dark);
+}
+
+@utility hover\:text-primary-opacity:hover {
+  color: var(--color-primary-opacity);
+}
+
+@utility hover\:text-secondary:hover {
+  color: var(--color-secondary);
+}
+
+@utility hover\:text-secondary-light:hover {
+  color: var(--color-secondary-light);
+}
+
+@utility hover\:text-secondary-dark:hover {
+  color: var(--color-secondary-dark);
+}
+
+@utility hover\:text-secondary-opacity:hover {
+  color: var(--color-secondary-opacity);
+}

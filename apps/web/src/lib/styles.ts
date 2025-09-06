@@ -14,7 +14,7 @@ export const heroBackgroundClass =
   "absolute bottom-0 left-0 right-0 top-0"
 
 export const heroInnerClass =
-"absolute left-1/2 translate-x-[-50%] translate-y-[-50%] w-320 max-w-[90vw]"
+"absolute left-1/2 translate-x-[-50%] translate-y-[-50%] w-7xl max-w-[90vw]"
 
 export const heroHeaderClass =
 "box-border content-stretch flex flex-col gap-8 items-center justify-center p-0 relative w-full"
@@ -29,10 +29,10 @@ export const heroButtonClass =
   "bg-white/10 z-3 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg px-8 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
   
 export const overlayBaseClass =
-  "fixed inset-0 w-full h-screen bg-gradient-to-b from-black/60 via-black/40 to-black/20 pointer-events-none z-1"
+  "fixed inset-0 w-full h-screen bg-linear-to-b from-black/60 via-black/40 to-black/20 pointer-events-none z-1"
 
 export const overlayHomeClass =
-  "fixed inset-0 w-full h-screen bg-gradient-to-br from-[#5e4684]/80 via-[#7a5ba8]/70 to-[#45a9a7]/60 pointer-events-none z-0"
+  "fixed inset-0 w-full h-screen bg-linear-to-br from-grape-800/80 via-[#7a5ba8]/70 to-teal-400/60 pointer-events-none z-0"
 
 export const overlayDarkClass =
   "fixed inset-0 w-full h-screen bg-black/20 pointer-events-none z-0"
