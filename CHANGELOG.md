@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.4.0...v1.4.1) (2025-09-14)
+
+
+### Bug Fixes
+
+* remove invalid CSS reset for color variables ([b59b8d5](https://github.com/stapusoa/plantingrootsrealty/commit/b59b8d5938a605587534b36ce48c14698d25656c))
+
 # [1.4.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.3.0...v1.4.0) (2025-09-05)
 
 
