@@ -2,9 +2,10 @@ import type { PageType } from "@/components/navigation/types"
 import {Hero} from '@/lib/layout/Hero2'
 import { WaveSeparator } from "@/components/separator/waveSeparator"
 
-import imageSM from "@/assets/bgHomeHero-sm.webp"
-import imageMD from "@/assets/bgHomeHero-md.webp"
-import imageLG from "@/assets/bgHomeHero-lg.webp"
+const imageSM = `${import.meta.env.VITE_API_URL}/assets/images/bgHomeHero-sm.webp`
+const imageMD = `${import.meta.env.VITE_API_URL}/assets/images/bgHomeHero-md.webp`
+const imageLG = `${import.meta.env.VITE_API_URL}/assets/images/bgHomeHero-lg.webp`
+
 
 export function HomeHero2({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   return (

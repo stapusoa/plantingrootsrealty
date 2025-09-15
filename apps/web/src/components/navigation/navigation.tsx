@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom"
 import { cn } from "@/lib/utils"
 import { navitems, PHONE_NUMBER } from "./constants"
 import type { NavigationProps } from "./types"
-import logowhite from "@/assets/logo-contrast.webp"
-import logoprimary from "@/assets/logo-primary.webp"
 import { Icon } from "@/components/Icon/Icon"
 
 export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
@@ -13,6 +11,9 @@ export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  const logowhite = `${import.meta.env.VITE_API_URL}/assets/logo-contrast.webp`
+  const logoprimary = `${import.meta.env.VITE_API_URL}/assets/logo-primary.webp`
+console.log("API URL:", import.meta.env.VITE_API_URL)
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev)
   }

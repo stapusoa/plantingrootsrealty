@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import type { PageType } from "@/components/navigation/types"
-import img1 from "@/assets/img1.jpg"
+
+const img1 = `${import.meta.env.VITE_API_URL}/assets/images/img1.jpg`
 
 function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, onSlideSelect }: {
   children: React.ReactNode;
