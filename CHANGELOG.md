@@ -1,3 +1,11 @@
+## [1.5.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.5.0...v1.5.1) (2025-09-15)
+
+
+### Bug Fixes
+
+* **api:** serve static assets correctly in both local and Vercel environments ([33c8a8b](https://github.com/stapusoa/plantingrootsrealty/commit/33c8a8b6223f6b6609aaeade9dff6ca03a51ebaa))
+* use process.cwd() to point to the root of project instead of __dirname ([26cecbe](https://github.com/stapusoa/plantingrootsrealty/commit/26cecbeaf3cf75a84c948b64814eb4f8a28ef733))
+
 # [1.5.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.4.1...v1.5.0) (2025-09-15)
 
 
