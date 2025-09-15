@@ -1,3 +1,17 @@
+# [1.5.0](https://github.com/stapusoa/plantingrootsrealty/compare/v1.4.1...v1.5.0) (2025-09-15)
+
+
+### Bug Fixes
+
+* prr-55 fix import for ImageWithFallback in TestimonialsSection ([80467f3](https://github.com/stapusoa/plantingrootsrealty/commit/80467f3ad3d48819ceeadfeae2153b1414ee0c2f))
+* prr-55 move ImageWithFallback to image component and Exclude .d.ts files from ESLint ([31ac3fd](https://github.com/stapusoa/plantingrootsrealty/commit/31ac3fdb54daab6ff248ca2d1afcc8998f902256))
+* prr-55 remove .eslintignore and ignore .d.ts files in ESLint ([986056c](https://github.com/stapusoa/plantingrootsrealty/commit/986056c37df74509da913dcc009b4d5a9b3fb228))
+
+
+### Features
+
+* **images:** prr-55 Move Images from Frontend to Backend ([22e20b3](https://github.com/stapusoa/plantingrootsrealty/commit/22e20b3bb0afb722685320124ed8599e0289b06b))
+
 ## [1.4.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.4.0...v1.4.1) (2025-09-14)
 
 
