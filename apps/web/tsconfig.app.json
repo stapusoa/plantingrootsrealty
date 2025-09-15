@@ -29,5 +29,5 @@
       "@/styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["src", "../api/src/lib/cms"]
+  "include": ["src", "../api/src/lib/cms", "src/**/*.d.ts"]
 }

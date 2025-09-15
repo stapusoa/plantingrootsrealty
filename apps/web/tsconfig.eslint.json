@@ -6,7 +6,8 @@
     ".storybook/main.ts",
     ".storybook/preview.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src/**/*.d.ts"
   ],
   "exclude": ["dist", "node_modules"]
 }

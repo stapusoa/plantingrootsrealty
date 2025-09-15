@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "private": true,
+  "packageManager": "pnpm@8.9.1",
   "workspaces": [
     "apps/*",
     "packages/*"

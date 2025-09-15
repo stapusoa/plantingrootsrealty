@@ -1,9 +1,9 @@
-import imgLogo from "@/assets/Logo 1.png"
-import imgLogo1 from "@/assets/Logo 2.png"
-import imgLogo2 from "@/assets/Logo 3.png"
-import imgLogo3 from "@/assets/Logo 4.png"
-import imgLogo4 from "@/assets/Logo 5.png"
-import imgLogo5 from "@/assets/Logo 6.png"
+const imgLogo = `${import.meta.env.VITE_API_URL}/assets/Logo 1.png`
+const imgLogo1 = `${import.meta.env.VITE_API_URL}/assets/Logo 2.png`
+const imgLogo2 = `${import.meta.env.VITE_API_URL}/assets/Logo 3.png`
+const imgLogo3 = `${import.meta.env.VITE_API_URL}/assets/Logo 4.png`
+const imgLogo4 = `${import.meta.env.VITE_API_URL}/assets/Logo 5.png`
+const imgLogo5 = `${import.meta.env.VITE_API_URL}/assets/Logo 6.png`
 
 export function LogoCloud() {
   return (
