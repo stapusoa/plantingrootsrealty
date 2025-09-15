@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/card/card"
-import { ImageWithFallback } from "@/assets/ImageWithFallback"
+import { ImageWithFallback } from "@/components/image/ImageWithFallback"
 
 export function TestimonialsSection() {
   const testimonials = [
