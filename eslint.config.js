@@ -12,7 +12,7 @@ const prettierConfig = prettierPkg.flatConfig ?? []
 
 export default [
   {
-    ignores: ['apps/web/dist/', 'apps/web/storybook-static/', 'node_modules/'],
+    ignores: ['apps/web/dist/', 'apps/web/storybook-static/', 'node_modules/', "**/*.d.ts"],
   },
   {
     files: ['apps/web/**/*.{ts,tsx}'],
