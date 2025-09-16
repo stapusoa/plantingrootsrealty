@@ -1,35 +1,56 @@
 import { Card, CardContent } from "@/components/card/card"
-import { ImageWithFallback } from "@/components/image/ImageWithFallback"
+import { Image } from "@/components/image/image"
+
+const img1 = `${import.meta.env.VITE_API_URL}/assets/images/imgReviewsRochaIvan.webp`
+const img2 = `${import.meta.env.VITE_API_URL}/assets/images/imgReviewsBainterBaxter.webp`
+const img3 = `${import.meta.env.VITE_API_URL}/assets/images/imgReviewsFunkJessica.webp`
+const img4 = `${import.meta.env.VITE_API_URL}/assets/images/imgReviewsNielsenTrev.webp`
+const img5 = `${import.meta.env.VITE_API_URL}/assets/images/imgReviewsRigbyTiffany.webp`
+const img6 = `${import.meta.env.VITE_API_URL}/assets/images/imgReviewsHerbertDerren.webp`
 
 export function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Sarah & Mike Johnson",
-      location: "Provo, UT",
-      text: "Brittni made our first home buying experience smooth and stress-free. Her knowledge of the Utah County market and dedication to finding us the perfect home was outstanding.",
+      name: "Ivan De Souza Rocha",
+      location: "Salt Lake City, UT",
+      text: "I couldn't be happier with how Brittany and her team treated me and my property when it came time to sell. She made me as much as a priority as she would anyone. And it saved me so much time having her taking care of the whole selling process. I would definitely recommend her!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616c5d0c4e0?w=100&h=100&fit=crop&crop=face"
+      image: img1
     },
     {
-      name: "David Chen",
-      location: "Lehi, UT", 
-      text: "As an investor, I needed an agent who understood market trends. Brittni's insights helped me make profitable decisions and her network of contractors saved me time and money.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-    },
-    {
-      name: "Emily Rodriguez",
-      location: "Orem, UT",
-      text: "Selling our home with Brittni was effortless. Her marketing strategy and staging advice helped us sell above asking price in just two weeks!",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
-    },
-    {
-      name: "The Thompson Family",
+      name: "Baxter Bainter",
       location: "Spanish Fork, UT",
-      text: "Brittni went above and beyond to help us find a home that fit our growing family. Her patience and expertise made all the difference.",
+      text: "It was phenomenal working with Brittany as our agent. She was definitely on our side and was looking out for our best interests. Brittany walked us through the process as an expert and had the answer to all our questions. Whenever we are ready for our next move, Brittany will be our definite choice!!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+      image: img2
+    },
+    {
+      name: "Jessica Funk",
+      location: "Clawson, UT",
+      text: "We bought a house and had fun throughout the whole process! BrittanyH is the coolest and knows her stuff! Thanks Brittany",
+      rating: 5,
+      image: img3
+    },
+    {
+      name: "Trev Nielsen",
+      location: "Salt Lake City, UT",
+      text: "Brittany did all in her power to get us into a place and make everything perfect. Cannot recommend her enough!",
+      rating: 5,
+      image: img4
+    },
+    {
+      name: "Tiffany Rigby",
+      location: "Payson, UT",
+      text: "Brittany is the best! She listens to you, she respects decisions, if you give her a list of things you like or dislike she will do her absolute best to make sure you are happy! I would 1000% recommend!!",
+      rating: 5,
+      image: img5
+    },
+    {
+      name: "Derren Herbert",
+      location: "Provo, UT",
+      text: "Brittany is one of a kind. She really care about her clients. She puts her heart and soul into making buying and seeking your home a great experience.",
+      rating: 5,
+      image: img6
     }
   ]
 
@@ -56,10 +77,12 @@ export function TestimonialsSection() {
                 >
                   <CardContent className="p-8">
                     <div className="flex gap-4 mb-6">
-                      <ImageWithFallback
+                      <Image
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover"
+                        className="rounded-full object-cover overflow-hidden"
+                        width={64}
+                        height={64}
                       />
                       <div>
                         <h3 className="font-['Merriweather:Bold',_sans-serif] text-[#1a1a1a] text-[18px] font-semibold">
