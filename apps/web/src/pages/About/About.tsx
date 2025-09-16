@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react"
 
+const imgAbout = `${import.meta.env.VITE_API_URL}/assets/images/imgAboutFamily.webp`
+
 export function About() {
   const galleryRef = useRef<HTMLDivElement>(null)
 
@@ -148,7 +150,7 @@ export function About() {
           {/* Section: Brittany Hutchison */}
           <div className="flex flex-col md:flex-row items-center gap-8">
             <img
-              src="https://plantingrootsrealty.com/wp-content/uploads/2025/01/Screenshot-2023-12-05-123215.png"
+              src={imgAbout}
               alt="Brittany Hutchison"
               className="w-80 h-80 object-contain rounded-full"
             />
