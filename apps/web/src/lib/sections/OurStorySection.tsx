@@ -49,8 +49,8 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
             key={index}
             onClick={() => onSlideSelect(index)}
             className={`transition-all duration-300 rounded-full ${index === currentSlide
-                ? 'w-8 h-3 bg-white shadow-lg'
-                : 'w-3 h-3 bg-white/50 hover:bg-white/70'
+              ? 'w-8 h-3 bg-white shadow-lg'
+              : 'w-3 h-3 bg-white/50 hover:bg-white/70'
               }`}
           />
         ))}
@@ -59,7 +59,7 @@ function ModernCarousel({ children, currentSlide, totalSlides, onNext, onPrev, o
   )
 }
 
-export function OurStorySection({  }: { onNavigate: (page: PageType) => void }) {
+export function OurStorySection({ }: { onNavigate: (page: PageType) => void }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const totalSlides = images.length
 
@@ -98,9 +98,11 @@ export function OurStorySection({  }: { onNavigate: (page: PageType) => void }) 
           onPrev={prevSlide}
           onSlideSelect={setCurrentSlide}
         >
-          {images.map((image, idx) => (
-            <img key={idx} src={image.src} alt={image.alt} className="object-cover w-full h-full" />
-          ))}
+          <img
+            src={images[currentSlide].src}
+            alt={images[currentSlide].alt}
+            className="object-cover w-full h-full"
+          />
         </ModernCarousel>
       </div>
     </div>
