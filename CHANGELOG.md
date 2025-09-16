@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/stapusoa/plantingrootsrealty/compare/v1.5.1...v1.5.2) (2025-09-16)
+
+
+### Bug Fixes
+
+* render only current slide in OurStorySection carousel ([987294b](https://github.com/stapusoa/plantingrootsrealty/commit/987294b8bb95d04a021127c52e223ac4c2b81647))
+
 ## [1.5.1](https://github.com/stapusoa/plantingrootsrealty/compare/v1.5.0...v1.5.1) (2025-09-15)
 
 
