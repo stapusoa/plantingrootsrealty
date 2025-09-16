@@ -4,29 +4,16 @@ import { cn } from "@/lib/utils"
 import { navitems, PHONE_NUMBER } from "./constants"
 import type { NavigationProps } from "./types"
 import { Icon } from "@/components/Icon/Icon"
-// Image URLs are now provided by the backend API response (siteSettings.logoContrastUrl, siteSettings.logoPrimaryUrl)
 
 export function Navigation({ onNavigate, heroHeight = 600 }: NavigationProps) {
   const location = useLocation()
   const isHomePage = location.pathname === "/"
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [siteSettings, setSiteSettings] = useState<any>(null)
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/site-settings`)
-      .then((response) => response.json())
-      .then((data) => {
-        setSiteSettings(data)
-      })
-      .catch((error) => {
-        console.error("Failed to fetch site settings:", error)
-      })
-  }, [])
-
- const logowhite = siteSettings?.logoContrastUrl ?? ''
-const logoprimary = siteSettings?.logoPrimaryUrl ?? `${import.meta.env.VITE_API_URL}/assets/logo-primary.webp`
- console.log("API URL:", import.meta.env.VITE_API_URL)
+  const logowhite = `${import.meta.env.VITE_API_URL}/assets/logo-contrast.webp`
+  const logoprimary = `${import.meta.env.VITE_API_URL}/assets/logo-primary.webp`
+console.log("API URL:", import.meta.env.VITE_API_URL)
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev)
   }
