@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/stapusoa/plantingrootsrealty/compare/v1.5.2...v1.5.3) (2025-09-17)
+
+
+### Bug Fixes
+
+* crop testimonial images to 1:1 ratios ([f59846d](https://github.com/stapusoa/plantingrootsrealty/commit/f59846d42a00eebf9d27272e1b003a067036b805))
+
 ## [1.5.2](https://github.com/stapusoa/plantingrootsrealty/compare/v1.5.1...v1.5.2) (2025-09-16)
 
 
